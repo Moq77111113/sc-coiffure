@@ -1,0 +1,53 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/molecules/content-section.astro";
+import type { Service } from "~/types";
+
+const services: Array<Service> = [
+  {
+    title: "Stylisme sur mesure",
+    description:
+      "Notre équipe de stylistes experts se dédie à créer des coiffures personnalisées, conçues pour correspondre parfaitement à votre style unique.",
+    icon: "mdi:scissors",
+  },
+  {
+    title: "Excellence des produits français",
+    description:
+      "Optez pour l'excellence avec l'utilisation exclusive de produits capillaires français de première qualité, assurant des résultats exceptionnels.",
+    icon: "openmoji:flag-france",
+  },
+  {
+    title: "Consultation experte",
+    description:
+      "Bénéficiez de consultations personnalisées, offrant des conseils pointus sur les soins capillaires et les dernières tendances.",
+    icon: "mdi:lightbulb-on",
+  },
+  {
+    title: "Ambiance raffinée",
+    description:
+      "Plongez dans une expérience de salon raffinée où notre service professionnel assure une détente totale et une satisfaction assurée.",
+    icon: "mdi:coffee",
+  },
+];
+---
+
+<ContentSection
+  title="Services"
+  id="services"
+  classes="bg-offset"
+  textColor="text-offset"
+>
+  <ul class="grid max-w-6xl grid-cols-1 md:grid-cols-2">
+    {
+      services.map(({ title, description, icon }) => (
+        <li class="flex flex-col items-center gap-4 p-6">
+          <div class="h-24 w-24 rounded-full border-2 border-offset p-3">
+            <Icon name={icon} class="text-offset" />
+          </div>
+          <p class="text-center font-extrabold text-primary text-lg">{title}</p>
+          <p class="text-center text-offset text-xs">{description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>

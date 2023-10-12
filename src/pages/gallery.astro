@@ -1,0 +1,15 @@
+---
+import "@fontsource-variable/inter";
+import Layout from "~/components/organisms/layout/layout.astro";
+
+import "~/styles/index.css";
+// import { getPosts } from "~/services/ig/getFiles";
+import GalleryContent from "~/components/organisms/gallery.svelte";
+import type { Posts } from "~/types/instagram/post";
+export const prerender = true;
+const posts = [] satisfies Posts;
+---
+
+<Layout index={false}>
+  <GalleryContent client:idle {posts} />
+</Layout>

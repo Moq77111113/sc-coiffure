@@ -1,0 +1,88 @@
+---
+import "@fontsource-variable/inter";
+import Footer from "~/components/organisms/footer.astro";
+import Header from "~/components/organisms/header.astro";
+import ScrollUp from "~/components/atoms/scroll-up.svelte";
+import Splash from "~/components/organisms/splash.astro";
+import "~/styles/index.css";
+import "~/styles/md.css";
+import Link from "~/components/atoms/link.svelte";
+const { generator, site } = Astro;
+const image = new URL("social.jpg", site);
+const description = "Le meilleur salon de la Seyne !";
+---
+
+<!DOCTYPE html>
+<html
+  lang="fr"
+  class="h-full font-display motion-safe:scroll-smooth"
+  data-theme="dark"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="robots" content="noindex" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href="/favicon.ico" type="image/ico" />
+    <meta name="generator" content={generator} />
+
+    <title>SC Coiffure</title>
+    <meta name="description" content={description} />
+
+    <!-- social media -->
+    <meta property="og:title" content="SC Coiffure" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script
+      src="https://kit.fontawesome.com/84df6234e4.js"
+      crossorigin="anonymous"
+      defer></script>
+    <!-- initialize theme -->
+    <script>
+      const theme = localStorage.getItem("theme");
+
+      if (theme) {
+        document.documentElement.dataset.theme = theme;
+      } else {
+        const prefersDark = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        ).matches;
+        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      }
+
+      window
+        .matchMedia("(prefers-color-scheme: dark)")
+        .addEventListener("change", (event) => {
+          if (!localStorage.getItem("theme")) {
+            document.documentElement.dataset.theme = event.matches
+              ? "dark"
+              : "light";
+          }
+        });
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header />
+    <Splash />
+
+    <article id="content" class="px-4 py-8">
+      <slot />
+    </article>
+    <Link
+      title="Retour à l'accueil"
+      href="/"
+      classes="flex justify-center gap-3 border-2 border-default px-6 py-4 text-default"
+    >
+      <div class="flex gap-2">
+        <i class="fa-solid fa-home flex h-8 items-center"></i>
+        <span class="m-auto text-center font-medium">Retour à l'accueil</span>
+      </div>
+    </Link>
+    <Footer />
+    <ScrollUp client:load />
+  </body>
+</html>

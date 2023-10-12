@@ -1,0 +1,79 @@
+/* styles.css */
+
+body {
+  @apply font-sans;
+}
+
+/* Typography Styles */
+#content > h1,
+#content > h2,
+#content > h3,
+#content > h4,
+#content > h5,
+#content > h6 {
+  font-weight: bold;
+}
+
+#content > p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Links */
+#content > a {
+  color: #3490dc;
+  text-decoration: underline;
+  transition: color 0.3s ease-in-out;
+}
+
+#content > a:hover {
+  color: #1e70b8;
+}
+
+/* Lists */
+#content > ul,
+#content > ol {
+  margin-bottom: 20px;
+  @apply flex list-inside flex-col gap-4;
+}
+
+#content > li {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Code Blocks */
+#content > pre {
+  background-color: #f6f8fa;
+  border-radius: 4px;
+  padding: 1em;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+#content > code {
+  font-family: "Fira Code", monospace;
+  font-size: 14px;
+}
+
+/* Blockquote */
+#content > blockquote {
+  border-left: 4px solid #3490dc;
+  padding-left: 20px;
+  margin: 0 0 20px;
+}
+
+/* Tables */
+#content > table {
+  width: 100%;
+  margin-bottom: 20px;
+  border-collapse: collapse;
+}
+
+#content > th,
+#content > td {
+  border: 1px solid #e2e8f0;
+  padding: 8px;
+  text-align: left;
+}

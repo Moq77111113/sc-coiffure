@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon";
+import ContentSection from "~/components/molecules/content-section.astro";
+
+type CTAElement = {
+  label: string;
+  href: string;
+  icon: {
+    pack: string;
+    name: string;
+  };
+};
+
+const ctas: CTAElement[] = [
+  {
+    label: "Découvrir nos services",
+    href: "/#services",
+    icon: {
+      pack: "mdi",
+      name: "scissors",
+    },
+  },
+  {
+    label: "Explorer nos travaux",
+    href: "/gallery/#pics",
+    icon: {
+      pack: "mdi",
+      name: "image",
+    },
+  },
+  {
+    label: "Rencontrer notre équipe",
+    href: "/#team",
+    icon: {
+      pack: "mdi",
+      name: "account-group",
+    },
+  },
+];
+---
+
+<ContentSection title="SC Coiffure" id="intro">
+  <Fragment slot="lead">
+    Sublimez <span class="text-accent"> Votre Style</span>.
+  </Fragment>
+  <Icon slot="eyebrow" name="logomark" class="h-48 text-default" />
+  <div class="container">
+    <div class="flex flex-col items-center gap-4">
+      <p class="text-text max-w-xl text-center text-sm">
+        Découvrez l'authenticité et l'excellence chez <span class="text-accent"
+          >SC Coiffure</span
+        >, votre salon dédié à l'art de la coiffure. Niché sur le port de la
+        Seyne-sur-Mer, notre établissement allie <span class="text-accent"
+          >charme</span
+        > maritime et <span class="text-accent">expertise</span> coiffure.
+      </p>
+      <p class="text-text max-w-xl text-center text-sm">
+        Ouvert en décembre 2023 par deux <span class="text-accent"
+          >passionnées</span
+        >, notre salon met en avant l'excellence des produits français Chaque
+        visite est une expérience personnalisée où nous <span
+          class="text-accent"
+          >sublimons votre style
+        </span>avec talent et dévouement.
+      </p>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 gap-2 text-offset sm:grid-cols-2">
+    {
+      ctas.map((cta, i) => (
+        <a
+          href={cta.href}
+          class={`flex items-center gap-3 border-2 border-default px-6 py-4 text-default dark:border-white ${
+            ctas.length % 2 !== 0 && i === ctas.length - 1
+              ? "sm:col-span-2 sm:mx-auto"
+              : ""
+          }`}
+        >
+          <Icon pack={cta.icon.pack} name={cta.icon.name} class="h-8" />
+          <span class="m-auto text-center font-medium">{cta.label}</span>
+        </a>
+      ))
+    }
+  </div>
+</ContentSection>

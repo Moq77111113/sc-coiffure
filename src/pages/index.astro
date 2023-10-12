@@ -1,0 +1,15 @@
+---
+import "@fontsource-variable/inter";
+import Services from "~/components/organisms/services.astro";
+import Intro from "~/components/organisms/intro.astro";
+import Layout from "~/components/organisms/layout/layout.astro";
+import Team from "~/components/organisms/team.astro";
+import "~/styles/index.css";
+export const prerender = true;
+---
+
+<Layout>
+  <Intro />
+  <Services />
+  <Team />
+</Layout>
