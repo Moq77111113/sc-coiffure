@@ -1,7 +1,7 @@
 ---
 import { register } from "swiper/element/bundle";
-import ContentSection from "../molecules/content-section.astro";
-import Person from "~/components/molecules/person.astro";
+import ContentSection from "~/components/molecules/ContentSection.astro";
+import Person from "~/components/molecules/Person.astro";
 register();
 
 const team = [
@@ -23,7 +23,12 @@ const team = [
 ];
 ---
 
-<ContentSection title="L'équipe" id="team">
+<ContentSection id="team">
+  <Fragment slot="title">
+    <h2 class=`text-center font-extrabold tracking-tight text-6xl text-default`>
+      L'équipe
+    </h2>
+  </Fragment>
   <ul
     class="flex w-full flex-col items-center justify-center gap-24 md:flex-row"
   >

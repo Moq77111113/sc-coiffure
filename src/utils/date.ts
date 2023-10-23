@@ -20,3 +20,14 @@ export const toFrenchDay = (day: Day) => {
       throw new Error(`Unknown day: ${day}`);
   }
 };
+
+const formatter = (
+  options: Intl.DateTimeFormatOptions = {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  }
+) => Intl.DateTimeFormat("fr-FR", options);
+
+export const formatDate = (date: Date, options?: Intl.DateTimeFormatOptions) =>
+  formatter(options).format(date);

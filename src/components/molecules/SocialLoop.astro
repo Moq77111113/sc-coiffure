@@ -1,7 +1,7 @@
 ---
 import type { FooterLink } from "~/types";
 import { Icon } from "astro-icon";
-import Link from "~/components/atoms/link.svelte";
+import Link from "~/components/atoms/Link.svelte";
 interface Props {
   links: Array<FooterLink>;
 }
@@ -21,6 +21,7 @@ const { links } = Astro.props;
         link.classList.add("hidden");
       }
     });
+
   toggle();
   setInterval(() => {
     currentIndex = (currentIndex + 1) % links.length;
@@ -31,7 +32,9 @@ const { links } = Astro.props;
   {
     links.map((link, index) => (
       <li
-        class={`animate-pop flex h-10 w-10 justify-center rounded-full border-current p-1 `}
+        class={`animate-pop h-10 w-10 justify-center rounded-full border-current p-1 ${
+          index > 0 ? "hidden" : "flex"
+        }`}
       >
         <Link href={link.url} title={link.description} newTab={true}>
           <Icon name={link.icon} class="h-full" />

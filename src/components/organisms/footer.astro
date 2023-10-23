@@ -1,27 +1,28 @@
 ---
-import HeroImage from "~/components/atoms/hero-image.astro";
 import type { FooterLink } from "~/types";
-import SocialList from "~/components/molecules/social-list.astro";
-import Link from "../atoms/link.svelte";
+import SocialList from "~/components/molecules/SocialList.astro";
+import Link from "~/components/atoms/Link.svelte";
+
+import { social } from "~/constants/social";
 const links: Array<FooterLink> = [
   {
-    url: "https://instagram.com/",
+    url: social.instagram,
     description: "Instagram",
-    icon: "uil:instagram",
+    icon: "uil:instagram-alt",
   },
   {
-    url: "https://facebook.com/",
+    url: social.facebook,
     description: "Facebook",
     icon: "mdi:facebook",
   },
   {
-    url: "mailto:cecilepechin.pro@gmail.com",
+    url: `mailto:${social.email}`,
     description: "Email",
     icon: "mdi:email",
   },
   {
-    url: "tel:0659200000",
-    description: "Call us",
+    url: `tel:${social.phone}`,
+    description: "Appelez-nous",
     icon: "mdi:phone",
   },
 ];
@@ -35,8 +36,8 @@ const links: Array<FooterLink> = [
   >
     <div class="absolute bottom-4 px-6 text-center text-xs">
       <p>© 2023 SC Coiffure Tous droits réservés</p>
-      <Link href="/legal">Mentions Légales</Link> -
-      <Link href="/privacy">Politique de confidentialité</Link>
+      <Link href="/legal#content">Mentions Légales</Link> -
+      <Link href="/privacy#content">Politique de confidentialité</Link>
     </div>
   </div>
   <SocialList links={links} />

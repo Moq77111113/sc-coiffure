@@ -17,6 +17,8 @@ const startRating = z.enum([
   "FIVE",
 ]);
 
+export type Rating = z.infer<typeof startRating>;
+
 const replySchema = z.object({
   comment: z.string(),
   updateTime: z.string(),
@@ -30,7 +32,7 @@ export const reviewSchema = z.object({
   comment: z.string(),
   createTime: z.string(),
   updateTime: z.string(),
-  reviewReply: replySchema,
+  reviewReply: replySchema.optional().nullable(),
 });
 
 export const reviewsSchema = z.object({

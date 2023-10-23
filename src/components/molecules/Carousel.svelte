@@ -2,7 +2,7 @@
   import { register, type SwiperContainer } from "swiper/element/bundle";
   import "swiper/css/navigation";
   import "swiper/css/pagination";
-  import Link from "./link.svelte";
+  import Link from "~/components/atoms/Link.svelte";
 
   export let slides: { imageUrl: string; caption: string; href?: string }[] =
     [];

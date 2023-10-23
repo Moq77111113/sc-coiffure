@@ -3,7 +3,7 @@
   export let label: string = "";
   export let classes = "";
 
-  import Link from "../atoms/link.svelte";
+  import Link from "~/components/atoms/Link.svelte";
 </script>
 
 <div

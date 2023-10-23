@@ -1,10 +1,11 @@
 ---
 import { Icon } from "astro-icon";
-import ThemeSwitcher from "~/components/atoms/theme-switcher.astro";
+import ThemeSwitcher from "~/components/atoms/ThemeSwitcher.astro";
 import type { FooterLink, NavItem } from "~/types";
-import SocialList from "~/components/molecules/social-list.astro";
-import Social from "~/components/molecules/social-animated.astro";
-
+import SocialList from "~/components/molecules/SocialList.astro";
+import Social from "~/components/molecules/SocialLoop.astro";
+import { social } from "~/constants/social";
+import Share from "../molecules/share.svelte";
 const navItems: Array<NavItem> = [
   { title: "Contact", url: "/#contact" },
   { title: "Galerie", url: "/gallery#pics" },
@@ -12,22 +13,22 @@ const navItems: Array<NavItem> = [
 
 const links: Array<FooterLink> = [
   {
-    url: "https://salon-sc-coiffure.fr/",
-    description: "Site Web",
+    url: social.instagram,
+    description: "Instagram",
     icon: "uil:instagram-alt",
   },
   {
-    url: "https://facebook.com/",
+    url: social.facebook,
     description: "Facebook",
     icon: "mdi:facebook",
   },
   {
-    url: "mailto:cecilepechin.pro@gmail.com",
+    url: `mailto:${social.email}`,
     description: "Email",
     icon: "mdi:email",
   },
   {
-    url: "tel:0659200000",
+    url: `tel:${social.phone}`,
     description: "Appelez-nous",
     icon: "mdi:phone",
   },
@@ -58,6 +59,7 @@ const links: Array<FooterLink> = [
         </ul>
       </nav>
       <Fragment class="sm:hidden"><Social links={links} /></Fragment>
+      <Share client:idle />
       <ThemeSwitcher />
       <button
         id="open-nav-button"
@@ -143,11 +145,13 @@ const links: Array<FooterLink> = [
     openNavButton.addEventListener("click", openMenu);
     closeNavButton.addEventListener("click", closeMenu);
 
-    document.addEventListener("scroll", () => {
+    const onScroll = () => {
       const d = page.clientHeight - page.scrollTop - header.offsetHeight;
       header.classList.toggle("colored-header", d < 0);
-    });
+    };
+    document.addEventListener("scroll", () => onScroll());
 
+    onScroll();
     menu.addEventListener("click", (event) => {
       if ((event.target as HTMLElement).tagName === "A") {
         closeMenu();

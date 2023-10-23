@@ -11,7 +11,7 @@
   bind:this={dialog}
   on:close={() => (showModal = false)}
   on:click|self={() => dialog.close()}
-  class="max-w-sm sm:max-w-md w-auto rounded-md p-1"
+  class="max-w-sm sm:max-w-md w-auto rounded-md p-1 z-10 mx-2 sm:m-auto"
 >
   <div
     on:click|stopPropagation

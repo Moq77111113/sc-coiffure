@@ -1,12 +1,10 @@
 ---
 export interface Props {
   id: string;
-  title: string;
   classes?: string;
-  textColor?: "text-default" | "text-offset";
 }
 
-const { title, id, classes = "", textColor = "text-display" } = Astro.props;
+const { id, classes = "" } = Astro.props;
 ---
 
 <section
@@ -15,9 +13,7 @@ const { title, id, classes = "", textColor = "text-display" } = Astro.props;
 >
   <div class="flex flex-col items-center gap-4">
     <slot name="eyebrow" />
-    <h2 class=`text-center font-extrabold tracking-tight text-6xl ${textColor}`>
-      {title}
-    </h2>
+    <slot name="title" />
   </div>
   <p class="text-display max-w-xl text-center font-extrabold text-2xl">
     <slot name="lead" />

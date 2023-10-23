@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { Day, Schedule } from "~/types";
   import Modal from "~/components/molecules/modal.svelte";
-  import Cta from "../atoms/cta.svelte";
+  import Cta from "~/components/atoms/cta.svelte";
   import { toFrenchDay, entries, keys } from "~/utils/index";
   import { dayOfWeek } from "~/constants/schedule";
   export let schedule: Schedule;

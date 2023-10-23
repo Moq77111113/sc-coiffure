@@ -1,11 +1,20 @@
 ---
-layout: ../components/organisms/layout/layoutText.astro
-title: Politique de confidentialité
+title: Politique de confidentialité - SC Coiffure
 author: Quentin Moessner
 description: Politique de confidentialité du Salon SC Coiffure
 ---
+
 export const prerender = true;
+import Layout from "~/components/organisms/layout/layout.astro";
+
+import HomeLink from "~/components/atoms/HomeLink.astro";
+
+<Layout index={false} title={frontmatter.title}  description={frontmatter.description}>
+<article id="content" class="md">
+
 # Politique de Confidentialité - Salon de Coiffure SC Coiffure
+
+<div class="mt-5">
 
 La présente politique de confidentialité expose la manière dont SC Coiffure collecte, utilise et protège les informations que vous fournissez lorsque vous utilisez notre site web et nos services.
 
@@ -36,3 +45,8 @@ Nous nous réservons le droit de modifier cette politique de confidentialité à
 ## Contact
 
 Si vous avez des questions concernant notre politique de confidentialité, veuillez nous contacter à [adresse e-mail de contact].
+
+</div>
+</article>
+<HomeLink />
+</Layout>

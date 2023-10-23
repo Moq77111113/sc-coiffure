@@ -1,7 +1,7 @@
 <script lang="ts">
   import { email, phone } from "~/constants";
-  import Link from "../atoms/link.svelte";
-  import Cta from "../atoms/cta.svelte";
+  import Link from "~/components/atoms/Link.svelte";
+  import Cta from "~/components/atoms/cta.svelte";
 </script>
 
 <Cta classes="text-white border-white">

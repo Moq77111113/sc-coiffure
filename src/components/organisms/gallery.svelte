@@ -1,8 +1,8 @@
 <script lang="ts">
-  import type { Posts } from "~/types/post";
-  import Modal from "../molecules/modal.svelte";
-  import Carousel from "../atoms/carousel.svelte";
-  import Link from "../atoms/link.svelte";
+  import Modal from "~/components/molecules/Modal.svelte";
+  import Carousel from "~/components/molecules/Carousel.svelte";
+  import Link from "~/components/atoms/Link.svelte";
+  import type { Posts } from "~/types/instagram/post";
   export let posts: Posts;
 
   let carouselPosts = [...posts];
@@ -45,14 +45,14 @@
           href={post.permalink}
           newTab={true}
           title={"Ouvrir dans instagram"}
-          classes="absolute bottom-2 right-4 text-white z-50"
+          classes="absolute bottom-2 right-4 text-white"
         >
           <i class="fa-lg fa-brands fa-instagram" />
         </Link>
       </button>
     {/each}
 
-    <Modal bind:showModal>
+    <Modal bind:showModal class="fixed top-1/2 left-1/2">
       <Carousel
         autoplay={false}
         slides={carouselPosts.map((_) => ({

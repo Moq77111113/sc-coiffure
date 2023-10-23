@@ -1,31 +1,41 @@
 ---
 import "@fontsource-variable/inter";
-import Footer from "~/components/organisms/footer.astro";
-import Header from "~/components/organisms/header.astro";
-import ScrollUp from "~/components/atoms/scroll-up.svelte";
-import Splash from "~/components/organisms/splash.astro";
+import Footer from "~/components/organisms/Footer.astro";
+import Header from "~/components/organisms/Header.astro";
+import ScrollUp from "~/components/atoms/ScrollUp.svelte";
+import Splash from "~/components/organisms/Splash.astro";
+import { seo } from "~/constants/seo";
+import { social } from "~/constants/social";
 import "~/styles/index.css";
-
+import "~/styles/md.css";
 interface Props {
   index?: boolean;
+  title?: string;
+  description?: string;
 }
-const { index = true } = Astro.props;
+const {
+  index = true,
+  title = seo.title,
+  description = seo.description,
+} = Astro.props;
 const { generator, site, url } = Astro;
 
 const image = new URL("social.jpg", site);
-const description = "Le meilleur salon de la Seyne !";
 const canonical = new URL(url.pathname, site);
-const facebook = "";
-const ig = "";
-const schema = JSON.stringify({
-  "@context": "http://schema.org",
-  "@type": "LocalBusiness",
-  name: "SC Coiffure",
-  description: description,
-  image: image,
-  url: canonical,
-  sameAs: [facebook, ig],
-});
+
+const schema = JSON.stringify(
+  {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    name: title,
+    description: description,
+    image: image,
+    url: canonical,
+    sameAs: [social.facebook, social.instagram],
+  },
+  null,
+  2
+);
 ---
 
 <!DOCTYPE html>
@@ -40,11 +50,13 @@ const schema = JSON.stringify({
     <link rel="icon" href="/favicon.ico" type="image/ico" />
     <meta name="generator" content={generator} />
     <meta name="robots" content={index ? "index" : "noindex"} />
-    <title>SC Coiffure</title>
+    <title>{title}</title>
+
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+
     <!-- social media -->
-    <meta property="og:title" content="SC Coiffure" />
+    <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
@@ -57,28 +69,28 @@ const schema = JSON.stringify({
       crossorigin="anonymous"
       async
       defer></script>
-    <!-- initialize theme -->
+
     <script async defer>
-      const theme = localStorage.getItem("theme");
+    const theme = localStorage.getItem("theme");
 
-      if (theme) {
-        document.documentElement.dataset.theme = theme;
-      } else {
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)"
-        ).matches;
-        document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-      }
+    if (theme) {
+      document.documentElement.dataset.theme = theme;
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+    }
 
-      window
-        .matchMedia("(prefers-color-scheme: dark)")
-        .addEventListener("change", (event) => {
-          if (!localStorage.getItem("theme")) {
-            document.documentElement.dataset.theme = event.matches
-              ? "dark"
-              : "light";
-          }
-        });
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        if (!localStorage.getItem("theme")) {
+          document.documentElement.dataset.theme = event.matches
+            ? "dark"
+            : "light";
+        }
+      });
     </script>
   </head>
   <body

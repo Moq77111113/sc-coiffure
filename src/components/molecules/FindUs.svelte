@@ -1,7 +1,7 @@
 <script lang="ts">
   import { address, mapsHref } from "~/constants";
-  import Cta from "../atoms/cta.svelte";
-  import Link from "../atoms/link.svelte";
+  import Cta from "~/components/atoms/cta.svelte";
+  import Link from "~/components/atoms/Link.svelte";
 </script>
 
 <Cta classes="text-white border-white">

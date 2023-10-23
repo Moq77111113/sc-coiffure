@@ -1,0 +1,50 @@
+---
+import { Image } from "astro:assets";
+import ContentSection from "~/components/molecules/ContentSection.astro";
+
+import loreal from "~/assets/products/loreal.png";
+import ghd from "~/assets/products/ghd.png";
+import Link from "../atoms/Link.svelte";
+import Share from "../molecules/share.svelte";
+
+const products = [
+  {
+    name: "L'Oréal",
+    image: loreal,
+    href: "https://www.lorealprofessionnel.fr/",
+  },
+  {
+    name: "GHD",
+    image: ghd,
+    href: "https://www.ghdhair.com/fr",
+  },
+];
+---
+
+<ContentSection id="products">
+  <Fragment slot="title">
+    <h2 class=`text-center font-extrabold tracking-tight text-6xl text-default`>
+      Nos produits
+    </h2>
+  </Fragment>
+  <ul
+    class="flex w-full flex-col items-center justify-center gap-24 md:flex-row md:px-8"
+  >
+    {
+      products.map((_) => (
+        <Link href={_.href} newTab>
+          <Image
+            class="pointer-events-none h-full w-full object-cover"
+            src={_.image}
+            alt={_.name}
+            width={_.image.width / 2}
+            densities={[1.5, 2]}
+            sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw"
+            quality={"hight"}
+            format="png"
+          />
+        </Link>
+      ))
+    }
+  </ul>
+</ContentSection>

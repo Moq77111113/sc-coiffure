@@ -1,13 +1,12 @@
 ---
 import "@fontsource-variable/inter";
-import Layout from "~/components/organisms/layout/layout.astro";
+import Layout from "~/components/organisms/layout/Layout.astro";
 
 import "~/styles/index.css";
-// import { getPosts } from "~/services/ig/getFiles";
-import GalleryContent from "~/components/organisms/gallery.svelte";
-import type { Posts } from "~/types/instagram/post";
-export const prerender = true;
-const posts = [] satisfies Posts;
+import { getPosts } from "~/services/ig/posts";
+import GalleryContent from "~/components/organisms/Gallery.svelte";
+export const prerender = false;
+const posts = await getPosts();
 ---
 
 <Layout index={false}>
