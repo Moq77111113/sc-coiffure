@@ -62,6 +62,24 @@ export const prerender = true;
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json" set:html={schema} />
   </head>
+  <script>
+    const handleSubmit = (event: SubmitEvent) => {
+      event.preventDefault();
+
+      const myForm = event.target;
+      if (!myForm) return console.error("Form not found");
+      const formData = new FormData(myForm as HTMLFormElement);
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(Object.entries(formData)).toString(),
+      })
+        .then(() => alert("Merci pour votre inscription !"))
+        .catch((error) => alert(error));
+    };
+
+    document.querySelector("form")?.addEventListener("submit", handleSubmit);
+  </script>
   <body
     class="flex h-screen flex-col items-center justify-center bg-default px-6 text-center font-display text-default"
   >
