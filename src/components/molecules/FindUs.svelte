@@ -1,6 +1,6 @@
 <script lang="ts">
   import { address, mapsHref } from "~/constants";
-  import Cta from "~/components/atoms/cta.svelte";
+  import Cta from "~/components/atoms/Cta.svelte";
   import Link from "~/components/atoms/Link.svelte";
 </script>
 
