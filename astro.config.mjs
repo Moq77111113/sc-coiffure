@@ -11,6 +11,32 @@ export default defineConfig({
   output: "server",
   adapter: netlify(),
   integrations: [tailwind(), svelte(), mdx()],
+  redirects: {
+    "/legal": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/privacy": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/gallery": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/api/posts": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/api/reviews": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/": {
+      status: 302,
+      destination: "/incoming",
+    },
+  },
   vite: {
     ssr: {
       external: ["svgo"],

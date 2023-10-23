@@ -78,6 +78,7 @@ const dataFake = [
 
 //TODO auth middleware
 export const POST = (async ({ request }) => {
+  return new Response(null, { status: 500 });
   try {
     await updateData("posts", postsSchema.parse(dataFake));
     return new Response(null, { status: 200 });
