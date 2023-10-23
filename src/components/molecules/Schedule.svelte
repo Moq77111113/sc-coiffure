@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { Day, Schedule } from "~/types";
-  import Modal from "~/components/molecules/modal.svelte";
+  import Modal from "~/components/molecules/Modal.svelte";
   import Cta from "~/components/atoms/cta.svelte";
   import { toFrenchDay, entries, keys } from "~/utils/index";
   import { dayOfWeek } from "~/constants/schedule";

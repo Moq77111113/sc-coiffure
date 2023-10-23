@@ -1,7 +1,7 @@
 <script lang="ts">
   import Modal from "~/components/molecules/Modal.svelte";
   import Carousel from "~/components/molecules/Carousel.svelte";
-  import Link from "~/components/atoms/Link1.svelte";
+  import Link from "~/components/atoms/Link.svelte";
   import type { Posts } from "~/types/instagram/post";
   export let posts: Posts;
 
@@ -52,7 +52,7 @@
       </button>
     {/each}
 
-    <Modal bind:showModal class="fixed top-1/2 left-1/2">
+    <Modal bind:showModal>
       <Carousel
         autoplay={false}
         slides={carouselPosts.map((_) => ({

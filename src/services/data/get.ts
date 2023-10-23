@@ -9,7 +9,7 @@ export async function getData<
 >(path: Path): Promise<Value> {
   try {
     // Read the JSON data from the file
-    const data = await fs.readFile("./dist/client/data.json", "utf-8");
+    const data = await fs.readFile("./dist/data.json", "utf-8");
 
     // Parse the JSON data into an object
     const parsedData = safeParse(data);

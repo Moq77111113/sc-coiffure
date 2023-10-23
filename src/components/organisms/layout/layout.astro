@@ -1,9 +1,9 @@
 ---
 import "@fontsource-variable/inter";
-import Footer from "~/components/organisms/Footer1.astro";
-import Header from "~/components/organisms/Header1.astro";
-import ScrollUp from "~/components/atoms/ScrollUp1.svelte";
-import Splash from "~/components/organisms/Splash1.astro";
+import Footer from "~/components/organisms/Footer.astro";
+import Header from "~/components/organisms/Header.astro";
+import ScrollUp from "~/components/atoms/ScrollUp.svelte";
+import Splash from "~/components/organisms/Splash.astro";
 import { seo } from "~/constants/seo";
 import { social } from "~/constants/social";
 import "~/styles/index.css";
@@ -36,7 +36,6 @@ const schema = JSON.stringify(
   null,
   2
 );
-return Astro.redirect("/incoming");
 ---
 
 <!DOCTYPE html>

@@ -3,8 +3,8 @@ import { register } from "swiper/element/bundle";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { getReviews } from "~/services/google/reviews";
-import ContentSection from "~/components/molecules/ContentSection1.astro";
-import Carousel from "~/components/molecules/Review-Carousel1.svelte";
+import ContentSection from "~/components/molecules/ContentSection.astro";
+import Carousel from "~/components/molecules/Review-Carousel.svelte";
 register();
 const data = await getReviews();
 ---

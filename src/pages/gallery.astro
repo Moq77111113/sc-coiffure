@@ -4,7 +4,7 @@ import Layout from "~/components/organisms/layout/Layout.astro";
 
 import "~/styles/index.css";
 import { getPosts } from "~/services/ig/posts";
-import GalleryContent from "~/components/organisms/Gallery1.svelte";
+import GalleryContent from "~/components/organisms/Gallery.svelte";
 export const prerender = false;
 const posts = await getPosts();
 ---
