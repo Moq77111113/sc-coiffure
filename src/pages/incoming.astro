@@ -71,13 +71,13 @@ export const prererender = true;
 
     <div class="mt-8 flex w-full flex-col">
       <form
-        name="contact"
         class="m-auto flex w-full flex-col items-center justify-center gap-2 px-4 sm:max-w-md sm:flex-row sm:gap-0"
         netlify-honeypot="anti-bot"
         method="POST"
         data-netlify="true"
       >
         <input class="hidden" name="anti-bot" />
+        <input type="hidden" name="form-name" value="contact" />
         <input
           type="email"
           name="email"
