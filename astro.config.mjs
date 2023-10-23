@@ -13,10 +13,6 @@ export default defineConfig({
   adapter: netlify(),
   integrations: [tailwind(), svelte(), mdx()],
   redirects: {
-    "/404": {
-      status: 302,
-      destination: "/incoming",
-    },
     "/legal": {
       status: 302,
       destination: "/incoming",
