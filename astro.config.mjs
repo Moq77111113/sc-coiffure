@@ -4,46 +4,47 @@ import node from "@astrojs/node";
 import svelte from "@astrojs/svelte";
 import mdx from "@astrojs/mdx";
 
+import netlify from "@astrojs/netlify/functions";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://sccoiffure83.fr",
   output: "server",
-  adapter: node({ mode: "middleware" }),
+  adapter: netlify(),
   integrations: [tailwind(), svelte(), mdx()],
   redirects: {
     "/404": {
       status: 302,
-      destination: "/incoming",
+      destination: "/incoming"
     },
     "/legal": {
       status: 302,
-      destination: "/incoming",
+      destination: "/incoming"
     },
     "/privacy": {
       status: 302,
-      destination: "/incoming",
+      destination: "/incoming"
     },
-
     "/gallery": {
       status: 302,
-      destination: "/incoming",
+      destination: "/incoming"
     },
     "/api/posts": {
       status: 302,
-      destination: "/incoming",
+      destination: "/incoming"
     },
     "/api/reviews": {
       status: 302,
-      destination: "/incoming",
+      destination: "/incoming"
     },
     "/": {
       status: 302,
-      destination: "/incoming",
-    },
+      destination: "/incoming"
+    }
   },
   vite: {
     ssr: {
-      external: ["svgo"],
-    },
-  },
+      external: ["svgo"]
+    }
+  }
 });
