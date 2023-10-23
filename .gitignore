@@ -24,3 +24,5 @@ public/*.json
 tmp
 
 .vscode/
+
+.netlify/
