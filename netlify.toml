@@ -10,5 +10,5 @@ Cache-Control = "public, max-age=0, must-revalidate"
 [[redirects]]
 from = "/*"
 to = "/incoming"
-status = 200
+status = 301
 force = true
