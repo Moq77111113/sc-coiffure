@@ -1,7 +1,14 @@
-
 [build]
 command = "pnpm build"
 publish = "dist"
 
-[dev]
-command = "pnpm dev"
+[[headers]]
+for = "/*"
+[headers.values]
+Cache-Control = "public, max-age=0, must-revalidate"
+
+[[redirects]]
+from = "/*"
+to = "/incoming"
+status = 200
+force = true
