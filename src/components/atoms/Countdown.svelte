@@ -35,7 +35,7 @@
   });
 </script>
 
-<div class="text-center mt-20">
+<div class="text-center mt-10 border p-6 rounded-xl">
   <div
     class="flex justify-around gap-4 text-center [&>*>h2]:text-sm [&>*>h2]:sm:text-xl [&>*>h2]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibol"
   >
