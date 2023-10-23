@@ -19,7 +19,7 @@ const {
 const { generator, site, url } = Astro;
 
 const image = new URL("social.jpg", site);
-const canonical = new URL('',site);
+const canonical = new URL("", site);
 
 const schema = JSON.stringify(
   {
@@ -72,7 +72,7 @@ const schema = JSON.stringify(
       <form
         name="contact"
         class="m-auto flex w-full flex-col items-center justify-center gap-2 px-4 sm:max-w-md sm:flex-row sm:gap-0"
-        data-netlify='true"'
+        data-netlify="true"
         netlify-honeypot="anti-bot"
       >
         <input class="hidden" name="anti-bot" />
