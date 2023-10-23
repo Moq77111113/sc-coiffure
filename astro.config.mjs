@@ -15,36 +15,36 @@ export default defineConfig({
   redirects: {
     "/404": {
       status: 302,
-      destination: "/incoming"
+      destination: "/incoming",
     },
     "/legal": {
       status: 302,
-      destination: "/incoming"
+      destination: "/incoming",
     },
     "/privacy": {
       status: 302,
-      destination: "/incoming"
+      destination: "/incoming",
     },
     "/gallery": {
       status: 302,
-      destination: "/incoming"
+      destination: "/incoming",
     },
     "/api/posts": {
       status: 302,
-      destination: "/incoming"
+      destination: "/incoming",
     },
     "/api/reviews": {
       status: 302,
-      destination: "/incoming"
+      destination: "/incoming",
     },
     "/": {
       status: 302,
-      destination: "/incoming"
-    }
+      destination: "/incoming",
+    },
   },
   vite: {
     ssr: {
-      external: ["svgo"]
-    }
-  }
+      external: ["svgo"],
+    },
+  },
 });
