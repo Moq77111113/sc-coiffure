@@ -6,11 +6,41 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://salonsc83.fr",
+  site: "https://sccoiffure83.fr",
   output: "server",
   adapter: node({ mode: "middleware" }),
   integrations: [tailwind(), svelte(), mdx()],
+  redirects: {
+    "/404": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/legal": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/privacy": {
+      status: 302,
+      destination: "/incoming",
+    },
 
+    "/gallery": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/api/posts": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/api/reviews": {
+      status: 302,
+      destination: "/incoming",
+    },
+    "/": {
+      status: 302,
+      destination: "/incoming",
+    },
+  },
   vite: {
     ssr: {
       external: ["svgo"],

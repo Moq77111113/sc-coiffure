@@ -1,9 +1,6 @@
 ---
 import "@fontsource-variable/inter";
-import Footer from "~/components/organisms/Footer.astro";
-import Header from "~/components/organisms/Header.astro";
-import ScrollUp from "~/components/atoms/ScrollUp.svelte";
-import Splash from "~/components/organisms/Splash.astro";
+import Countdown from "~/components/atoms/Countdown.svelte";
 import { seo } from "~/constants/seo";
 import { social } from "~/constants/social";
 import "~/styles/index.css";
@@ -36,7 +33,6 @@ const schema = JSON.stringify(
   null,
   2
 );
-return Astro.redirect("/incoming");
 ---
 
 <!DOCTYPE html>
@@ -64,45 +60,15 @@ return Astro.redirect("/incoming");
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json" set:html={schema} />
-
-    <script
-      src="https://kit.fontawesome.com/84df6234e4.js"
-      crossorigin="anonymous"
-      async
-      defer></script>
-
-    <script async defer>
-    const theme = localStorage.getItem("theme");
-
-    if (theme) {
-      document.documentElement.dataset.theme = theme;
-    } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
-    }
-
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (event) => {
-        if (!localStorage.getItem("theme")) {
-          document.documentElement.dataset.theme = event.matches
-            ? "dark"
-            : "light";
-        }
-      });
-    </script>
   </head>
   <body
-    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+    class="flex h-screen flex-col items-center justify-center bg-primary text-center font-display text-white"
   >
-    <Header />
-    <Splash />
+    <h1 class="font-bold text-2xl">On arrive bientôt !</h1>
+    <p class="mt-4 text-lg">On travaille sur quelque chose d'incroyable !</p>
 
-    <slot />
-
-    <Footer />
-    <ScrollUp client:load />
+    <div class="mt-8">
+      <Countdown client:load />
+    </div>
   </body>
 </html>
