@@ -2,7 +2,7 @@
   import { share } from "~/constants/sharing";
   import { useShare } from "~/services/share/share";
   import { onMount } from "svelte";
-  import Link from "~/components/atoms/Link.svelte";
+  import Link from "~/components/atoms/Link1.svelte";
 
   let open = false;
   const toggle = () => {

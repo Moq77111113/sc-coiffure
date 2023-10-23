@@ -1,7 +1,7 @@
 <script lang="ts">
   import Modal from "~/components/molecules/Modal.svelte";
   import Carousel from "~/components/molecules/Carousel.svelte";
-  import Link from "~/components/atoms/Link.svelte";
+  import Link from "~/components/atoms/Link1.svelte";
   import type { Posts } from "~/types/instagram/post";
   export let posts: Posts;
 
