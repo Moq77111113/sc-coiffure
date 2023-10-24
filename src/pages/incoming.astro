@@ -41,7 +41,7 @@ export const prerender = true;
 <!DOCTYPE html>
 <html
   lang="fr"
-  class="contents h-screen w-screen font-display motion-safe:scroll-smooth"
+  class="font-display motion-safe:scroll-smooth"
   data-theme="light"
 >
   <head>
@@ -65,34 +65,36 @@ export const prerender = true;
   </head>
 
   <body
-    class="relative flex h-screen w-screen flex-col justify-center bg-default text-center text-default"
+    class="flex h-screen max-h-screen w-screen flex-col items-center justify-center bg-default text-default"
   >
-    <form
-      name="contact"
-      data-netlify="true"
-      netlify-honeypot="ilovehoney"
-      hidden
-    >
-      <input type="email" name="email" />
-    </form>
-    <div class="flex flex-col px-4">
-      <Icon name="logomark" class="h-32 text-secondary" />
-      <h1 class="text-center font-bold text-2xl">
-        SC Coiffure arrive à <br /><span>La Seyne-sur-Mer</span>
-      </h1>
-      <h2 class="mt-2 text-lg">
-        Votre nouveau salon de coiffure arrive bientôt !
-      </h2>
-    </div>
-    <div class="mt-4 flex w-full flex-col px-4">
-      <ContactForm client:idle />
-      <p class="mt-2 text-sm">
-        Soyez les premiers à être informés de notre lancement !
-      </p>
-      <div class="mx-auto mt-4"><Countdown client:idle /></div>
-    </div>
+    <main class="relative flex flex-grow flex-col justify-center text-center">
+      <form
+        name="contact"
+        data-netlify="true"
+        netlify-honeypot="ilovehoney"
+        hidden
+      >
+        <input type="email" name="email" />
+      </form>
+      <div class="flex flex-col px-4">
+        <Icon name="logomark" class="h-32 text-secondary" />
+        <h1 class="text-center font-bold text-2xl">
+          SC Coiffure arrive à <br /><span>La Seyne-sur-Mer</span>
+        </h1>
+        <h2 class="mt-2 text-lg">
+          Votre nouveau salon de coiffure arrive bientôt !
+        </h2>
+      </div>
+      <div class="mt-4 flex w-full flex-col px-4">
+        <ContactForm client:idle />
+        <p class="mt-2 text-sm">
+          Soyez les premiers à être informés de notre lancement !
+        </p>
+        <div class="mx-auto mt-4"><Countdown client:idle /></div>
+      </div>
+    </main>
     <footer
-      class="absolute bottom-0 flex w-full flex-col bg-black p-2 text-white text-xs"
+      class="flex w-full flex-shrink-0 flex-col items-center bg-black py-2 text-white text-xs"
     >
       SC Coiffure © 2023
       <a href="mailto:contact@sccoiffure83.fr">contact@sccoiffure83.fr</a>
