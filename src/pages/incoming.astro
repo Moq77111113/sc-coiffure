@@ -1,12 +1,12 @@
 ---
-import "@fontsource-variable/inter";
-import Icon from "astro-icon";
-import ContactForm from "~/components/atoms/ContactForm.svelte";
-import Countdown from "~/components/atoms/Countdown.svelte";
-import { seo } from "~/constants/seo";
-import { social } from "~/constants/social";
-import "~/styles/index.css";
-import "~/styles/md.css";
+import '@fontsource-variable/inter';
+import Icon from 'astro-icon';
+import ContactForm from '~/components/atoms/ContactForm.svelte';
+import Countdown from '~/components/atoms/Countdown.svelte';
+import { seo } from '~/constants/seo';
+import { social } from '~/constants/social';
+import '~/styles/index.css';
+import '~/styles/md.css';
 interface Props {
   index?: boolean;
   title?: string;
@@ -19,13 +19,13 @@ const {
 } = Astro.props;
 const { generator, site, url } = Astro;
 
-const image = new URL("social.jpg", site);
-const canonical = new URL("", site);
+const image = new URL('social.jpg', site);
+const canonical = new URL(url, site);
 
 const schema = JSON.stringify(
   {
-    "@context": "http://schema.org",
-    "@type": "LocalBusiness",
+    '@context': 'http://schema.org',
+    '@type': 'LocalBusiness',
     name: title,
     description: description,
     image: image,
@@ -41,7 +41,7 @@ export const prerender = true;
 <!DOCTYPE html>
 <html
   lang="fr"
-  class="font-display motion-safe:scroll-smooth"
+  class="contents h-screen w-screen font-display motion-safe:scroll-smooth"
   data-theme="light"
 >
   <head>
@@ -49,7 +49,7 @@ export const prerender = true;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico" type="image/ico" />
     <meta name="generator" content={generator} />
-    <meta name="robots" content={index ? "index" : "noindex"} />
+    <meta name="robots" content={index ? 'index' : 'noindex'} />
     <title>{title}</title>
 
     <meta name="description" content={description} />
@@ -65,7 +65,7 @@ export const prerender = true;
   </head>
 
   <body
-    class="relative flex h-screen w-screen flex-col justify-center bg-default text-center font-display text-default"
+    class="relative flex h-screen w-screen flex-col justify-center bg-default text-center text-default"
   >
     <form
       name="contact"
@@ -75,17 +75,22 @@ export const prerender = true;
     >
       <input type="email" name="email" />
     </form>
-    <Icon name="logomark" class="mb-12 h-32 text-secondary" />
-    <h1 class="font-bold text-2xl">On arrive bientôt !</h1>
-    <p class="mt-2 text-lg">On travaille sur quelque chose d'incroyable !</p>
-
+    <div class="flex flex-col px-4">
+      <Icon name="logomark" class="h-32 text-secondary" />
+      <h1 class="text-center font-bold text-2xl">
+        SC Coiffure arrive à <br /><span>La Seyne-sur-Mer</span>
+      </h1>
+      <h2 class="mt-2 text-lg">
+        Votre nouveau salon de coiffure arrive bientôt !
+      </h2>
+    </div>
     <div class="mt-4 flex w-full flex-col px-4">
       <ContactForm client:idle />
       <p class="mt-2 text-sm">
         Soyez les premiers à être informés de notre lancement !
       </p>
+      <div class="mx-auto mt-4"><Countdown client:idle /></div>
     </div>
-    <div class="mx-auto mt-4"><Countdown client:idle /></div>
     <footer
       class="absolute bottom-0 flex w-full flex-col bg-black p-2 text-white text-xs"
     >

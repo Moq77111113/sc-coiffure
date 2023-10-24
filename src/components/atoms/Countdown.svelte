@@ -1,10 +1,10 @@
 <script lang="ts">
-  import { onMount, onDestroy } from "svelte";
+  import { onMount, onDestroy } from 'svelte';
 
   let timeRemaining = calculateTimeRemaining();
 
   function calculateTimeRemaining() {
-    const targetDate = new Date("2023-12-05T10:00:00+01:00").getTime();
+    const targetDate = new Date('2023-12-05T10:00:00+01:00').getTime();
     const now = new Date().getTime();
     const difference = targetDate - now;
 
@@ -35,7 +35,7 @@
   });
 </script>
 
-<div class="text-center border rounded-xl">
+<div class="text-center border p-2 rounded-xl">
   <div
     class="flex justify-around gap-4 text-center [&>*>h2]:text-sm [&>*>h2]:sm:text-xl [&>*>h2]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibol"
   >
