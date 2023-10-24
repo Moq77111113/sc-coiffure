@@ -1,7 +1,9 @@
 ---
 import "@fontsource-variable/inter";
 import Icon from "astro-icon";
+import ContactForm from "~/components/atoms/ContactForm.svelte";
 import Countdown from "~/components/atoms/Countdown.svelte";
+import Contact from "~/components/molecules/Contact.svelte";
 import { seo } from "~/constants/seo";
 import { social } from "~/constants/social";
 import "~/styles/index.css";
@@ -62,55 +64,24 @@ export const prerender = true;
     <meta name="twitter:card" content="summary_large_image" />
     <script type="application/ld+json" set:html={schema} />
   </head>
-  <script>
-    const handleSubmit = (event: SubmitEvent) => {
-      event.preventDefault();
 
-      const myForm = event.target;
-      if (!myForm) return console.error("Form not found");
-      const formData = new FormData(myForm as HTMLFormElement);
-      fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(Object.entries(formData)).toString(),
-      })
-        .then(() => alert("Merci pour votre inscription !"))
-        .catch((error) => alert(error));
-    };
-
-    document.querySelector("form")?.addEventListener("submit", handleSubmit);
-  </script>
   <body
     class="relative flex h-screen w-screen flex-col justify-center bg-default text-center font-display text-default"
   >
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="ilovehoney"
+      hidden
+    >
+      <input type="email" name="email" />
+    </form>
     <Icon name="logomark" class="mb-12 h-32 text-secondary" />
     <h1 class="font-bold text-2xl">On arrive bientôt !</h1>
     <p class="mt-2 text-lg">On travaille sur quelque chose d'incroyable !</p>
 
     <div class="mt-4 flex w-full flex-col px-4">
-      <form
-        class="m-auto flex w-full flex-col items-center justify-center gap-2 sm:max-w-md sm:flex-row sm:gap-0"
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        netlify-honeypot="ilovehoney"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <input class="hidden" name="ilovehoney" type="text" />
-        <input
-          type="email"
-          name="email"
-          placeholder="Entrez votre email"
-          class="w-full rounded-md border bg-white px-4 py-2 text-black placeholder-gray-400 text-xs focus:outline-none sm:rounded-r-none"
-          required
-        />
-
-        <button
-          type="submit"
-          class="w-md m-auto rounded-md border bg-primary px-4 py-2 text-white hover:bg-accent focus:outline-none sm:w-auto sm:rounded-l-none"
-          >S'inscrire</button
-        >
-      </form>
+      <ContactForm client:idle />
       <p class="mt-2 text-sm">
         Soyez les premiers à être informés de notre lancement !
       </p>
