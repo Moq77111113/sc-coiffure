@@ -20,7 +20,9 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-src/content/*.json
+public/*.json
 tmp
 
 .vscode/
+
+.netlify/

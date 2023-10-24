@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 
 const reviewerSchema = z.object({
   profilePhotoUrl: z.string(),
@@ -9,13 +9,15 @@ const reviewerSchema = z.object({
 export type Reviewer = z.infer<typeof reviewerSchema>;
 
 const startRating = z.enum([
-  "STAR_RATING_UNSPECIFIED",
-  "ONE",
-  "TWO",
-  "THREE",
-  "FOUR",
-  "FIVE",
+  'STAR_RATING_UNSPECIFIED',
+  'ONE',
+  'TWO',
+  'THREE',
+  'FOUR',
+  'FIVE',
 ]);
+
+export type Rating = z.infer<typeof startRating>;
 
 const replySchema = z.object({
   comment: z.string(),
@@ -30,7 +32,7 @@ export const reviewSchema = z.object({
   comment: z.string(),
   createTime: z.string(),
   updateTime: z.string(),
-  reviewReply: replySchema,
+  reviewReply: replySchema.optional().nullable(),
 });
 
 export const reviewsSchema = z.object({

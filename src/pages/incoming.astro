@@ -1,0 +1,96 @@
+---
+import "@fontsource-variable/inter";
+import Icon from "astro-icon";
+import ContactForm from "~/components/atoms/ContactForm.svelte";
+import Countdown from "~/components/atoms/Countdown.svelte";
+import { seo } from "~/constants/seo";
+import { social } from "~/constants/social";
+import "~/styles/index.css";
+import "~/styles/md.css";
+interface Props {
+  index?: boolean;
+  title?: string;
+  description?: string;
+}
+const {
+  index = true,
+  title = seo.title,
+  description = seo.description,
+} = Astro.props;
+const { generator, site, url } = Astro;
+
+const image = new URL("social.jpg", site);
+const canonical = new URL("", site);
+
+const schema = JSON.stringify(
+  {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    name: title,
+    description: description,
+    image: image,
+    url: canonical,
+    sameAs: [social.facebook, social.instagram],
+  },
+  null,
+  2
+);
+export const prerender = true;
+---
+
+<!DOCTYPE html>
+<html
+  lang="fr"
+  class="font-display motion-safe:scroll-smooth"
+  data-theme="light"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" type="image/ico" />
+    <meta name="generator" content={generator} />
+    <meta name="robots" content={index ? "index" : "noindex"} />
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={schema} />
+  </head>
+
+  <body
+    class="relative flex h-screen w-screen flex-col justify-center bg-default text-center font-display text-default"
+  >
+    <form
+      name="contact"
+      data-netlify="true"
+      netlify-honeypot="ilovehoney"
+      hidden
+    >
+      <input type="email" name="email" />
+    </form>
+    <Icon name="logomark" class="mb-12 h-32 text-secondary" />
+    <h1 class="font-bold text-2xl">On arrive bientôt !</h1>
+    <p class="mt-2 text-lg">On travaille sur quelque chose d'incroyable !</p>
+
+    <div class="mt-4 flex w-full flex-col px-4">
+      <ContactForm client:idle />
+      <p class="mt-2 text-sm">
+        Soyez les premiers à être informés de notre lancement !
+      </p>
+    </div>
+    <div class="mx-auto mt-4"><Countdown client:idle /></div>
+    <footer
+      class="absolute bottom-0 flex w-full flex-col bg-black p-2 text-white text-xs"
+    >
+      SC Coiffure © 2023
+      <a href="mailto:contact@sccoiffure83.fr">contact@sccoiffure83.fr</a>
+    </footer>
+  </body>
+</html>

@@ -1,7 +1,8 @@
 ---
-import Link from "~/components/atoms/link.svelte";
-import Layout from "~/components/organisms/layout/layout.astro";
+import Link from "~/components/atoms/Link.svelte";
+import Layout from "~/components/organisms/layout/Layout.astro";
 export const prerender = true;
+return Astro.redirect("/incoming");
 ---
 
 <Layout>

@@ -1,0 +1,107 @@
+---
+import "@fontsource-variable/inter";
+import Footer from "~/components/organisms/Footer.astro";
+import Header from "~/components/organisms/Header.astro";
+import ScrollUp from "~/components/atoms/ScrollUp.svelte";
+import Splash from "~/components/organisms/Splash.astro";
+import { seo } from "~/constants/seo";
+import { social } from "~/constants/social";
+import "~/styles/index.css";
+import "~/styles/md.css";
+interface Props {
+  index?: boolean;
+  title?: string;
+  description?: string;
+}
+const {
+  index = true,
+  title = seo.title,
+  description = seo.description,
+} = Astro.props;
+const { generator, site, url } = Astro;
+
+const image = new URL("social.jpg", site);
+const canonical = new URL(url.pathname, site);
+
+const schema = JSON.stringify(
+  {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    name: title,
+    description: description,
+    image: image,
+    url: canonical,
+    sameAs: [social.facebook, social.instagram],
+  },
+  null,
+  2
+);
+---
+
+<!DOCTYPE html>
+<html
+  lang="fr"
+  class="h-full font-display motion-safe:scroll-smooth"
+  data-theme="dark"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/favicon.ico" type="image/ico" />
+    <meta name="generator" content={generator} />
+    <meta name="robots" content={index ? "index" : "noindex"} />
+    <title>{title}</title>
+
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- social media -->
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={site} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json" set:html={schema} />
+
+    <script
+      src="https://kit.fontawesome.com/84df6234e4.js"
+      crossorigin="anonymous"
+      async
+      defer></script>
+
+    <script async defer>
+    const theme = localStorage.getItem("theme");
+
+    if (theme) {
+      document.documentElement.dataset.theme = theme;
+    } else {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+    }
+
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (event) => {
+        if (!localStorage.getItem("theme")) {
+          document.documentElement.dataset.theme = event.matches
+            ? "dark"
+            : "light";
+        }
+      });
+    </script>
+  </head>
+  <body
+    class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+  >
+    <Header />
+    <Splash />
+
+    <slot />
+
+    <Footer />
+    <ScrollUp client:load />
+  </body>
+</html>
