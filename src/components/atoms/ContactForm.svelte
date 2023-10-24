@@ -1,13 +1,12 @@
 <script>
   let email = "";
-
+  let honey = "";
   const handleSubmit = async () => {
     const formData = new FormData();
     formData.append("form-name", "contact");
-    formData.append("ilovehoney", ""); // Hidden field
+    formData.append("ilovehoney", honey); // Hidden field
     formData.append("email", email);
 
-    console.log(formData, new URLSearchParams(formData).toString());
     try {
       const response = await fetch("/", {
         method: "POST",
@@ -40,6 +39,8 @@
   netlify-honeypot="ilovehoney"
 >
   <input type="hidden" name="form-name" value="contact" />
+  <input type="text" name="ilovehoney" bind:value={honey} class="hidden" />
+
   <input
     bind:value={email}
     class="w-full rounded-md border bg-white px-4 py-2 text-black placeholder-gray-400 text-xs focus:outline-none sm:rounded-r-none"
