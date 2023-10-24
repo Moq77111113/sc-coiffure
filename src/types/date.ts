@@ -1,13 +1,13 @@
-import type { Prettify } from "./object";
+import type { Prettify } from './object';
 
 export type Day =
-  | "sunday"
-  | "monday"
-  | "tuesday"
-  | "wednesday"
-  | "thursday"
-  | "friday"
-  | "saturday";
+  | 'sunday'
+  | 'monday'
+  | 'tuesday'
+  | 'wednesday'
+  | 'thursday'
+  | 'friday'
+  | 'saturday';
 
 export type Time = `${number}:${number}`;
 

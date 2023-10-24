@@ -1,15 +1,15 @@
-import { promises as fs } from "fs";
-import { dataSchema, type Data } from "~/types/data";
-import { reviewsSchema, type Reviews } from "~/types/google/review";
-import { postsSchema, type Posts } from "~/types/instagram/post";
+import { promises as fs } from 'fs';
+import { dataSchema, type Data } from '~/types/data';
+import { reviewsSchema, type Reviews } from '~/types/google/review';
+import { postsSchema, type Posts } from '~/types/instagram/post';
 
 export async function getData<
   Path extends keyof Data,
-  Value = Path extends "reviews" ? Reviews : Posts
+  Value = Path extends 'reviews' ? Reviews : Posts
 >(path: Path): Promise<Value> {
   try {
     // Read the JSON data from the file
-    const data = await fs.readFile("./dist/data.json", "utf-8");
+    const data = await fs.readFile('./dist/data.json', 'utf-8');
 
     // Parse the JSON data into an object
     const parsedData = safeParse(data);
@@ -22,17 +22,17 @@ export async function getData<
     }
 
     // Decode the encoded data
-    const decodedData = Buffer.from(encodedData, "base64").toString("utf-8");
+    const decodedData = Buffer.from(encodedData, 'base64').toString('utf-8');
 
     // Parse the decoded data using the appropriate schema
     const parsedValue =
-      path === "posts"
+      path === 'posts'
         ? postsSchema.parse(JSON.parse(decodedData))
         : reviewsSchema.parse(JSON.parse(decodedData));
 
     return parsedValue as Value;
   } catch (error) {
-    console.error("Error getting data:", error);
+    console.error('Error getting data:', error);
     throw error;
   }
 }
@@ -46,11 +46,11 @@ const safeParse = (data: string): Data => {
       return result.data;
     }
   } catch (error) {
-    console.error("Error parsing data:", error);
+    console.error('Error parsing data:', error);
   }
 
   return {
-    reviews: "",
-    posts: "",
+    reviews: '',
+    posts: '',
   };
 };

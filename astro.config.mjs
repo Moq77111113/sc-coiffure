@@ -1,45 +1,45 @@
-import tailwind from "@astrojs/tailwind";
-import { defineConfig } from "astro/config";
-import svelte from "@astrojs/svelte";
-import mdx from "@astrojs/mdx";
+import tailwind from '@astrojs/tailwind';
+import { defineConfig } from 'astro/config';
+import svelte from '@astrojs/svelte';
+import mdx from '@astrojs/mdx';
 
-import netlify from "@astrojs/netlify/functions";
+import netlify from '@astrojs/netlify/functions';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sccoiffure83.fr",
-  output: "server",
+  site: 'https://sccoiffure83.fr',
+  output: 'server',
   adapter: netlify(),
   integrations: [tailwind(), svelte(), mdx()],
   redirects: {
-    "/legal": {
+    '/legal': {
       status: 302,
-      destination: "/incoming",
+      destination: '/incoming',
     },
-    "/privacy": {
+    '/privacy': {
       status: 302,
-      destination: "/incoming",
+      destination: '/incoming',
     },
-    "/gallery": {
+    '/gallery': {
       status: 302,
-      destination: "/incoming",
+      destination: '/incoming',
     },
-    "/api/posts": {
+    '/api/posts': {
       status: 302,
-      destination: "/incoming",
+      destination: '/incoming',
     },
-    "/api/reviews": {
+    '/api/reviews': {
       status: 302,
-      destination: "/incoming",
+      destination: '/incoming',
     },
-    "/": {
+    '/': {
       status: 302,
-      destination: "/incoming",
+      destination: '/incoming',
     },
   },
   vite: {
     ssr: {
-      external: ["svgo"],
+      external: ['svgo'],
     },
   },
 });
