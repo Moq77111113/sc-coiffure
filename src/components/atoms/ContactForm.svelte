@@ -1,31 +1,31 @@
 <script>
-  let email = "";
-  let honey = "";
+  let email = '';
+  let honey = '';
   const handleSubmit = async () => {
     const formData = new FormData();
-    formData.append("form-name", "contact");
-    formData.append("ilovehoney", honey); // Hidden field
-    formData.append("email", email);
+    formData.append('form-name', 'contact');
+    formData.append('ilovehoney', honey); // Hidden field
+    formData.append('email', email);
 
     try {
-      const response = await fetch("/incoming", {
-        method: "POST",
+      const response = await fetch('/incoming', {
+        method: 'POST',
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
+          'Content-Type': 'application/x-www-form-urlencoded',
         },
         body: new URLSearchParams(formData).toString(),
       });
 
       // Handle the response as needed
       if (response.ok) {
-        alert("Merci pour votre inscription !");
-        email = "";
+        alert('Merci pour votre inscription !');
+        email = '';
       } else {
-        alert("Oops! Une erreur est survenue.");
+        alert('Oops! Une erreur est survenue.');
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("Oops! Une erreur est survenue.");
+      console.error('Error submitting form:', error);
+      alert('Oops! Une erreur est survenue.');
     }
   };
 </script>
@@ -52,7 +52,7 @@
 
   <button
     type="submit"
-    class="w-md m-auto rounded-md border bg-primary px-4 py-2 text-white hover:bg-accent focus:outline-none sm:w-auto sm:rounded-l-none"
+    class="w-md m-auto rounded-md border bg-primary px-4 py-2 hover:bg-accent focus:outline-none sm:w-auto sm:rounded-l-none"
   >
     S'inscrire
   </button>
