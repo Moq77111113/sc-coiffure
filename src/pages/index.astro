@@ -53,7 +53,7 @@ export const prerender = true;
   </head>
 
   <body
-    class="flex h-screen max-h-screen w-screen flex-col items-center justify-center bg-default text-default"
+    class="flex h-screen max-h-screen flex-col items-center justify-center bg-default text-default"
   >
     <main class="relative flex flex-grow flex-col justify-center text-center">
       <form
@@ -64,7 +64,7 @@ export const prerender = true;
       >
         <input type="email" name="email" />
       </form>
-      <div class="flex flex-col px-4">
+      <div class="mt-10 flex flex-col px-4">
         <Icon name="logomark" class="h-32 text-secondary" />
         <h1 class="mt-4 text-center font-bold text-2xl">
           SC Coiffure arrive à <br /><span>La Seyne-sur-Mer</span>
@@ -73,7 +73,7 @@ export const prerender = true;
           Votre nouveau salon de coiffure arrive bientôt !
         </h2>
       </div>
-      <div class="mt-4 flex w-full flex-col px-4">
+      <div class="mt-4 flex w-full flex-col text-center">
         <ContactForm client:idle />
         <p class="mt-2 text-sm">
           Soyez les premiers à être informés de notre lancement !

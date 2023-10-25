@@ -31,7 +31,7 @@
 </script>
 
 <form
-  class="m-auto flex w-full flex-col items-center justify-center gap-2 sm:max-w-md sm:flex-row sm:gap-0"
+  class="m-auto flex w-full flex-col items-center px-4 justify-center gap-2 sm:max-w-md sm:flex-row sm:gap-0"
   name="contact"
   method="POST"
   on:submit|preventDefault={handleSubmit}
