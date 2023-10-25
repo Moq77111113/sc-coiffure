@@ -8,7 +8,7 @@
     formData.append('email', email);
 
     try {
-      const response = await fetch('/incoming', {
+      const response = await fetch('/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/x-www-form-urlencoded',

@@ -1,4 +1,4 @@
-[data-theme='light'] {
+html {
   --color-primary: #e8c7ae;
   --color-secondary: #5a352c;
   --color-text: theme('colors.gray.800');
@@ -10,7 +10,7 @@
   --color-accent: #eca766;
 }
 
-[data-theme='dark'] {
+html.dark {
   --color-primary: #e8c7ae;
   --color-secondary: #5a352c;
   --color-text: theme('colors.gray.50');

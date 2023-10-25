@@ -1,8 +1,8 @@
 const facebook = '';
 const instagram = '';
-const web = '';
+const web = 'https://sccoiffure83.fr';
 const phone = '';
-const email = '';
+const email = 'contact@sccoiffure83.fr';
 
 export const social = {
   facebook,

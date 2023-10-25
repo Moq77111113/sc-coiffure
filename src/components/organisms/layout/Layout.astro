@@ -1,13 +1,12 @@
 ---
-import "@fontsource-variable/inter";
-import Footer from "~/components/organisms/Footer.astro";
-import Header from "~/components/organisms/Header.astro";
-import ScrollUp from "~/components/atoms/ScrollUp.svelte";
-import Splash from "~/components/organisms/Splash.astro";
-import { seo } from "~/constants/seo";
-import { social } from "~/constants/social";
-import "~/styles/index.css";
-import "~/styles/md.css";
+import '@fontsource-variable/inter';
+import Footer from '~/components/organisms/Footer.astro';
+import Header from '~/components/organisms/Header.astro';
+import ScrollUp from '~/components/atoms/ScrollUp.svelte';
+import Splash from '~/components/organisms/Splash.astro';
+import { seo } from '~/constants/seo';
+import '~/styles/index.css';
+import '~/styles/md.css';
 interface Props {
   index?: boolean;
   title?: string;
@@ -20,36 +19,20 @@ const {
 } = Astro.props;
 const { generator, site, url } = Astro;
 
-const image = new URL("social.jpg", site);
+const image = new URL('social.jpg', site);
 const canonical = new URL(url.pathname, site);
 
-const schema = JSON.stringify(
-  {
-    "@context": "http://schema.org",
-    "@type": "LocalBusiness",
-    name: title,
-    description: description,
-    image: image,
-    url: canonical,
-    sameAs: [social.facebook, social.instagram],
-  },
-  null,
-  2
-);
+const schema = JSON.stringify(seo.schema({ image, canonical }), null, 2);
 ---
 
 <!DOCTYPE html>
-<html
-  lang="fr"
-  class="h-full font-display motion-safe:scroll-smooth"
-  data-theme="dark"
->
+<html lang="fr" class="h-full font-display motion-safe:scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" type="image/ico" />
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <meta name="generator" content={generator} />
-    <meta name="robots" content={index ? "index" : "noindex"} />
+    <meta name="robots" content={index ? 'index' : 'noindex'} />
     <title>{title}</title>
 
     <meta name="description" content={description} />
@@ -62,6 +45,9 @@ const schema = JSON.stringify(
     <meta property="og:image" content={image} />
     <meta property="og:url" content={site} />
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={seo.title} />
+    <meta name="twitter:description" content={seo.description} />
+    <meta name="twitter:image" content={url} />
     <script type="application/ld+json" set:html={schema} />
 
     <script
@@ -71,26 +57,15 @@ const schema = JSON.stringify(
       defer></script>
 
     <script async defer>
-    const theme = localStorage.getItem("theme");
-
-    if (theme) {
-      document.documentElement.dataset.theme = theme;
+    if (
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
+    ) {
+      document.documentElement.classList.add('dark');
     } else {
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)"
-      ).matches;
-      document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+      document.documentElement.classList.remove('dark');
     }
-
-    window
-      .matchMedia("(prefers-color-scheme: dark)")
-      .addEventListener("change", (event) => {
-        if (!localStorage.getItem("theme")) {
-          document.documentElement.dataset.theme = event.matches
-            ? "dark"
-            : "light";
-        }
-      });
     </script>
   </head>
   <body
