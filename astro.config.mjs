@@ -14,27 +14,23 @@ export default defineConfig({
   redirects: {
     '/legal': {
       status: 302,
-      destination: '/incoming',
+      destination: '/',
     },
     '/privacy': {
       status: 302,
-      destination: '/incoming',
+      destination: '/',
     },
     '/gallery': {
       status: 302,
-      destination: '/incoming',
+      destination: '/',
     },
     '/api/posts': {
       status: 302,
-      destination: '/incoming',
+      destination: '/',
     },
     '/api/reviews': {
       status: 302,
-      destination: '/incoming',
-    },
-    '/': {
-      status: 302,
-      destination: '/incoming',
+      destination: '/',
     },
   },
   vite: {
