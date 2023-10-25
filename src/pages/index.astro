@@ -22,7 +22,7 @@ const { generator, site, url } = Astro;
 const image = new URL('social.jpg', site);
 const canonical = new URL(url, site);
 
-const schema = seo.schema({ canonical, image });
+const schema = JSON.stringify(seo.schema({ canonical, image }), null, 2);
 export const prerender = true;
 ---
 
@@ -85,7 +85,7 @@ export const prerender = true;
       class="flex w-full flex-shrink-0 flex-col items-center bg-black py-2 text-white text-xs"
     >
       SC Coiffure © 2023
-      <a href="mailto:contact@sccoiffure83.fr">{social.email}</a>
+      <a href={`mailto:${social.email}`}>{social.email}</a>
     </footer>
   </body>
 </html>
