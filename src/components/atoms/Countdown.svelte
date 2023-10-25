@@ -35,28 +35,28 @@
   });
 </script>
 
-<div class="text-center border p-2 rounded-xl">
+<article class="text-center border p-2 rounded-xl">
   <div
-    class="flex justify-around gap-4 text-center [&>*>h2]:text-sm [&>*>h2]:sm:text-xl [&>*>h2]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibol"
+    class="flex justify-around gap-4 text-center [&>*>span]:text-sm [&>*>span]:sm:text-xl [&>*>span]:font-bold [&>*>p]:text-sm [&>*>p]:font-semibol"
   >
     <div>
-      <h2>{timeRemaining.days}</h2>
+      <span>{timeRemaining.days}</span>
       <p>jours</p>
     </div>
 
     <div>
-      <h2>{timeRemaining.hours}</h2>
+      <span>{timeRemaining.hours}</span>
       <p>heures</p>
     </div>
 
     <div>
-      <h2>{timeRemaining.minutes}</h2>
+      <span>{timeRemaining.minutes}</span>
       <p>minutes</p>
     </div>
 
     <div>
-      <h2>{timeRemaining.seconds}</h2>
+      <span>{timeRemaining.seconds}</span>
       <p>secondes</p>
     </div>
   </div>
-</div>
+</article>
