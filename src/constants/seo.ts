@@ -7,8 +7,12 @@ export const title = 'SC-Coiffure - Votre coiffeur à La Seyne-sur-Mer';
 
 const keywords = [
   'Coiffure',
+  'Coiffeur',
   'Salon de coiffure',
   'Coupe de cheveux',
+  'Cheveux',
+  'Petits prix',
+  'Accessible',
   'Coloration',
   'Boucles',
   'Shampoing',
@@ -17,15 +21,26 @@ const keywords = [
   'Var',
   '83',
   'La Seyne-sur-Mer',
+  'La Seyne',
+  'Toulon',
+  'Six-Fours',
+  'Ollioules',
   'Port',
+  'Convivial',
   'Permanente',
   'Lissage',
-  'Chignon',
-  'Extensions de cheveux',
+  'Mèches',
+  'Hairdresser',
+  'Haircut',
+  'Hair',
+  'Small prices',
+  'Coloring',
+  'Curls',
+  'Shampoo',
 ];
 
 const schema = ({ canonical, image }: { canonical: URL; image: URL }) => ({
-  '@context': 'http://schema.org',
+  '@context': ['http://schema.org', { '@language': 'fr-fr' }],
   '@type': 'BeautySalon',
   name: title,
   description: description,
@@ -44,24 +59,24 @@ const schema = ({ canonical, image }: { canonical: URL; image: URL }) => ({
   priceRange: '20€ - 100€', // Ajustement de la plage de prix
   paymentAccepted: 'Cash, Credit Card',
   currenciesAccepted: 'EUR',
-  openingHours: [
+  openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-      opens: '09:00',
-      closes: '18:00',
+      opens: '09:00:00',
+      closes: '18:00:00',
     },
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Saturday'],
-      opens: '09:00',
-      closes: '17:00',
+      opens: '09:00:00',
+      closes: '17:00:00',
     },
   ],
   geo: {
     '@type': 'GeoCoordinates',
-    latitude, // Ajout de la latitude de votre emplacement
-    longitude, // Ajout de la longitude de votre emplacement
+    latitude,
+    longitude,
   },
   keywords: keywords.join(', '),
 });
