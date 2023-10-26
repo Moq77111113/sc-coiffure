@@ -1,29 +1,30 @@
 ---
-import type { FooterLink } from "~/types";
-import SocialList from "~/components/molecules/SocialList.astro";
-import Link from "~/components/atoms/Link.svelte";
+import type { FooterLink } from '~/types';
+import SocialList from '~/components/molecules/SocialList.astro';
+import Link from '~/components/atoms/Link.svelte';
 
-import { social } from "~/constants/social";
+import { social } from '~/constants/social';
+import { companyName } from '~/constants';
 const links: Array<FooterLink> = [
   {
     url: social.instagram,
-    description: "Instagram",
-    icon: "uil:instagram-alt",
+    description: 'Instagram',
+    icon: 'uil:instagram-alt',
   },
   {
     url: social.facebook,
-    description: "Facebook",
-    icon: "mdi:facebook",
+    description: 'Facebook',
+    icon: 'mdi:facebook',
   },
   {
     url: `mailto:${social.email}`,
-    description: "Email",
-    icon: "mdi:email",
+    description: 'Email',
+    icon: 'mdi:email',
   },
   {
     url: `tel:${social.phone}`,
-    description: "Appelez-nous",
-    icon: "mdi:phone",
+    description: 'Appelez-nous',
+    icon: 'mdi:phone',
   },
 ];
 ---
@@ -35,7 +36,7 @@ const links: Array<FooterLink> = [
     class="absolute inset-0 flex flex-col items-center justify-center overflow-hidden"
   >
     <div class="absolute bottom-4 px-6 text-center text-xs">
-      <p>© 2023 SC Coiffure Tous droits réservés</p>
+      <p>{companyName} © 2023Tous droits réservés</p>
       <Link href="/legal#content">Mentions Légales</Link> -
       <Link href="/privacy#content">Politique de confidentialité</Link>
     </div>

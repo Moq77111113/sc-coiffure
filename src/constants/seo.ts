@@ -1,9 +1,10 @@
 import { address, latitude, longitude } from './location';
 import { social } from './social';
 
+export const companyName = 'SC Coiffure';
 export const description =
-  'Votre coiffeur sur le port de La Seyne-sur-Mer. SC-Coiffure, experts capillaires pour tous. Ambiance conviviale, tarifs exceptionnels. Réservez maintenant!';
-export const title = 'SC-Coiffure - Votre coiffeur à La Seyne-sur-Mer';
+  'Votre coiffeur sur le port de La Seyne-sur-Mer. SC Coiffure, experts capillaires pour tous. Ambiance conviviale, tarifs exceptionnels. Réservez maintenant!';
+export const title = 'SC Coiffure - Votre coiffeur à La Seyne-sur-Mer';
 
 const keywords = [
   'Coiffure',
@@ -18,6 +19,7 @@ const keywords = [
   'Shampoing',
   'Brushing',
   'SC-Coiffure',
+  'SC Coiffure',
   'Var',
   '83',
   'La Seyne-sur-Mer',

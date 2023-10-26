@@ -1,6 +1,7 @@
 ---
-import { Icon } from "astro-icon";
-import ContentSection from "~/components/molecules/ContentSection.astro";
+import { Icon } from 'astro-icon';
+import ContentSection from '~/components/molecules/ContentSection.astro';
+import { companyName } from '~/constants/seo';
 
 type CTAElement = {
   label: string;
@@ -13,27 +14,27 @@ type CTAElement = {
 
 const ctas: CTAElement[] = [
   {
-    label: "Découvrir nos services",
-    href: "/#services",
+    label: 'Découvrir nos services',
+    href: '/#services',
     icon: {
-      pack: "mdi",
-      name: "scissors",
+      pack: 'mdi',
+      name: 'scissors',
     },
   },
   {
-    label: "Explorer nos travaux",
-    href: "/gallery/#pics",
+    label: 'Explorer nos travaux',
+    href: '/gallery/#pics',
     icon: {
-      pack: "mdi",
-      name: "image",
+      pack: 'mdi',
+      name: 'image',
     },
   },
   {
-    label: "Découvrir nos produits",
-    href: "/#products",
+    label: 'Découvrir nos produits',
+    href: '/#products',
     icon: {
-      pack: "mdi",
-      name: "lotion",
+      pack: 'mdi',
+      name: 'lotion',
     },
   },
 ];
@@ -42,7 +43,7 @@ const ctas: CTAElement[] = [
 <ContentSection id="intro">
   <Fragment slot="title">
     <h2 class=`text-center font-extrabold tracking-tight text-6xl text-display`>
-      SC Coiffure
+      {companyName}
     </h2>
   </Fragment>
 
@@ -67,8 +68,8 @@ const ctas: CTAElement[] = [
           href={cta.href}
           class={`flex items-center justify-center gap-3 border-2 border-default px-6 py-4 text-default dark:border-white ${
             ctas.length % 2 !== 0 && i === ctas.length - 1
-              ? "sm:col-span-2 sm:mx-auto"
-              : ""
+              ? 'sm:col-span-2 sm:mx-auto'
+              : ''
           }`}
         >
           <Icon pack={cta.icon.pack} name={cta.icon.name} class="h-10" />

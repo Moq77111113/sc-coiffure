@@ -10,4 +10,4 @@ export const social = {
   web,
   phone,
   email,
-};
+} as const;

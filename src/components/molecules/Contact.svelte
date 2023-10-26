@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { email, phone } from "~/constants";
+  import { social } from "~/constants";
   import Link from "~/components/atoms/Link.svelte";
   import Cta from "~/components/atoms/Cta.svelte";
 </script>
@@ -10,14 +10,14 @@
       <i class="fa-solid fa-comment" /> Nous Contacter
     </h2>
     <div class="flex flex-col items-center text-xs whitespace-nowrap">
-      <Link title="phone" href={`tel:${phone}`}
+      <Link title="phone" href={`tel:${social.phone}`}
         ><span class="flex gap-2 items-center"
-          ><i class="fa-solid fa-phone" />{phone}</span
+          ><i class="fa-solid fa-phone" />{social.phone}</span
         ></Link
       >
-      <Link title="email" href={`mailto:${email}`}
+      <Link title="email" href={`mailto:${social.email}`}
         ><span class="flex gap-2 items-center whitespace-nowrap"
-          ><i class="fa-solid fa-envelope" />{email}</span
+          ><i class="fa-solid fa-envelope" />{social.email}</span
         ></Link
       >
     </div>

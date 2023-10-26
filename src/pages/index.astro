@@ -3,7 +3,7 @@ import '@fontsource-variable/inter';
 import Icon from 'astro-icon';
 import ContactForm from '~/components/atoms/ContactForm.svelte';
 import Countdown from '~/components/atoms/Countdown.svelte';
-import { seo } from '~/constants/seo';
+import { companyName, seo } from '~/constants/seo';
 import { social } from '~/constants/social';
 import '~/styles/index.css';
 import '~/styles/md.css';
@@ -42,7 +42,7 @@ export const prerender = true;
     <!-- social media -->
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:site_name" content={title} />
-    <meta property="og:title" content="SC-Coiffure" />
+    <meta property="og:title" content={companyName} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
@@ -86,7 +86,7 @@ export const prerender = true;
     <footer
       class="flex w-full flex-shrink-0 flex-col items-center bg-black py-2 text-white text-xs"
     >
-      SC Coiffure © 2023
+      {companyName} © 2023
       <a href={`mailto:${social.email}`}>{social.email}</a>
     </footer>
   </body>

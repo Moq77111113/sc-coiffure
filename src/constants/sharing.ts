@@ -5,4 +5,4 @@ const title = 'SC Coiffure';
 export const share = {
   message,
   title,
-};
+} as const;
