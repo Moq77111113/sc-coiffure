@@ -12,23 +12,7 @@ export default defineConfig({
   adapter: netlify(),
   integrations: [tailwind(), svelte(), mdx()],
   redirects: {
-    '/legal': {
-      status: 302,
-      destination: '/',
-    },
-    '/privacy': {
-      status: 302,
-      destination: '/',
-    },
-    '/gallery': {
-      status: 302,
-      destination: '/',
-    },
-    '/api/posts': {
-      status: 302,
-      destination: '/',
-    },
-    '/api/reviews': {
+    '/incoming': {
       status: 302,
       destination: '/',
     },

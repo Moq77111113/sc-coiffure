@@ -11,7 +11,7 @@
   bind:this={dialog}
   on:close={() => (showModal = false)}
   on:click|self={() => dialog.close()}
-  class="max-w-sm sm:max-w-md w-auto rounded-md p-1 z-10 mx-2 sm:m-auto"
+  class="max-w-sm sm:max-w-md w-auto rounded-md p-1 z-10 px-3 mx-4 sm:mx-auto "
 >
   <div
     on:click|stopPropagation
@@ -39,6 +39,8 @@
 </dialog>
 
 <style>
+
+ 
   dialog::backdrop {
     background: rgba(0, 0, 0, 0.3);
   }

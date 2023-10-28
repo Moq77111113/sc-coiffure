@@ -9,7 +9,7 @@
     <h2 class="flex gap-2 items-center">
       <i class="fa-solid fa-map" /> Nous trouver
     </h2>
-    <Link href={mapsHref} newTab title="Notre addresse">
+    <Link href={mapsHref} newTab title="Notre adresse">
       <article class="flex flex-col items-center text-xs whitespace-nowrap">
         <span>{address.street}</span>
         <span>{address.zip} {address.city}</span>

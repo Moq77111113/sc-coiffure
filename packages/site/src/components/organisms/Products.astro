@@ -4,6 +4,7 @@ import ContentSection from '~/components/molecules/ContentSection.astro';
 
 import loreal from '~/assets/products/loreal.png';
 import ghd from '~/assets/products/ghd.png';
+import subtil from '~/assets/products/subtil.png';
 import Link from '~/components/atoms/Link.svelte';
 
 const products = [
@@ -17,6 +18,7 @@ const products = [
     image: ghd,
     href: 'https://www.ghdhair.com/fr',
   },
+  { name: 'Subtil', image: subtil, href: 'https://www.subtil.fr/' },
 ];
 ---
 
@@ -31,9 +33,9 @@ const products = [
   >
     {
       products.map((_) => (
-        <Link href={_.href} newTab>
+        <Link href={_.href} newTab title={_.name}>
           <Image
-            class="pointer-events-none h-full w-full rounded-md object-cover dark:bg-offset"
+            class="pointer-events-none h-full w-full rounded-md object-cover dark:invert"
             src={_.image}
             alt={_.name}
             width={_.image.width / 2}

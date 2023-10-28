@@ -27,29 +27,3 @@ import FindUs from '~/components/molecules/FindUs.svelte';
     </div>
   </div>
 </section>
-
-<style>
-  @keyframes float {
-    0% {
-      transform: translate3d(0, 0, 0);
-    }
-
-    100% {
-      transform: translate3d(0, 30px, 0);
-    }
-  }
-
-  #floating {
-    animation: float linear 2.5s infinite alternate;
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    #floating {
-      @apply animate-none;
-    }
-
-    #splash-bg-fallback {
-      @apply block;
-    }
-  }
-</style>
