@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
-import { updateData } from '~//services/data/update';
-import { postsSchema } from '~//types/instagram/post';
+import { updateData } from '~/services/data/update';
+import { postsSchema } from '~/types/instagram/post';
 export const prerender = false;
 
 const dataFake = [

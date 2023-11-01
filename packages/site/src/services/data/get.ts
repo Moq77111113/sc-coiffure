@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
-import { dataSchema, type Data } from '~//types/data';
-import { reviewsSchema, type Reviews } from '~//types/google/review';
-import { postsSchema, type Posts } from '~//types/instagram/post';
+import { dataSchema, type Data } from '~/types/data';
+import { reviewsSchema, type Reviews } from '~/types/google/review';
+import { postsSchema, type Posts } from '~/types/instagram/post';
 
 export async function getData<
   Path extends keyof Data,

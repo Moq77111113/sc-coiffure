@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
-import { updateData } from '~//services/data/update';
-import { reviewsSchema } from '~//types/google/review';
+import { updateData } from '~/services/data/update';
+import { reviewsSchema } from '~/types/google/review';
 export const prerender = false;
 
 const dataFake = {

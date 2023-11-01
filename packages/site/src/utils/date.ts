@@ -1,4 +1,4 @@
-import type { Day } from '~//types/date';
+import type { Day } from '~/types/date';
 
 export const toFrenchDay = (day: Day) => {
   switch (day) {

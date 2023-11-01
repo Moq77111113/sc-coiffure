@@ -1,4 +1,4 @@
-import type { Day, Schedule } from '~//types/date';
+import type { Day, Schedule } from '~/types/date';
 
 export const dayOfWeek = [
   'sunday',

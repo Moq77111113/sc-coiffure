@@ -1,4 +1,4 @@
-import type { Rating } from '~//types/google/review';
+import type { Rating } from '~/types/google/review';
 
 export const getRating = (v: Rating) =>
   ({
