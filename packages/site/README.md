@@ -1,6 +1,6 @@
 # SC-Coiffure Website
 
-Welcome to the SC-Coiffure showcase website! 🌟
+Welcome to the SC-Coiffure showcase website! 
 
 ## Overview
 
