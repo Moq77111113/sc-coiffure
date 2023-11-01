@@ -4,9 +4,8 @@
   "description": "monorepo for tools related to sc-coiffure ",
   "private": true,
   "scripts": {
-    "dev": "pnpm -r dev",
-    "build": "pnpm -r build",
-    "preview": "pnpm -r preview"
+    "dev": "pnpm -r --filter=site dev",
+    "build:site": "pnpm -r --filter=site build"
   },
   "author": {
     "name": "Quentin Moessner",
