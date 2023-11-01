@@ -1,6 +1,6 @@
 [build]
-command = "pnpm build"
-publish = "dist"
+command = "pnpm build:site"
+publish = "packages/site/dist"
 
 [[headers]]
 for = "/*"
