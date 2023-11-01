@@ -1,23 +1,35 @@
-# SC-Coiffure Website
+# SC MonRepo
+Short project description goes here.
 
-Welcome to the SC-Coiffure showcase website! 🌟
+## Table of Contents
+- [SC MonRepo](#sc-monrepo)
+  - [Table of Contents](#table-of-contents)
+  - [Introduction](#introduction)
+  - [Packages](#packages)
+    - [Site](#site)
+    - [Cron Functions](#cron-functions)
+    - [CLI](#cli)
+  - [Getting Started](#getting-started)
+  - [License](#license)
 
-## Overview
+## Introduction
 
+Provide a brief overview of your project. Explain what it does and its purpose.
+
+## Packages
+
+### Site
+
+The `site` package contains the source code for our hair salon showcase website.
 This website is built with [Astro](https://astro.build/), styled with [Tailwind CSS](https://tailwindcss.com/), and powered by the delightful [Svelte](https://svelte.dev/) framework.
 
-## Features
+### Cron Functions
 
-- **Modern Design**: A sleek and modern design to reflect the style of SC-Coiffure.
-- **Responsive**: Ensuring a seamless experience across various devices and screen sizes.
-- **Interactive Elements**: Utilizing the power of Svelte for dynamic and engaging user interactions.
-- **Fast and Efficient**: Thanks to Astro, the website is super-fast and efficient, providing a snappy user experience.
+The `cron-functions` package hosts scheduled functions that automate various tasks related to our hair salon operations. This could include tasks like appointment reminders, data updates, or any other scheduled processes.
 
-## Technologies Used
+### CLI
 
-- **Astro**: A futuristic static site generator that brings the best of both worlds - static and dynamic.
-- **Tailwind CSS**: Rapidly build and design your site with the utility-first CSS framework.
-- **Svelte**: A refreshing approach to building user interfaces with a reactive and component-based structure.
+The `cli` package provides a command-line interface (CLI) for running local tools related to our hair salon. This could include scripts for data management, analysis, or any other command-line tools.
 
 ## Getting Started
 
@@ -31,22 +43,6 @@ This website is built with [Astro](https://astro.build/), styled with [Tailwind 
     pnpm install
     ```
 
-3. **Run dev server:**
-    ```bash
-    pnpm dev
-    ```
+## License
 
-Your site should be up and running at http://localhost:4321.
-
-## Customization
-Feel free to customize the content, styles, and components to tailor the website to SC-Coiffure's unique identity.
-
-
-## Deployment
-[![Netlify Status](https://api.netlify.com/api/v1/badges/93895918-4616-4dc5-ac26-8fd3542f3e41/deploy-status)](https://app.netlify.com/sites/sc-coiffure/deploys)
-
-## Contributions
-Contributions and feedback are welcome! If you have ideas for improvement, feel free to open an issue or submit a pull request.
-
-
-Happy coding! 💇‍♀️💻
+This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
