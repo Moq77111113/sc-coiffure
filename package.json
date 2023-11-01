@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "dev": "pnpm -r --filter=site dev",
-    "build:site": "pnpm -r --filter=site build"
+    "build:site": "pnpm -r --filter=site build",
+    "cli": "pnpm --filter=cli start"
   },
   "author": {
     "name": "Quentin Moessner",
