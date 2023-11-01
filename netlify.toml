@@ -1,5 +1,5 @@
 [build]
-command = "pnpm build"
+command = "pnpm build:site"
 publish = "packages/site/dist"
 
 [[headers]]
