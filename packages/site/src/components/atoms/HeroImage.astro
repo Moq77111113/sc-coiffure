@@ -1,0 +1,13 @@
+---
+import { Image } from "astro:assets";
+import hero from "~/assets/hero.jpg";
+
+const sizes = "100vw";
+---
+
+<Image
+  class="pointer-events-none h-full w-full object-cover"
+  src={hero}
+  sizes={sizes}
+  alt="Notre salon"
+/>

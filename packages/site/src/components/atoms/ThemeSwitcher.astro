@@ -1,0 +1,66 @@
+---
+import { Icon } from 'astro-icon';
+---
+
+<button
+  id="theme-switcher"
+  type="button"
+  class="origin-[right_center] transition-all duration-500"
+>
+  <div id="icon-theme-light">
+    <Icon name="theme/light" class="h-8" />
+    <span class="sr-only">Thème clair</span>
+  </div>
+  <div id="icon-theme-dark" class="hidden">
+    <Icon name="theme/dark" class="h-8" />
+    <span class="sr-only">Thème foncé</span>
+  </div>
+</button>
+
+<script>
+  import invariant from 'tiny-invariant';
+
+  const themes = ['light', 'dark'] as const;
+  const button = document.querySelector('#theme-switcher');
+  invariant(button, 'button should not be null');
+
+  const getCurrentTheme = () => {
+    const classList = document.documentElement.classList;
+    return themes.find((theme) => classList.contains(theme)) ?? 'light';
+  };
+
+  const getNextTheme = () => {
+    const themeCurrent = getCurrentTheme();
+    invariant(themeCurrent, 'themeCurrent should not be undefined');
+    const indexThemeCurrent = themes.indexOf(themeCurrent);
+    return themes[(indexThemeCurrent + 1) % themes.length];
+  };
+
+  const updateIcon = () => {
+    const themeCurrent = getCurrentTheme();
+    document
+      .querySelector(`#icon-theme-${themeCurrent}`)
+      ?.classList.add('hidden');
+    const themeNext = getNextTheme();
+    document
+      .querySelector(`#icon-theme-${themeNext}`)
+      ?.classList.remove('hidden');
+  };
+
+  button.addEventListener('click', () => {
+    const themeNext = getNextTheme();
+    const classList = document.documentElement.classList;
+    classList.remove(getCurrentTheme());
+    classList.add(themeNext);
+    localStorage.setItem('theme', themeNext);
+    updateIcon();
+  });
+
+  updateIcon();
+</script>
+
+<style>
+  :global(.fixed-header) #theme-switcher {
+    @apply ml-0 scale-100;
+  }
+</style>

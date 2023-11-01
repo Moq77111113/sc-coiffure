@@ -1,0 +1,43 @@
+---
+import { register } from 'swiper/element/bundle';
+import ContentSection from '~/components/molecules/ContentSection.astro';
+import Person from '~/components/molecules/Person.astro';
+register();
+
+const team = [
+  {
+    name: 'Cécile',
+    role: 'Co-Fondatrice',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam aliquet. Sed vitae eros quis nisl aliquam aliquet.',
+    imageUrl: 'https://source.unsplash.com/random/256x192?hairdresser,female',
+  },
+  {
+    name: 'Séverine',
+    role: 'Co-Fondatrice',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae eros quis nisl aliquam aliquet. Sed vitae eros quis nisl aliquam aliquet.',
+    imageUrl:
+      'https://source.unsplash.com/random/256x192?hairdresser,female,joy,bw',
+  },
+];
+---
+
+<ContentSection id="team">
+  <Fragment slot="title">
+    <h2 class=`text-center font-extrabold tracking-tight text-6xl text-default`>
+      L'équipe
+    </h2>
+  </Fragment>
+  <ul
+    class="flex w-full flex-col items-center justify-center gap-24 sm:flex-row"
+  >
+    {
+      team.map(({ name, role, imageUrl, description }) => (
+        <li class="list-none">
+          <Person {name} {role} {imageUrl} {description} />
+        </li>
+      ))
+    }
+  </ul>
+</ContentSection>
