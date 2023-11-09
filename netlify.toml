@@ -1,13 +1,15 @@
+[build.environment]
+NODE_VERSION = "18"
+
 [build]
 command = "pnpm build:site"
 publish = "packages/site/dist"
+
 
 [[headers]]
 for = "/*"
 [headers.values]
 Cache-Control = "public, max-age=0, must-revalidate"
 
-[[redirects]]
-from = "/*"
-to = "/"
-status = 200
+[functions]
+directory = "packages/site/functions"

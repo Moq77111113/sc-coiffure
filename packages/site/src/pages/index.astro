@@ -23,7 +23,7 @@ const image = new URL('social.jpg', site);
 const canonical = new URL(url, site);
 
 const schema = JSON.stringify(seo.schema({ canonical, image }), null, 2);
-export const prerender = true;
+export const prerender = false;
 ---
 
 <!DOCTYPE html>
@@ -55,7 +55,7 @@ export const prerender = true;
   </head>
 
   <body
-    class="flex h-screen max-h-screen flex-col items-center justify-center bg-default text-default"
+    class="bg-default text-default flex h-screen max-h-screen flex-col items-center justify-center"
   >
     <main class="relative flex flex-grow flex-col justify-center text-center">
       <form
@@ -67,8 +67,8 @@ export const prerender = true;
         <input type="email" name="email" />
       </form>
       <div class="mt-10 flex flex-col px-4">
-        <Icon name="logomark" class="h-32 text-secondary" />
-        <h1 class="mt-4 text-center font-bold text-2xl">
+        <Icon name="logomark" class="text-secondary h-32" />
+        <h1 class="mt-4 text-center text-2xl font-bold">
           SC Coiffure arrive à <br /><span>La Seyne-sur-Mer</span>
         </h1>
         <h2 class="mt-2 text-lg">
@@ -84,7 +84,7 @@ export const prerender = true;
       </div>
     </main>
     <footer
-      class="flex w-full flex-shrink-0 flex-col items-center bg-black py-2 text-white text-xs"
+      class="flex w-full flex-shrink-0 flex-col items-center bg-black py-2 text-xs text-white"
     >
       {companyName} © 2023
       <a href={`mailto:${social.email}`}>{social.email}</a>

@@ -32,11 +32,8 @@ export default defineConfig({
       status: 302,
       destination: '/',
     },
-    '/incoming': {
-      status: 302,
-      destination: '/',
-    },
   },
+
   vite: {
     ssr: {
       external: ['svgo'],
