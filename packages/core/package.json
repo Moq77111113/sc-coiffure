@@ -1,0 +1,23 @@
+{
+  "name": "@sc-coiffure/core",
+  "version": "1.0.0",
+  "description": "Services for sc monorepo",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "peerDependencies": {
+    "axios": "1.6.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.8.4",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}

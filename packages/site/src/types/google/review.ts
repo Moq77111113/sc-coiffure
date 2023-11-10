@@ -1,4 +1,4 @@
-import { z } from 'zod';
+import * as z from 'zod';
 
 const reviewerSchema = z.object({
   profilePhotoUrl: z.string(),
