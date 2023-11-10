@@ -1,11 +1,9 @@
 import { promises as fs } from 'fs';
-import { dataSchema, type Data } from '~/types/data';
-import type { Reviews } from '~/types/google/review';
-import type { Posts } from '~/types/instagram/post';
+import { dataSchema, type Data, type DataTypes } from '~/types/data';
 
 export async function updateData<
   Path extends keyof Data,
-  Value = Path extends 'reviews' ? Reviews : Posts
+  Value = DataTypes[Path]
 >(path: Path, value: Value) {
   try {
     // Read the JSON data from the file
@@ -37,6 +35,7 @@ const safeParse = (data: string | null): Data => {
     return {
       reviews: '',
       posts: '',
+      igAuth: '',
     };
   }
 };
