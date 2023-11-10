@@ -1,2 +1,4 @@
 packages:
-  - 'packages/**/*'
+  - 'packages/site'
+  - 'packages/cli'
+  - 'packages/core'

@@ -20,7 +20,7 @@ interface CommandOptions<T> {
    * },
    *```
    */
-  builder: Record<string, CommandOption>;
+  builder?: Record<string, CommandOption>;
   /**
    * Command handler function.
    * @example
@@ -41,6 +41,9 @@ export function createCommand<T>(
     command,
     describe,
     builder: (yargs) => {
+      if (!builder) {
+        return yargs;
+      }
       Object.entries(builder).forEach(([argName, argOptions]) => {
         yargs.option(argName, {
           type: argOptions.type,
