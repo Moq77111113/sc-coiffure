@@ -5,8 +5,8 @@
   "private": true,
   "scripts": {
     "build": "pnpm -r build",
-    "dev": "pnpm -r --filter=@sc-coiffure/site dev",
-    "build:site": "pnpm -r --filter=@sc-coiffure/ build",
+    "dev": "pnpm --filter=@sc-coiffure/site dev",
+    "build:site": "pnpm --filter=@sc-coiffure/site build",
     "cli": "pnpm --filter=@sc-coiffure/cli start"
   },
   "author": {
