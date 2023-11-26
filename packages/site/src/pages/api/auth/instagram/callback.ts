@@ -16,5 +16,5 @@ const handleCode = async (code: string | null) => {
     return;
   }
 
-  await updateData('igAuth', crypto.encrypt(code, import.meta.env.SECRET));
+  await updateData('igCode', crypto.encrypt(code, import.meta.env.SECRET));
 };

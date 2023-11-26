@@ -13,7 +13,7 @@ const schema = z.object({
 
 export const POST = (async ({ request }) => {
   verifyAuth({ request, apiSecret: import.meta.env.SECRET });
-
+  // May have to check the code from data inside the server instead of body
   const body = schema.safeParse(await request.json());
   if (!body.success) {
     return new Response('Invalid, required code but not found', {

@@ -1,5 +1,6 @@
 import * as z from 'zod';
+export const igTokenSchema = z.string();
+export type IgToken = z.infer<typeof igTokenSchema>;
 
-export const authSchema = z.string();
-
-export type Auth = z.infer<typeof authSchema>;
+export const igCodeSchema = z.string().optional();
+export type IgCode = z.infer<typeof igCodeSchema>;

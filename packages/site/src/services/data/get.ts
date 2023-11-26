@@ -2,7 +2,7 @@ import { promises as fs } from 'fs';
 import type { z } from 'zod';
 import { dataSchema, type Data, type DataTypes } from '~/types/data';
 import { reviewsSchema } from '~/types/google/review';
-import { authSchema } from '~/types/instagram/auth';
+import { igCodeSchema, igTokenSchema } from '~/types/instagram/auth';
 import { postsSchema } from '~/types/instagram/post';
 
 export async function getData<Path extends keyof Data, Value = Data[Path]>(
@@ -50,14 +50,15 @@ const safeParse = (data: string): Data => {
   return {
     reviews: '',
     posts: '',
-    igAuth: '',
+    igToken: '',
   };
 };
 
 const pathToResolver = {
   reviews: reviewsSchema,
   posts: postsSchema,
-  igAuth: authSchema,
+  igToken: igTokenSchema,
+  igCode: igCodeSchema,
 } satisfies Record<keyof Data, z.ZodSchema<DataTypes[keyof Data]>>;
 
 const resolveData = <DataType extends keyof Data>(

@@ -38,7 +38,7 @@ const safeParse = (data: string | null): Data => {
     return {
       reviews: '',
       posts: '',
-      igAuth: '',
+      igToken: '',
     };
   }
 };
