@@ -8,7 +8,7 @@ export async function updateData<
   try {
     // Read the JSON data from the file
     const data = await fs
-      .readFile('./dist/data.json', 'utf-8')
+      .readFile(import.meta.env.PATH_TO_DATA, 'utf-8')
       .catch((_) => null);
 
     const parsedData = safeParse(data);
@@ -19,7 +19,10 @@ export async function updateData<
     parsedData[path] = encoded;
 
     // Write the updated JSON data back to the file
-    await fs.writeFile('./dist/data.json', JSON.stringify(parsedData, null, 2));
+    await fs.writeFile(
+      import.meta.env.PATH_TO_DATA,
+      JSON.stringify(parsedData, null, 2)
+    );
   } catch (error) {
     console.error('Error updating data:', error);
   }

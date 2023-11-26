@@ -1,6 +1,7 @@
 import * as z from 'zod';
-import type Reviews from '~/components/atoms/Review.svelte';
 import type { Posts } from './instagram/post';
+import type { Reviews } from './google/review';
+import type { Auth } from './instagram/auth';
 
 export const dataSchema = z.object({
   reviews: z.string(),
@@ -11,6 +12,6 @@ export const dataSchema = z.object({
 export type DataTypes = {
   reviews: Reviews;
   posts: Posts;
-  igAuth: string;
+  igAuth: Auth;
 };
 export type Data = z.infer<typeof dataSchema>;

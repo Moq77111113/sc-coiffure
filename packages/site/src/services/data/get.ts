@@ -1,15 +1,16 @@
 import { promises as fs } from 'fs';
-import { dataSchema, type Data } from '~/types/data';
-import { reviewsSchema, type Reviews } from '~/types/google/review';
-import { postsSchema, type Posts } from '~/types/instagram/post';
+import type { z } from 'zod';
+import { dataSchema, type Data, type DataTypes } from '~/types/data';
+import { reviewsSchema } from '~/types/google/review';
+import { authSchema } from '~/types/instagram/auth';
+import { postsSchema } from '~/types/instagram/post';
 
-export async function getData<
-  Path extends keyof Data,
-  Value = Path extends 'reviews' ? Reviews : Posts
->(path: Path): Promise<Value> {
+export async function getData<Path extends keyof Data, Value = Data[Path]>(
+  path: Path
+): Promise<Value> {
   try {
     // Read the JSON data from the file
-    const data = await fs.readFile('./dist/data.json', 'utf-8');
+    const data = await fs.readFile(import.meta.env.PATH_TO_DATA, 'utf-8');
 
     // Parse the JSON data into an object
     const parsedData = safeParse(data);
@@ -25,10 +26,7 @@ export async function getData<
     const decodedData = Buffer.from(encodedData, 'base64').toString('utf-8');
 
     // Parse the decoded data using the appropriate schema
-    const parsedValue =
-      path === 'posts'
-        ? postsSchema.parse(JSON.parse(decodedData))
-        : reviewsSchema.parse(JSON.parse(decodedData));
+    const parsedValue = resolveData(path, decodedData);
 
     return parsedValue as Value;
   } catch (error) {
@@ -52,5 +50,17 @@ const safeParse = (data: string): Data => {
   return {
     reviews: '',
     posts: '',
+    igAuth: '',
   };
 };
+
+const pathToResolver = {
+  reviews: reviewsSchema,
+  posts: postsSchema,
+  igAuth: authSchema,
+} satisfies Record<keyof Data, z.ZodSchema<DataTypes[keyof Data]>>;
+
+const resolveData = <DataType extends keyof Data>(
+  type: DataType,
+  value: string
+) => pathToResolver[type].parse(JSON.parse(value));

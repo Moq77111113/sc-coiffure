@@ -10,7 +10,7 @@ const { handler, describe, builder, command } = createCommand<Schema>(
   {
     describe: 'Get IG auth code',
 
-    handler: async ({}) => {
+    handler: async () => {
       const clientId = process.env.IG_CLIENT_ID;
       const redirectUrl = process.env.IG_REDIRECT_URL;
       if (!clientId || !redirectUrl) {

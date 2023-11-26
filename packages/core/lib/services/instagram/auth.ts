@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import axios from 'axios';
-import { IGTokenResponse } from '~/types';
+import { IGTokenResponse } from '../../types/instagram';
 const baseSchema = z.object({
   apiUrl: z.string().url(),
   apiPath: z.string(),
@@ -22,7 +22,6 @@ type ShortTokenArgs = z.infer<typeof shortTokenSchema>;
 const IGAuthService = {
   buildAuthorizationUrl: (args: AuthArgs) => {
     const { apiUrl, apiPath, clientId, redirectUrl } = args;
-    console.log(redirectUrl);
     const url = new URL(apiPath, `https://${apiUrl}`);
     url.search = new URLSearchParams({
       client_id: clientId,
