@@ -5,3 +5,11 @@ const tokenSchema = z.object({
 });
 
 export type IGTokenResponse = z.infer<typeof tokenSchema>;
+
+const longTokenSchema = z.object({
+  access_token: z.string(),
+  token_type: z.string(),
+  expires_in: z.number(),
+});
+
+export type IGLongTokenResponse = z.infer<typeof longTokenSchema>;

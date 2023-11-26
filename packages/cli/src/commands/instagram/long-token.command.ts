@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { createCommand } from '../../utils/createCommand';
 import { IGAuthService } from '@sc-coiffure/core/lib/services/instagram/auth';
+import { msToText } from '@sc-coiffure/core/lib/utils';
 // pnpm run cli ig:auth:token
 const schema = z.object({
   code: z.string(),
@@ -8,29 +9,30 @@ const schema = z.object({
 
 type Schema = z.infer<typeof schema>;
 const { handler, describe, builder, command } = createCommand<Schema>(
-  'ig:auth:token',
+  'ig:auth:long-token',
   {
     describe: 'Generate a short token',
 
     handler: async ({ code }) => {
       const clientId = process.env.IG_CLIENT_ID;
-      const redirectUrl = process.env.IG_REDIRECT_URL;
+
       const clientSecret = process.env.IG_CLIENT_SECRET;
-      if (!clientId || !redirectUrl || !clientSecret) {
-        throw new Error(
-          'IG_CLIENT_ID or IG_REDIRECT_URL or IG_CLIENT_SECRET is not set'
-        );
+      if (!clientId || !clientSecret) {
+        throw new Error('IG_CLIENT_ID or IG_CLIENT_SECRET is not set');
       }
       try {
-        const apiResponse = await IGAuthService.getShortToken({
-          apiPath: 'oauth/access_token',
-          apiUrl: 'api.instagram.com',
-          clientId,
-          redirectUrl,
+        const apiResponse = await IGAuthService.getLongToken({
+          apiPath: 'access_token',
+          apiUrl: 'graph.instagram.com',
           clientSecret,
           code,
         });
-        console.log('Token: ', apiResponse.data.access_token);
+        console.log(
+          'Token: ',
+          apiResponse.data.access_token,
+          'will expire in',
+          msToText(apiResponse.data.expires_in * 1000)
+        );
       } catch (e) {
         console.log(e);
       }

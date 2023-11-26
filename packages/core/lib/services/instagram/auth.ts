@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import axios from 'axios';
-import { IGTokenResponse } from '../../types/instagram';
+import { IGLongTokenResponse, IGTokenResponse } from '../../types/instagram';
 const baseSchema = z.object({
   apiUrl: z.string().url(),
   apiPath: z.string(),
@@ -19,6 +19,12 @@ const shortTokenSchema = baseSchema.merge(
 
 type ShortTokenArgs = z.infer<typeof shortTokenSchema>;
 
+const longTokenCodeSchema = shortTokenSchema.omit({
+  redirectUrl: true,
+  clientId: true,
+});
+
+type LongTokenArgs = z.infer<typeof longTokenCodeSchema>;
 const IGAuthService = {
   buildAuthorizationUrl: (args: AuthArgs) => {
     const { apiUrl, apiPath, clientId, redirectUrl } = args;
@@ -43,6 +49,17 @@ const IGAuthService = {
     params.append('code', code);
 
     return axios.post<IGTokenResponse>(url.toString(), params);
+  },
+  getLongToken: async (args: LongTokenArgs) => {
+    const { apiUrl, apiPath, clientSecret, code } = args;
+    const url = new URL(apiPath, `https://${apiUrl}`);
+    url.search = new URLSearchParams({
+      grant_type: 'ig_exchange_token',
+      client_secret: clientSecret,
+      access_token: code,
+    }).toString();
+
+    return axios.get<IGLongTokenResponse>(url.toString());
   },
 };
 
