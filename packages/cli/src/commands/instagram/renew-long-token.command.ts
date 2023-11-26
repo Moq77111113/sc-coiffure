@@ -9,22 +9,15 @@ const schema = z.object({
 
 type Schema = z.infer<typeof schema>;
 const { handler, describe, builder, command } = createCommand<Schema>(
-  'ig:auth:long-token',
+  'ig:auth:renew-token',
   {
-    describe: 'Generate a long lived token',
+    describe: 'Renew a long lived token',
 
     handler: async ({ code }) => {
-      const clientId = process.env.IG_CLIENT_ID;
-
-      const clientSecret = process.env.IG_CLIENT_SECRET;
-      if (!clientId || !clientSecret) {
-        throw new Error('IG_CLIENT_ID or IG_CLIENT_SECRET is not set');
-      }
       try {
-        const apiResponse = await IGAuthService.getLongToken({
-          apiPath: 'access_token',
+        const apiResponse = await IGAuthService.renewLongToken({
+          apiPath: 'refresh_access_token',
           apiUrl: 'graph.instagram.com',
-          clientSecret,
           code,
         });
         console.log(
