@@ -15,5 +15,5 @@ export default defineConfig({
       external: ['svgo'],
     },
   },
-  output: 'hybrid',
+  output: 'server',
 });
