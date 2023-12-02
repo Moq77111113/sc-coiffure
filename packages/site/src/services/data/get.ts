@@ -5,7 +5,7 @@ import { reviewsSchema } from '~/types/google/review';
 import { igCodeSchema, igTokenSchema } from '~/types/instagram/auth';
 import { postsSchema } from '~/types/instagram/post';
 
-export async function getData<Path extends keyof Data, Value = Data[Path]>(
+export async function getData<Path extends keyof DataTypes, Value = DataTypes[Path]>(
   path: Path
 ): Promise<Value> {
   try {

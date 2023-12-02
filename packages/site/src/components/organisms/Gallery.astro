@@ -2,21 +2,28 @@
 import { getPosts } from '~/services/ig/posts';
 import GalleryGrid from '~/components/molecules/GalleryGrid.svelte';
 import ContentSection from '../molecules/ContentSection.astro';
-const posts = await getPosts();
+import type { Post } from '~/types/instagram/post';
+// const posts = await getPosts();
+const posts = [] satisfies Post[]; // TODO : implement post fetching
 ---
+
 {
   () => {
-      if(!posts.length) {
-        return null
-      }
-      
-  return <ContentSection id="gallery" classes="px-0">
-    <Fragment slot="title">
-      <h2 class={`text-center font-extrabold tracking-tight text-6xl text-default`}>
-        Découvrez nos travaux
-      </h2>
-    </Fragment>
-    <GalleryGrid client:idle {posts}  />
-  </ContentSection>
+    if (!posts.length) {
+      return null;
     }
+
+    return (
+      <ContentSection id="gallery" classes="px-0">
+        <Fragment slot="title">
+          <h2
+            class={`text-default text-center text-6xl font-extrabold tracking-tight`}
+          >
+            Découvrez nos travaux
+          </h2>
+        </Fragment>
+        <GalleryGrid client:idle {posts} />
+      </ContentSection>
+    );
+  }
 }

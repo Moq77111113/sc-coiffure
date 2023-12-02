@@ -7,11 +7,6 @@ import Social from '~/components/molecules/SocialLoop.astro';
 import { social } from '~/constants/social';
 import Share from '../molecules/Share.svelte';
 import { getRandomPost } from '~/services/ig/posts';
-import { Image } from 'astro:assets';
-const navItems: Array<NavItem> = [
-  { title: 'Contact', url: '/#contact' },
-  { title: 'Galerie', url: '/#gallery' },
-];
 
 const links: Array<FooterLink> = [
   {
@@ -35,15 +30,13 @@ const links: Array<FooterLink> = [
     icon: 'mdi:phone',
   },
 ];
-
-const post = await getRandomPost();
 ---
 
 <header
   id="page-header"
   class="fixed z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 text-white"
 >
-  <a class="flex items-center gap-3 hover:!text-default" href="/">
+  <a class="hover:!text-default flex items-center gap-3" href="/">
     <h1 class="sr-only">SC Coiffure</h1>
     <Icon name="logomark" class="h-16" />
   </a>
