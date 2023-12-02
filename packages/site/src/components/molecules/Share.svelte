@@ -49,7 +49,8 @@
   <button
     class="cursor-pointer h-10 rounded-full w-10 hover:text-accent border-current flex items-center justify-center focus:outline-none"
     on:click={shareFunction} bind:this={toggleButton}
-    name="Partager"
+  
+    aria-label="Partager"
     ><i class="fa-solid fa-share-nodes hover:text-accent" /></button
   >
   {#if open} 

@@ -8,7 +8,7 @@ import netlify from '@astrojs/netlify/functions';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sccoiffure83.fr',
-  output: 'server',
+  output: 'hybrid',
   adapter: netlify(),
   integrations: [tailwind(), svelte(), mdx()],
   redirects: {
