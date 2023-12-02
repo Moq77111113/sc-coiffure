@@ -1,21 +1,15 @@
 ---
-import ContentSection from '../molecules/ContentSection.astro';
 import { social } from '~/constants/social';
 ---
 
-<!-- 
-<ContentSection
-  id="gallery"
-  classes="bg-offset px-0 py-0 space-y-0 scroll-mt-0 gap-0 h-[16rem] space-y-0"
-> -->
-<section class="h-[20rem] bg-offset">
+<section class="bg-offset h-[20rem]">
   <iframe
     src={social.embedUrl}
     width="100%"
+    title="Localisation"
     height="100%"
     style="border:0;"
     allowfullscreen={false}
     loading="lazy"
     referrerpolicy="no-referrer-when-downgrade"></iframe>
 </section>
-<!-- </ContentSection> -->
