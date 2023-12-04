@@ -2,7 +2,8 @@
 import { Image } from 'astro:assets';
 import hero from '~/assets/hero.jpg';
 
-const sizes = '100vw';
+const sizes =
+  '(max-width: 480px) 100vw,(max-width: 768px) 90vw, 1200px';
 ---
 
 <Image
