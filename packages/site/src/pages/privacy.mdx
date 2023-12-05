@@ -2,9 +2,10 @@
 title: Politique de confidentialité - SC Coiffure
 author: Quentin Moessner
 description: Politique de confidentialité du Salon SC Coiffure
+email: contact@sccoiffure83.fr
 ---
 
-export const prerender = false;
+export const prerender = true;
 import Layout from '~/components/organisms/layout/Layout.astro';
 
 import HomeLink from '~/components/atoms/HomeLink.astro';
@@ -36,7 +37,7 @@ Notre site web peut utiliser des cookies pour améliorer votre expérience de na
 
 ## Droit d'Accès et de Rectification
 
-Vous avez le droit d'accéder à vos informations personnelles et de demander des corrections si nécessaire. Pour exercer ces droits, veuillez nous contacter à [adresse e-mail de contact].
+Vous avez le droit d'accéder à vos informations personnelles et de demander des corrections si nécessaire. Pour exercer ces droits, veuillez nous contacter à {frontmatter.email}.
 
 ## Modifications de la Politique de Confidentialité
 
@@ -44,7 +45,7 @@ Nous nous réservons le droit de modifier cette politique de confidentialité à
 
 ## Contact
 
-Si vous avez des questions concernant notre politique de confidentialité, veuillez nous contacter à [adresse e-mail de contact].
+Si vous avez des questions concernant notre politique de confidentialité, veuillez nous contacter à {frontmatter.email}.
 
 </div>
 </article>

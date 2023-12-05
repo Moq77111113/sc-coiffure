@@ -1,7 +1,7 @@
 ---
-import type { FooterLink } from "~/types";
-import { Icon } from "astro-icon";
-import Link from "~/components/atoms/Link.svelte";
+import type { FooterLink } from '~/types';
+import { Icon } from 'astro-icon';
+import Link from '~/components/atoms/Link.svelte';
 interface Props {
   links: Array<FooterLink>;
 }
@@ -9,16 +9,16 @@ const { links } = Astro.props;
 ---
 
 <script>
-  const links = document.querySelectorAll("#link-list li");
+  const links = document.querySelectorAll('#link-list li');
   let currentIndex = 0;
   const toggle = () =>
     links.forEach((link, index) => {
       if (index === currentIndex) {
-        link.classList.remove("hidden");
-        link.classList.add("flex");
+        link.classList.remove('hidden');
+        link.classList.add('flex');
       } else {
-        link.classList.remove("flex");
-        link.classList.add("hidden");
+        link.classList.remove('flex');
+        link.classList.add('hidden');
       }
     });
 
@@ -33,7 +33,7 @@ const { links } = Astro.props;
     links.map((link, index) => (
       <li
         class={`animate-pop h-10 w-10 justify-center rounded-full border-current p-1 ${
-          index > 0 ? "hidden" : "flex"
+          index > 0 ? 'hidden' : 'flex'
         }`}
       >
         <Link href={link.url} title={link.description} newTab={true}>

@@ -1,93 +1,21 @@
 ---
 import '@fontsource-variable/inter';
-import Icon from 'astro-icon';
-import ContactForm from '~/components/atoms/ContactForm.svelte';
-import Countdown from '~/components/atoms/Countdown.svelte';
-import { companyName, seo } from '~/constants/seo';
-import { social } from '~/constants/social';
+import Services from '~/components/organisms/Services.astro';
+import Intro from '~/components/organisms/Intro.astro';
+import Layout from '~/components/organisms/layout/Layout.astro';
 import '~/styles/index.css';
-import '~/styles/md.css';
-interface Props {
-  index?: boolean;
-  title?: string;
-  description?: string;
-}
-const {
-  index = true,
-  title = seo.title,
-  description = seo.description,
-} = Astro.props;
-const { generator, site, url } = Astro;
-
-const image = new URL('social.jpg', site);
-const canonical = new URL(url, site);
-
-const schema = JSON.stringify(seo.schema({ canonical, image }), null, 2);
-export const prerender = false;
+import Reviews from '~/components/organisms/Reviews.astro';
+import Products from '~/components/organisms/Products.astro';
+import Gallery from '~/components/organisms/Gallery.astro';
+import GoogleMap from '~/components/organisms/GoogleMap.astro';
+export const prerender = true;
 ---
 
-<!DOCTYPE html>
-<html lang="fr" class="font-display motion-safe:scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-    <meta name="generator" content={generator} />
-    <meta name="robots" content={index ? 'index' : 'noindex'} />
-    <title>{title}</title>
-
-    <meta name="description" content={description} />
-    <link rel="canonical" href={canonical} />
-
-    <!-- social media -->
-    <meta property="og:locale" content="fr_FR" />
-    <meta property="og:site_name" content={title} />
-    <meta property="og:title" content={companyName} />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={image} />
-    <meta property="og:url" content={site} />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content={seo.title} />
-    <meta name="twitter:description" content={seo.description} />
-    <meta name="twitter:image" content={url} />
-    <script type="application/ld+json" set:html={schema} />
-  </head>
-
-  <body
-    class="bg-default text-default flex h-screen max-h-screen flex-col items-center justify-center"
-  >
-    <main class="relative flex flex-grow flex-col justify-center text-center">
-      <form
-        name="contact"
-        data-netlify="true"
-        netlify-honeypot="ilovehoney"
-        hidden
-      >
-        <input type="email" name="email" />
-      </form>
-      <div class="mt-10 flex flex-col px-4">
-        <Icon name="logomark" class="text-secondary h-32" />
-        <h1 class="mt-4 text-center text-2xl font-bold">
-          SC Coiffure arrive à <br /><span>La Seyne-sur-Mer</span>
-        </h1>
-        <h2 class="mt-2 text-lg">
-          Votre nouveau salon de coiffure arrive bientôt !
-        </h2>
-      </div>
-      <div class="mt-4 flex w-full flex-col text-center">
-        <ContactForm client:idle />
-        <p class="mt-2 text-sm">
-          Soyez les premiers à être informés de notre lancement !
-        </p>
-        <div class="mx-auto mt-4"><Countdown client:idle /></div>
-      </div>
-    </main>
-    <footer
-      class="flex w-full flex-shrink-0 flex-col items-center bg-black py-2 text-xs text-white"
-    >
-      {companyName} © 2023
-      <a href={`mailto:${social.email}`}>{social.email}</a>
-    </footer>
-  </body>
-</html>
+<Layout>
+  <Intro />
+  <Services />
+  <Products />
+  <Reviews />
+  <Gallery />
+  <GoogleMap />
+</Layout>

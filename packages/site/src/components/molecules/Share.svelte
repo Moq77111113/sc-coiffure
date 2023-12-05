@@ -4,6 +4,7 @@
   import { onMount } from 'svelte';
   import Link from '~/components/atoms/Link.svelte';
   import { social } from '~/constants';
+    import { fade } from 'svelte/transition';
 
   let open = false;
   const toggle = () => {
@@ -15,6 +16,7 @@
     share.message
   );
 
+  let toggleButton: HTMLButtonElement;
   const shareFunction = () => {
     try {
       navigator.share({
@@ -38,19 +40,23 @@
       open = false;
     }, 250);
   };
+
+ 
 </script>
 
 <svelte:window on:scroll={scrollSpy} />
 <div class="relative container flex justify-center items-center">
   <button
     class="cursor-pointer h-10 rounded-full w-10 hover:text-accent border-current flex items-center justify-center focus:outline-none"
-    on:click={shareFunction}
+    on:click={shareFunction} bind:this={toggleButton}
+  
+    aria-label="Partager"
     ><i class="fa-solid fa-share-nodes hover:text-accent" /></button
   >
+  {#if open} 
   <div
+    transition:fade
     class="absolute flex flex-col items-center justify-center transition-all duration-500 ease-in-out"
-    class:opacity-1={open}
-    class:opacity-0={!open}
   >
     <Link
       title="facebook"
@@ -87,4 +93,5 @@
       ><i class="fa-solid fa-copy" /></button
     >
   </div>
+  {/if}
 </div>

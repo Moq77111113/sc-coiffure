@@ -1,16 +1,14 @@
 import { promises as fs } from 'fs';
-import { dataSchema, type Data } from '~/types/data';
-import type { Reviews } from '~/types/google/review';
-import type { Posts } from '~/types/instagram/post';
+import { dataSchema, type Data, type DataTypes } from '~/types/data';
 
 export async function updateData<
   Path extends keyof Data,
-  Value = Path extends 'reviews' ? Reviews : Posts
+  Value = DataTypes[Path]
 >(path: Path, value: Value) {
   try {
     // Read the JSON data from the file
     const data = await fs
-      .readFile('./dist/data.json', 'utf-8')
+      .readFile(import.meta.env.PATH_TO_DATA, 'utf-8')
       .catch((_) => null);
 
     const parsedData = safeParse(data);
@@ -21,7 +19,10 @@ export async function updateData<
     parsedData[path] = encoded;
 
     // Write the updated JSON data back to the file
-    await fs.writeFile('./dist/data.json', JSON.stringify(parsedData, null, 2));
+    await fs.writeFile(
+      import.meta.env.PATH_TO_DATA,
+      JSON.stringify(parsedData, null, 2)
+    );
   } catch (error) {
     console.error('Error updating data:', error);
   }
@@ -37,6 +38,7 @@ const safeParse = (data: string | null): Data => {
     return {
       reviews: '',
       posts: '',
+      igToken: '',
     };
   }
 };

@@ -30,6 +30,15 @@ module.exports = {
         offset: 'var(--color-border-offset)',
         accent: 'var(--color-accent)',
       },
+      keyframes: {
+        clouding: {
+          '0%': { transform: 'translate3d(0, 0, 0)' },
+          '100%': { transform: 'translate3d(0, 15px, 0)' },
+        },
+      },
+      animation: {
+        clouding: 'clouding linear 2.5s infinite alternate',
+      },
     },
   },
   corePlugins: {

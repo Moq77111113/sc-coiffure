@@ -1,4 +1,5 @@
 import yargs from 'yargs';
+import 'dotenv/config';
 
 yargs(process.argv.slice(2))
   .scriptName('cli')

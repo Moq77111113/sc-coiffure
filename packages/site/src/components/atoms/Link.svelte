@@ -15,7 +15,7 @@
   on:click={callback}
 >
   {#if newTab}
-    <span class="sr-only">S'ouvre dans une nouvelle fenêtre</span>
+    <span class="sr-only">Lien vers {title} - S'ouvre dans une nouvelle fenêtre</span>
   {/if}
   <slot />
 </a>

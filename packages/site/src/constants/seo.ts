@@ -58,7 +58,7 @@ const schema = ({ canonical, image }: { canonical: URL; image: URL }) => ({
   telephone: social.phone,
   email: social.email,
 
-  priceRange: '20€ - 100€', // Ajustement de la plage de prix
+  priceRange: '20€ - 100€',
   paymentAccepted: 'Cash, Credit Card',
   currenciesAccepted: 'EUR',
   openingHoursSpecification: [

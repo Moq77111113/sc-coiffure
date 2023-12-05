@@ -22,14 +22,6 @@ const ctas: CTAElement[] = [
     },
   },
   {
-    label: 'Explorer nos travaux',
-    href: '/gallery/#pics',
-    icon: {
-      pack: 'mdi',
-      name: 'image',
-    },
-  },
-  {
     label: 'Découvrir nos produits',
     href: '/#products',
     icon: {
@@ -37,6 +29,14 @@ const ctas: CTAElement[] = [
       name: 'lotion',
     },
   },
+  // {
+  //   label: 'Explorer nos travaux',
+  //   href: '#gallery',
+  //   icon: {
+  //     pack: 'mdi',
+  //     name: 'image',
+  //   },
+  // },
 ];
 ---
 
@@ -47,7 +47,7 @@ const ctas: CTAElement[] = [
     </h2>
   </Fragment>
 
-  <Icon slot="eyebrow" name="logomark" class="h-48 text-default" />
+  <Icon slot="eyebrow" name="logomark" class="text-default h-48" />
   <div class="container">
     <div class="flex flex-col items-center gap-4">
       <p class="text-text max-w-xl text-center text-sm">
@@ -61,12 +61,12 @@ const ctas: CTAElement[] = [
     </div>
   </div>
 
-  <div class="grid grid-cols-1 gap-2 text-offset sm:grid-cols-2">
+  <div class="text-offset grid grid-cols-1 gap-2 sm:grid-cols-2">
     {
       ctas.map((cta, i) => (
         <a
           href={cta.href}
-          class={`flex items-center justify-center gap-3 border-2 border-default px-6 py-4 text-default dark:border-white ${
+          class={`border-default text-default flex items-center justify-center gap-3 border-2 px-6 py-4 dark:border-white ${
             ctas.length % 2 !== 0 && i === ctas.length - 1
               ? 'sm:col-span-2 sm:mx-auto'
               : ''
