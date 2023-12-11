@@ -6,9 +6,9 @@
 
 <Cta classes="text-white border-white">
   <div class="flex flex-col items-center text-sm gap-4">
-    <h2 class="flex items-center gap-2">
+    <h3 class="flex items-center gap-2">
       <i class="fa-solid fa-comment" /> Nous Contacter
-    </h2>
+    </h3>
   
     <div class="flex flex-col items-center text-xs whitespace-nowrap">
        {#if social.phone}

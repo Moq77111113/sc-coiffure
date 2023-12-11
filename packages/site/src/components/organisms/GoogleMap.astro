@@ -3,6 +3,8 @@ import { social } from '~/constants/social';
 ---
 
 <section class="bg-offset h-[20rem]">
+  <sc-map data-src={social.embedUrl}></sc-map>
+  <!-- 
   <iframe
     src={social.embedUrl}
     width="100%"
@@ -11,5 +13,61 @@ import { social } from '~/constants/social';
     style="border:0;"
     allowfullscreen={false}
     loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
+    referrerpolicy="no-referrer-when-downgrade"></iframe> -->
 </section>
+
+<script>
+  class SCMap extends HTMLElement {
+    constructor() {
+      super();
+
+      const url = this.getAttribute('data-src');
+      if (!url) return;
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const iframe = document.createElement('iframe');
+            iframe.src = url;
+            iframe.width = '100%';
+            iframe.title = 'Localisation du salon';
+            iframe.height = '100%';
+            iframe.allowFullscreen = false;
+            iframe.loading = 'lazy';
+            iframe.referrerPolicy = 'no-referrer-when-downgrade';
+            entry.target.appendChild(iframe);
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+
+      const lazyLoadMapElements = document.querySelectorAll('sc-map');
+      lazyLoadMapElements.forEach((element) => {
+        observer.observe(element);
+      });
+
+      document.addEventListener('touchstart', () => {}, { passive: true });
+      document.addEventListener('touchmove', () => {}, { passive: true });
+      document.addEventListener('wheel', () => {}, { passive: true });
+    }
+  }
+
+  customElements.define('sc-map', SCMap);
+</script>
+
+<style>
+  sc-map {
+    position: relative;
+    width: 600px;
+    height: 450px;
+    overflow: hidden;
+  }
+
+  sc-map iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>
