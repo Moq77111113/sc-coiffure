@@ -2,6 +2,7 @@
 import { Icon } from 'astro-icon';
 import ContentSection from '~/components/molecules/ContentSection.astro';
 import { companyName } from '~/constants/seo';
+import Price from '../atoms/Price.svelte';
 
 type CTAElement = {
   label: string;
@@ -29,14 +30,14 @@ const ctas: CTAElement[] = [
       name: 'lotion',
     },
   },
-  // {
-  //   label: 'Explorer nos travaux',
-  //   href: '#gallery',
-  //   icon: {
-  //     pack: 'mdi',
-  //     name: 'image',
-  //   },
-  // },
+  {
+    label: 'Consulter nos tarifs',
+    href: '#prices',
+    icon: {
+      pack: 'mdi',
+      name: 'euro',
+    },
+  },
 ];
 ---
 
@@ -56,7 +57,7 @@ const ctas: CTAElement[] = [
         situé sur le port de
         <span class="text-accent">La Seyne-sur-Mer</span>, alliant <span
           class="text-accent">expertise</span
-        > et <span class="text-accent">convivialité</span>. 
+        > et <span class="text-accent">convivialité</span>.
       </p>
     </div>
   </div>
