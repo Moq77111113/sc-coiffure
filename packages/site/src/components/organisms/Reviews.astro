@@ -1,26 +1,29 @@
 ---
-import { register } from "swiper/element/bundle";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import { getReviews } from "~/services/google/reviews";
-import ContentSection from "~/components/molecules/ContentSection.astro";
-import Carousel from "~/components/molecules/Review-Carousel.svelte";
+import { register } from 'swiper/element/bundle';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { getReviews } from '~/services/google/reviews';
+import ContentSection from '~/components/molecules/ContentSection.astro';
+import Carousel from '~/components/molecules/Review-Carousel.svelte';
 register();
 const data = await getReviews();
 ---
+
 {
   () => {
-    if(!data?.reviews.length) {
-      return null
+    if (!data?.reviews.length) {
+      return null;
     }
 
-return <ContentSection id="reviews" classes="bg-offset">
-  <Fragment slot="title">
-    <h2 class="text-center font-extrabold tracking-tight text-2xl text-offset">
-      Les avis de nos clients
-    </h2>
-  </Fragment>
-  <Carousel client:idle reviews={data?.reviews ?? []} />
-</ContentSection>
+    return (
+      <ContentSection id="reviews" classes="bg-offset">
+        <Fragment slot="title">
+          <h2 class="text-offset text-center text-2xl font-extrabold tracking-tight">
+            Les avis de nos clients
+          </h2>
+        </Fragment>
+        <Carousel client:idle reviews={data?.reviews ?? []} />
+      </ContentSection>
+    );
   }
 }

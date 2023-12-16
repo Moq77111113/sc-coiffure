@@ -16,7 +16,7 @@ const keywords = [
   'Accessible',
   'Coloration',
   'Boucles',
-  'Shampoing',
+  'Shampooing',
   'Brushing',
   'SC-Coiffure',
   'SC Coiffure',
