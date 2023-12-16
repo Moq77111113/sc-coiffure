@@ -6,9 +6,9 @@
 
 <Cta classes="text-white border-white">
   <div class="text-sm flex flex-col items-center gap-4">
-    <h2 class="flex gap-2 items-center">
+    <h3 class="flex gap-2 items-center">
       <i class="fa-solid fa-map" /> Nous trouver
-    </h2>
+    </h3>
     <Link href={mapsHref} newTab title="Notre adresse">
       <article class="flex flex-col items-center text-xs whitespace-nowrap">
         <span>{address.street}</span>

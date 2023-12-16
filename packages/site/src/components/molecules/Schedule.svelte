@@ -40,9 +40,9 @@
 
 <Cta action={() => (showModal = true)} classes="text-white border-white">
   <div class="text-sm flex flex-col items-center gap-4">
-    <h2 class="flex gap-2 items-center">
+    <h3 class="flex gap-2 items-center">
       <i class="fa-solid fa-clock" />Aujourd'hui
-    </h2>
+    </h3>
     <div class="flex flex-col items-center text-xs">
       <span>{formatDay(todaySchedule)}</span>
       <span class="text-xs">Consulter les horaires</span>

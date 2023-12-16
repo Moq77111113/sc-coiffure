@@ -13,12 +13,12 @@ import FindUs from '~/components/molecules/FindUs.svelte';
   <div
     class="relative flex h-full flex-col items-center justify-between gap-8 sm:justify-center sm:gap-32"
   >
-    <h2 class="flex flex-col gap-2 sm:gap-4 sm:self-auto sm:justify-self-end">
+    <h1 class="flex flex-col gap-2 sm:gap-4 sm:self-auto sm:justify-self-end">
       <div class="text-center font-thin tracking-tighter text-gray-50 text-6xl">
         Bienvenue chez <br />
         <span class="text-6xl">SC Coiffure</span>
       </div>
-    </h2>
+    </h1>
 
     <div class="flex max-w-xl flex-col gap-4 sm:mx-8 sm:max-w-3xl sm:flex-row">
       <ScheduleTemplate {schedule} client:idle />
