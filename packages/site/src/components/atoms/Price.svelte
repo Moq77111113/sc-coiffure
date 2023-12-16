@@ -18,6 +18,11 @@ const indexToLabel = (index: number) => {
   }
 };
 
+const toFixedAmount = (amount: number) => {
+  const amountInEuros = amount / 100;
+   return amountInEuros % 1 === 0 ? amountInEuros.toFixed() : amountInEuros.toFixed(2);
+};
+
 </script>
 
 <div class="price relative w-full overflow-hidden flex flex-col sm:flex-row justify-between items-center bg-primary p-4 rounded-md text-secondary ">  
@@ -29,7 +34,7 @@ const indexToLabel = (index: number) => {
     {#each price.amounts as amount, i}
       <p class="whitespace-nowrap border-secondary border-r pr-2 last:pr-0 last:border-r-0">
         <span class="flex flex-col text-center">  <small class="text-xs font-light">{indexToLabel(i)}</small>
-           {(amount / 100)} €
+           {toFixedAmount(amount)} €
           
         </span></p>
    

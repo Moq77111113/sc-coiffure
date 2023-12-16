@@ -12,7 +12,10 @@ const introPrices = [
       name: 'Shampooing coupe brushing',
       amounts: [2900, 3100, 3600],
     },
-    { name: 'Shampooing coupe couleur avec amnoniaque', amounts: [4500, 5550, 6500] },
+    {
+      name: 'Shampooing coupe couleur avec amnoniaque',
+      amounts: [4500, 5500, 6500],
+    },
     {
       name: 'Shampooing coupe couleur sans amnoniaque',
       amounts: [5200, 6200, 7200],
