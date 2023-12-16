@@ -5,6 +5,7 @@ import Header from '~/components/organisms/Header.astro';
 import ScrollUp from '~/components/atoms/ScrollUp.svelte';
 import Splash from '~/components/organisms/Splash.astro';
 import { seo } from '~/constants/seo';
+import { social } from '~/constants/social';
 import '~/styles/index.css';
 import '~/styles/md.css';
 interface Props {
@@ -35,16 +36,22 @@ const schema = JSON.stringify(seo.schema({ image, canonical }), null, 2);
     <meta name="robots" content={index ? 'index' : 'noindex'} />
     <link rel="preconnect" href="https://ka-f.fontawesome.com" />
     <title>{title}</title>
-
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
     <!-- social media -->
+    <meta property="article:publisher" content={social.facebook} />
+    <meta property="og:site_name" content={seo.title} />
+    <meta property="og:locale" content="fr_FR" />
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
+    <meta property="og:image:width" content="342" />
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:type" content="image/jpeg" />
     <meta property="og:url" content={site} />
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={seo.title} />
     <meta name="twitter:description" content={seo.description} />
