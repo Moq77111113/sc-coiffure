@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { verifyAuth } from '~/services/auth';
 import { updateData } from '~/services/data/update';
 import { postsSchema } from '~/types/instagram/post';
 export const prerender = false;
@@ -78,6 +79,7 @@ const dataFake = [
 //TODO auth middleware
 export const POST = (async ({ request }) => {
   try {
+    verifyAuth({ request, apiSecret: import.meta.env.SECRET });
     await updateData('posts', postsSchema.parse(dataFake));
     return new Response(null, { status: 200 });
   } catch (error) {

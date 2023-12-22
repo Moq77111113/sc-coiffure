@@ -1,4 +1,5 @@
 import type { APIRoute } from 'astro';
+import { verifyAuth } from '~/services/auth';
 import { updateData } from '~/services/data/update';
 import { reviewsSchema } from '~/types/google/review';
 export const prerender = false;
@@ -134,6 +135,7 @@ const dataFake = {
 // TODO auth middleware
 export const POST = (async ({ request }) => {
   try {
+    verifyAuth({ request, apiSecret: import.meta.env.SECRET });
     await updateData('reviews', reviewsSchema.parse(dataFake));
     return new Response(null, { status: 200 });
   } catch (error) {
