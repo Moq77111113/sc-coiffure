@@ -13,22 +13,27 @@ import { social } from '~/constants/social';
 
       const url = this.getAttribute('data-src');
       if (!url) return;
-      const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const iframe = document.createElement('iframe');
-            iframe.src = url;
-            iframe.width = '100%';
-            iframe.title = 'Localisation du salon';
-            iframe.height = '100%';
-            iframe.allowFullscreen = false;
-            iframe.loading = 'lazy';
-            iframe.referrerPolicy = 'no-referrer-when-downgrade';
-            entry.target.appendChild(iframe);
-            observer.unobserve(entry.target);
-          }
-        });
-      });
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const iframe = document.createElement('iframe');
+              iframe.src = url;
+              iframe.width = '100%';
+              iframe.title = 'Localisation du salon';
+              iframe.height = '100%';
+              iframe.allowFullscreen = false;
+              iframe.loading = 'lazy';
+              iframe.referrerPolicy = 'no-referrer-when-downgrade';
+              entry.target.appendChild(iframe);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          rootMargin: '100px 0px 100px 0px',
+        }
+      );
 
       const lazyLoadMapElements = document.querySelectorAll('sc-map');
       lazyLoadMapElements.forEach((element) => {
