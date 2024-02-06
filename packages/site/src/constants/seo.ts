@@ -3,7 +3,7 @@ import { social } from './social';
 
 export const companyName = 'SC Coiffure';
 export const description =
-  'Votre coiffeur sur le port de La Seyne-sur-Mer. SC Coiffure, experts capillaires pour tous. Ambiance conviviale, tarifs exceptionnels. Réservez maintenant!';
+  'Votre coiffeur sur le port de La Seyne-sur-Mer. SC Coiffure, experts capillaires pour tous. Ambiance conviviale, tarifs exceptionnels. Avec ou sans rendez-vous, découvrez notre savoir-faire';
 export const title = 'SC Coiffure - Votre coiffeur à La Seyne-sur-Mer';
 
 const keywords = [
@@ -20,6 +20,8 @@ const keywords = [
   'Brushing',
   'SC-Coiffure',
   'SC Coiffure',
+  'sans rdv',
+  'Sans rendez-vous',
   'Var',
   '83',
   'La Seyne-sur-Mer',
@@ -39,6 +41,7 @@ const keywords = [
   'Coloring',
   'Curls',
   'Shampoo',
+  'No appointment',
 ];
 
 const schema = ({ canonical, image }: { canonical: URL; image: URL }) => ({
