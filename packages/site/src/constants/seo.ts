@@ -3,7 +3,7 @@ import { social } from './social';
 
 export const companyName = 'SC Coiffure';
 export const description =
-  'Votre coiffeur sur le port de La Seyne-sur-Mer. SC Coiffure, experts capillaires pour tous. Ambiance conviviale, tarifs exceptionnels. Avec ou sans rendez-vous, découvrez notre savoir-faire';
+  'SC Coiffure, votre coiffeur de confiance sur le port de La Seyne-sur-Mer. Avec ou sans rendez-vous, profitez de notre expertise pour sublimer votre style.';
 export const title = 'SC Coiffure - Votre coiffeur à La Seyne-sur-Mer';
 
 const keywords = [
