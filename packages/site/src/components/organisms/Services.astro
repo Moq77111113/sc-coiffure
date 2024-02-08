@@ -2,25 +2,29 @@
 import { Icon } from "astro-icon";
 import ContentSection from "~/components/molecules/ContentSection.astro";
 import type { Service } from "~/types";
-
+import room from '~/assets/room.jpeg';
+import { Image } from 'astro:assets';
 const services: Array<Service> = [
   {
     title: "Excellence des produits français",
     description:
       "Dans notre salon, l'authenticité règne. Des produits français de qualité dans une atmosphère chaleureuse, pour une expérience locale.",
     icon: "openmoji:flag-france",
+    image: undefined,
   },
   {
     title: "En toute amitié",
     description:
       "Des coupes qui riment avec convivialité. On travaille sur votre style dans une ambiance amicale et détendue.",
     icon: "mdi:account-group",
+    image: undefined,
   },
   {
     title: "Ambiance conviviale près de chez vous ",
     description:
       "Offrez-vous une pause bien-être sans aller loin. Des soins de qualité, à deux pas de chez vous.",
-    icon: "mdi:coffee",
+    icon: undefined,
+    image: room,
   },
 ];
 ---
@@ -33,11 +37,18 @@ const services: Array<Service> = [
   </Fragment>
   <ul class="grid max-w-6xl grid-cols-1 sm:grid-cols-2">
     {
-      services.map(({ title, description, icon }, i ) => (
+      services.map(({ title, description, icon, image }, i ) => (
         <li class=`flex flex-col items-center gap-4 p-6 ${services.length % 2 !== 0 && i === services.length -1 ? "sm:col-span-2 sm:mx-auto" : ""}`>
-          <div class="h-24 w-24 rounded-full border-2 border-offset p-3">
-            <Icon name={icon} class="text-offset" />
-          </div>
+          {icon  && <div class="h-32 w-32 rounded-full border-2 border-offset p-4">
+           <Icon name={icon} class="text-offset " />
+          </div>}
+            {image && <Image src={image} alt={title}
+            class="h-32 w-32 rounded-full border-2 border-offset pointer-events-none"
+            densities={[1.5, 2]}
+            sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw"
+            quality={'high'}
+            format={image.format} />}
+       
           <p class="text-center font-extrabold text-primary text-lg">{title}</p>
           <p class="text-center text-offset text-xs">{description}</p>
         </li>
