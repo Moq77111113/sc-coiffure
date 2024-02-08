@@ -6,6 +6,7 @@ export const description =
   'SC Coiffure, votre coiffeur de confiance sur le port de La Seyne-sur-Mer. Avec ou sans rendez-vous, profitez de notre expertise pour sublimer votre style.';
 export const title = 'SC Coiffure - Votre coiffeur à La Seyne-sur-Mer';
 
+const siteName = 'SC Coiffure';
 const keywords = [
   'Coiffure',
   'Coiffeur',
@@ -46,8 +47,8 @@ const keywords = [
 
 const schema = ({ canonical, image }: { canonical: URL; image: URL }) => ({
   '@context': ['http://schema.org', { '@language': 'fr-fr' }],
-  '@type': 'BeautySalon',
-  name: title,
+  '@type': 'HairSalon',
+  name: siteName,
   description: description,
   image: image,
   url: canonical,
@@ -90,4 +91,5 @@ export const seo = {
   description,
   title,
   schema,
+  siteName,
 };
