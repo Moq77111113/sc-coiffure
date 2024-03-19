@@ -1,12 +1,11 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import ContentSection from '~/components/molecules/ContentSection.astro';
 import { companyName } from '~/constants/seo';
 type CTAElement = {
   label: string;
   href: string;
   icon: {
-    pack: string;
     name: string;
   };
 };
@@ -16,24 +15,21 @@ const ctas: CTAElement[] = [
     label: 'Découvrir nos services',
     href: '/#services',
     icon: {
-      pack: 'mdi',
-      name: 'scissors',
+      name: 'mdi:scissors',
     },
   },
   {
     label: 'Découvrir nos produits',
     href: '/#products',
     icon: {
-      pack: 'mdi',
-      name: 'lotion',
+      name: 'mdi:lotion',
     },
   },
   {
     label: 'Consulter nos tarifs',
     href: '#prices',
     icon: {
-      pack: 'mdi',
-      name: 'euro',
+      name: 'mdi:euro',
     },
   },
 ];
@@ -46,7 +42,7 @@ const ctas: CTAElement[] = [
     </h2>
   </Fragment>
 
-  <Icon slot="eyebrow" name="logomark" class="text-default h-48" />
+  <Icon slot="eyebrow" name="logomark" class="text-default size-32" />
   <div class="container flex items-center justify-center">
     <div class="text-text flex max-w-xl flex-col gap-4 text-center text-sm">
       <p>
@@ -87,7 +83,7 @@ const ctas: CTAElement[] = [
               : ''
           }`}
         >
-          <Icon pack={cta.icon.pack} name={cta.icon.name} class="h-10" />
+          <Icon name={cta.icon.name} class="size-10" />
           <span class="m-auto  text-center font-medium">{cta.label}</span>
         </a>
       ))

@@ -2,8 +2,8 @@
 import { Image } from 'astro:assets';
 import ContentSection from '~/components/molecules/ContentSection.astro';
 
-import loreal from '~/assets/products/loreal.png';
 import ghd from '~/assets/products/ghd.png';
+import loreal from '~/assets/products/loreal.png';
 import subtil from '~/assets/products/subtil.png';
 import Link from '~/components/atoms/Link.svelte';
 
@@ -33,18 +33,20 @@ const products = [
   >
     {
       products.map((_) => (
-        <Link href={_.href} newTab title={_.name}>
-          <Image
-            class="pointer-events-none h-full w-full rounded-md object-cover dark:invert"
-            src={_.image}
-            alt={_.name}
-            width={_.image.width / 2}
-            densities={[1.5, 2]}
-            sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw"
-            quality={'hight'}
-            format="png"
-          />
-        </Link>
+        <li>
+          <Link href={_.href} newTab title={_.name}>
+            <Image
+              class="pointer-events-none h-full w-full rounded-md object-cover dark:invert"
+              src={_.image}
+              alt={_.name}
+              width={_.image.width / 2}
+              densities={[1.5, 2]}
+              sizes="(min-width: 0px) and (max-width: 480px) 480px, (min-width: 481px) 600px, 100vw"
+              quality={'hight'}
+              format="png"
+            />
+          </Link>
+        </li>
       ))
     }
   </ul>
