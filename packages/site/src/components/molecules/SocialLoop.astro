@@ -1,6 +1,6 @@
 ---
 import type { FooterLink } from '~/types';
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import Link from '~/components/atoms/Link.svelte';
 interface Props {
   links: Array<FooterLink>;
@@ -37,7 +37,7 @@ const { links } = Astro.props;
         }`}
       >
         <Link href={link.url} title={link.description} newTab={true}>
-          <Icon name={link.icon} class="h-full" />
+          <Icon name={link.icon} class="size-full" />
           <span class="sr-only">{link.description}</span>
         </Link>
       </li>

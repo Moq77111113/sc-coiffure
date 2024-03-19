@@ -1,18 +1,16 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import ThemeSwitcher from '~/components/atoms/ThemeSwitcher.astro';
 import type { FooterLink, NavItem } from '~/types';
-import SocialList from '~/components/molecules/SocialList.astro';
 import Social from '~/components/molecules/SocialLoop.astro';
 import { social } from '~/constants/social';
 import Share from '../molecules/Share.svelte';
-import { getRandomPost } from '~/services/ig/posts';
 
 const links: Array<FooterLink> = [
   {
     url: social.instagram,
     description: 'Instagram',
-    icon: 'uil:instagram-alt',
+    icon: 'mdi:instagram',
   },
   {
     url: social.facebook,
@@ -38,7 +36,7 @@ const links: Array<FooterLink> = [
 >
   <a class="hover:!text-default flex items-center gap-3" href="/">
     <h1 class="sr-only">SC Coiffure</h1>
-    <Icon name="logomark" class="h-16" />
+    <Icon name="logomark" class="size-16" />
   </a>
   <div>
     <div class="flex items-center gap-6">

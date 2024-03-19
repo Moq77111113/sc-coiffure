@@ -1,5 +1,5 @@
 ---
-import { Icon } from "astro-icon";
+import { Icon } from "astro-icon/components";
 import ContentSection from "~/components/molecules/ContentSection.astro";
 import type { Service } from "~/types";
 
@@ -35,8 +35,8 @@ const services: Array<Service> = [
     {
       services.map(({ title, description, icon }, i ) => (
         <li class=`flex flex-col items-center gap-4 p-6 ${services.length % 2 !== 0 && i === services.length -1 ? "sm:col-span-2 sm:mx-auto" : ""}`>
-          <div class="h-24 w-24 rounded-full border-2 border-offset p-3">
-            <Icon name={icon} class="text-offset" />
+          <div class="h-24 w-24 rounded-full border-2 border-offset p-3 flex items-center justify-center">
+            <Icon name={icon} class="text-offset  h-12 w-12" />
           </div>
           <p class="text-center font-extrabold text-primary text-lg">{title}</p>
           <p class="text-center text-offset text-xs">{description}</p>

@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon';
+import { Icon } from 'astro-icon/components';
 import type { FooterLink } from '~/types';
 interface Props {
   links: Array<FooterLink>;
@@ -18,7 +18,7 @@ const { links } = Astro.props;
           rel="noopener, noreferrer"
         >
           <span class="sr-only">{link.description}</span>
-          <Icon class="h-full" name={link.icon} />
+          <Icon class="size-full" name={link.icon} />
         </a>
       </li>
     ))
