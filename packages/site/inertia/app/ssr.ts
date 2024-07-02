@@ -1,9 +1,10 @@
-
+import { PageProps } from '@adonisjs/inertia/types'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { renderToString } from '@vue/server-renderer'
 import { createSSRApp, h, type DefineComponent } from 'vue'
+import { Page } from '@inertiajs/core'
 
-export default function render(page: any) {
+export default function render(page: Page<PageProps>) {
   return createInertiaApp({
     page,
     render: renderToString,
