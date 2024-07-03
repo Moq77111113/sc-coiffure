@@ -1,8 +1,9 @@
 import { Brands } from './brands'
-import { Phone } from 'lucide-vue-next'
+import { Phone, ArrowRight } from 'lucide-vue-next'
 const Icons = {
   ...Brands,
   Phone,
+  ArrowRight,
 }
 
 export { Icons, Brands as BrandIcons }

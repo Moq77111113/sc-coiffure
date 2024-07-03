@@ -18,7 +18,7 @@ const team = ref([
 </script>
 
 <template>
-  <section id="us" class="w-full py-12 md:py-24 lg:py-32">
+  <section id="us" class="w-full py-12 md:py-24">
     <div class="container px-4 md:px-6">
       <div
         class="flex flex-col sm:flex-row items-center justify-center sm:space-x-12 md:space-x-24"
