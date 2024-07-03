@@ -15,12 +15,12 @@ defineProps<{ version: number }>()
 <template>
   <Head title="SC Coiffure" />
   <Layout>
-    <main>
+    <main class="relative">
+
       <Hero />
       <Schedule />
       <RealisationsSection />
-      <SalonSection />
-
+      <SalonSection />   
       <section id="contact" class="w-full py-12 md:py-24 lg:py-32 bg-muted">
         <div class="container px-4 md:px-6">
           <div class="flex flex-col items-center justify-center space-y-4 text-center">

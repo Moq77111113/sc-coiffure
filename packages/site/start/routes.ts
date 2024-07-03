@@ -12,3 +12,4 @@ import router from '@adonisjs/core/services/router'
 const Home = () => import('#controllers/home_controller')
 
 router.get('/', [Home, 'index'])
+router.get('/sbx', [Home, 'sbx'])

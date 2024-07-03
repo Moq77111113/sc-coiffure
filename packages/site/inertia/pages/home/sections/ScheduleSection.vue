@@ -11,7 +11,7 @@ const schedule = ref({
 <template>
   <section id="schedule" class="w-full py-8 md:py-12 lg:py-20 bg-muted text-muted-foreground">
     <div class="container w-full sm:px-4 md:px-6">
-      <div class="grid grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="space-y-2 flex flex-col items-end justify-self-end">
           <h2 class="font-handwritten tracking-wider text-xl/relaxed md:text-3xl/relaxed">
             Les Horaires
@@ -22,8 +22,8 @@ const schedule = ref({
         <div class="px-6 md:px-8 lg:px-12">
           <ul class="list-none">
             <li v-for="[day, hours] in Object.entries(schedule)" :key="day">
-              <div class="flex justify-between text-2xl/relaxed py-4">
-                <h3 class="text-2xl/relaxed">{{ day }}</h3>
+              <div class="flex justify-between text-xl/tight md:text-2xl/relaxed py-4">
+                <h3>{{ day }}</h3>
                 <span v-if="!hours.length">Fermé</span>
                 <span v-else>{{ hours[0] }} - {{ hours[1] }}</span>
               </div>

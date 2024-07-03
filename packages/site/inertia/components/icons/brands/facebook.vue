@@ -5,5 +5,5 @@ const props = defineProps<{ class?: string; fill?: string }>()
 </script>
 
 <template>
-  <svg v-html="siFacebook.svg" :class="props.class" :fill="props.fill" />
+  <svg :class="props.class" :fill="props.fill" v-html="siFacebook.svg" />
 </template>
