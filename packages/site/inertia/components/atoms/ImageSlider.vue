@@ -7,15 +7,17 @@ type Picture = {
   alt: string
 }
 type Props = {
-  size?: number
+  height?: number
+  width?: number
   pictures: Picture[]
   delay?: number
   loop?: boolean
 }
-const { pictures, delay, loop, size } = withDefaults(defineProps<Props>(), {
+const { pictures, delay, loop, height, width } = withDefaults(defineProps<Props>(), {
   delay: 1500,
   loop: true,
-  size: 256,
+  height: 384,
+  width: 256,
 })
 </script>
 
@@ -34,15 +36,13 @@ const { pictures, delay, loop, size } = withDefaults(defineProps<Props>(), {
         :key="index"
         class="basis-1/2 md:basis-1/3 lg:basis-1/6"
       >
-        <div class="p-1 shadow-md h-[256px]">
-          <img
-            :src="src"
-            :alt="alt"
-            :height="size"
-            :width="size"
-            class="size-full object-cover rounded-sm"
-          />
-        </div>
+        <img
+          :src="src"
+          :alt="alt"
+          :height="height"
+          :width="width"
+          class="size-full object-cover aspect-[3/4] rounded-sm shadow-xl"
+        />
       </CarouselItem>
     </CarouselContent>
   </Carousel>

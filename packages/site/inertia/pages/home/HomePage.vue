@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Head, Link } from '@inertiajs/vue3'
+import { Head } from '@inertiajs/vue3'
 import { Textarea } from '~/components/ui/textarea'
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
@@ -16,11 +16,10 @@ defineProps<{ version: number }>()
   <Head title="SC Coiffure" />
   <Layout>
     <main class="relative">
-
       <Hero />
       <Schedule />
       <RealisationsSection />
-      <SalonSection />   
+      <SalonSection />
       <section id="contact" class="w-full py-12 md:py-24 lg:py-32 bg-muted">
         <div class="container px-4 md:px-6">
           <div class="flex flex-col items-center justify-center space-y-4 text-center">
@@ -47,14 +46,5 @@ defineProps<{ version: number }>()
         </div>
       </section>
     </main>
-    <footer
-      class="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t"
-    >
-      <p class="text-xs text-muted-foreground">&copy; 2024 Salon Chic. All rights reserved.</p>
-      <nav class="sm:ml-auto flex gap-4 sm:gap-6">
-        <Link href="#" class="text-xs hover:underline underline-offset-4"> Privacy Policy </Link>
-        <Link href="#" class="text-xs hover:underline underline-offset-4"> Terms of Service </Link>
-      </nav>
-    </footer>
   </Layout>
 </template>
