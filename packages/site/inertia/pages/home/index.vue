@@ -3,8 +3,8 @@ import { Head, Link } from '@inertiajs/vue3'
 import { Textarea } from '~/components/ui/textarea'
 import { Input } from '~/components/ui/input'
 import { Button } from '~/components/ui/button'
-import Layout from '~/layout.vue'
-import Header from '~/header.vue'
+import Layout from '~/components/layout/layout.vue'
+import Hero from '~/components/layout/Hero.vue'
 defineProps<{ version: number }>()
 
 
@@ -14,38 +14,9 @@ defineProps<{ version: number }>()
 
   <Head title="SC Coiffure" />
   <Layout>
-    <Header />
+    <main>
+      <Hero />
 
-
-    <main class="flex-1">
-      <section class="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-        <div class="container px-4 md:px-6">
-          <div class="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-            <div class="flex flex-col justify-center space-y-4">
-              <div class="space-y-2">
-                <h1 class="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                  Elevate Your Hair with Salon Chic
-                </h1>
-                <p class="max-w-[600px] text-muted-foreground md:text-xl">
-                  Experience the finest hair care services in town, crafted by our talented team of stylists.
-                </p>
-              </div>
-              <div class="flex flex-col gap-2 min-[400px]:flex-row">
-                <Link href="#"
-                  class="inline-flex h-10 items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-                Explore Services
-                </Link>
-                <Link href="#"
-                  class="inline-flex h-10 items-center justify-center rounded-md border border-input bg-background px-8 text-sm font-medium shadow-sm transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50">
-                Book Appointment
-                </Link>
-              </div>
-            </div>
-            <img src="https://generated.vusercontent.net/placeholder.svg" width="550" height="550" alt="Hero"
-              class="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square" />
-          </div>
-        </div>
-      </section>
       <section id="services" class="w-full py-12 md:py-24 lg:py-32 bg-muted">
         <div class="container px-4 md:px-6">
           <div class="flex flex-col items-center justify-center space-y-4 text-center">
