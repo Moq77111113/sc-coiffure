@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Great+Vibes&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,6 +7,7 @@
   :root {
     --font-heading: 'Manrope';
     --font-body: 'Manrope';
+    --font-handwritten: 'Great Vibes';
     --background: 60 5% 94%;
     --foreground: 240 5% 10%;
     --primary: 240 0% 10%;

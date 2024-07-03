@@ -20,13 +20,14 @@ const sections = ref([
     <nav class="flex justify-center self-end flex-grow gap-4 sm:gap-6">
       <Link
         v-for="{ name, href } in sections"
+        :key="name"
         :href="href"
         class="text-sm font-bold hover:underline underline-offset-4"
       >
         {{ name }}
       </Link>
     </nav>
-    <div class="flex space-x-2">
+    <div class="flex space-x-4">
       <a href="#" target="_blank" rel="noopener, noreferrer"
         ><BrandIcons.facebook class="size-6"
       /></a>

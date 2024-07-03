@@ -18,7 +18,7 @@ export default ts.config(
   js.configs.recommended,
   ...ts.configs.recommended,
   ...vue.configs['flat/recommended'],
-  ...prettier,
+  prettier,
   {
     files: ['**/*.vue'],
     languageOptions: {
