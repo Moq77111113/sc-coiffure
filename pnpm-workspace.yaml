@@ -1,4 +1,5 @@
 packages:
   - 'packages/site'
+  - 'packages/site-v1'
   - 'packages/cli'
   - 'packages/core'
