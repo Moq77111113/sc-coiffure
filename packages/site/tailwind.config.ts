@@ -84,6 +84,9 @@ const config = {
           '100%': { opacity: '1' },
         },
       },
+      boxShadowColor: {
+        story: '',
+      },
 
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',

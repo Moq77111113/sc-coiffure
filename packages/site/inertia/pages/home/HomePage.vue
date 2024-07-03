@@ -7,6 +7,7 @@ import Schedule from './sections/ScheduleSection.vue'
 import SalonSection from './sections/SalonSection.vue'
 import RealisationsSection from './sections/RealisationsSection.vue'
 import ServiceSection from './sections/ServiceSection.vue'
+import IGSection from './sections/IGSection.vue'
 defineProps<{ version: number }>()
 </script>
 
@@ -19,6 +20,7 @@ defineProps<{ version: number }>()
       <RealisationsSection />
       <SalonSection />
       <ServiceSection />
+      <IGSection />
     </main>
   </Layout>
 </template>
