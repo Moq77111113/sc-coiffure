@@ -2,6 +2,6 @@ import type { HttpContext } from '@adonisjs/core/http'
 
 export default class UsersController {
   async index({ inertia }: HttpContext) {
-    return inertia.render('home/index', { version: 1 })
+    return inertia.render('home/HomePage', { version: 1 })
   }
 }

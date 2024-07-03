@@ -13,11 +13,10 @@ const schedule = ref({
     <div class="container w-full sm:px-4 md:px-6">
       <div class="grid grid-cols-2 gap-8">
         <div class="space-y-2 flex flex-col items-end justify-self-end">
-          <h2 class="text-xl font-bold tracking-wide sm:text-2xl">La Seyne</h2>
-          <div class="w-12 h-2 rounded-sm bg-accent-foreground" />
-          <p class="font-handwritten tracking-wider text-xl/relaxed md:text-3xl/relaxed">
+          <h2 class="font-handwritten tracking-wider text-xl/relaxed md:text-3xl/relaxed">
             Les Horaires
-          </p>
+          </h2>
+          <div class="w-12 h-2 rounded-sm bg-accent-foreground" />
         </div>
 
         <div class="px-6 md:px-8 lg:px-12">

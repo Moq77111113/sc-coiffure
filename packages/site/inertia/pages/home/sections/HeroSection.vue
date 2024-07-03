@@ -31,7 +31,7 @@ import { Link } from '@inertiajs/vue3'
           width="550"
           height="550"
           alt="Salon SC Coiffure"
-          class="animate-fade-in mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
+          class="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
         />
       </div>
     </div>
