@@ -1,5 +1,6 @@
 import { Config } from 'tailwindcss'
 import animate from 'tailwindcss-animate'
+import typography from '@tailwindcss/typography'
 
 import defaultTheme from 'tailwindcss/defaultTheme.js'
 
@@ -97,7 +98,7 @@ const config = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, typography],
 } satisfies Config
 
 export default config
