@@ -13,11 +13,13 @@ const schedule = ref({
     id="schedule"
     class="w-full bg-muted py-8 text-muted-foreground md:py-12 lg:py-20"
   >
-    <div class="container w-full space-y-4 sm:px-4 md:space-y-8 md:px-6">
+    <div class="container w-full space-y-8 sm:px-4 md:space-y-8 md:px-6">
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
-        <div class="flex flex-col items-end space-y-2 justify-self-end">
+        <div
+          class="flex flex-col items-end space-y-2 justify-self-center sm:justify-self-end"
+        >
           <h2
-            class="font-handwritten text-xl/relaxed tracking-wider md:text-3xl/relaxed"
+            class="font-handwritten text-2xl/relaxed tracking-wider md:text-3xl/relaxed"
           >
             Les informations
           </h2>
@@ -26,11 +28,13 @@ const schedule = ref({
 
         <div class="px-6 md:mt-8 md:px-8 lg:px-12">
           <div
-            class="flex flex-col justify-between space-y-4 py-4 text-xl/relaxed"
+            class="flex flex-col justify-between space-y-4 py-4 text-base sm:text-xl/tight md:text-xl/relaxed"
           >
             <span class="flex items-center justify-between"
               ><Icons.Map />
-              <p>5 Avenue Garibaldi, 83500 La Seyne-sur-Mer</p></span
+              <p class="line-clamp-1 whitespace-nowrap">
+                5 Avenue Garibaldi, 83500 La Seyne-sur-Mer
+              </p></span
             >
             <div class="my-2 h-[0.2pt] w-full bg-muted-foreground" />
 
@@ -49,10 +53,10 @@ const schedule = ref({
 
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div
-          class="flex flex-col items-end space-y-2 justify-self-start md:order-2"
+          class="flex flex-col items-end space-y-2 justify-self-center sm:justify-self-start md:order-2"
         >
           <h2
-            class="font-handwritten text-xl/relaxed tracking-wider md:text-3xl/relaxed"
+            class="font-handwritten text-2xl/relaxed tracking-wider md:text-3xl/relaxed"
           >
             Les Horaires
           </h2>
@@ -63,7 +67,7 @@ const schedule = ref({
           <ul class="list-none">
             <li v-for="[day, hours] in Object.entries(schedule)" :key="day">
               <div
-                class="flex justify-between py-4 text-xl/tight md:text-2xl/relaxed"
+                class="line-clamp-1 flex justify-between py-4 text-base sm:text-xl/tight md:text-xl/relaxed"
               >
                 <h3>{{ day }}</h3>
                 <span v-if="!hours.length">Fermé</span>

@@ -31,7 +31,7 @@ const pics = ref(
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
+        <div class="grid grid-cols-3 gap-2 md:grid-cols-4">
           <template v-for="pic in pics" :key="pic.src">
             <img
               loading="lazy"

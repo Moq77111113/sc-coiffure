@@ -27,7 +27,7 @@ const services = [
         class="flex flex-col items-center justify-center space-y-6 text-center"
       >
         <span
-          class="font-handwritten tracking-wider text-xl/relaxed md:text-3xl/relaxed rotate-2"
+          class="rotate-2 font-handwritten text-2xl/relaxed tracking-wider md:text-3xl/relaxed"
         >
           Découvrez
         </span>
@@ -35,21 +35,27 @@ const services = [
           Nos services
         </h2>
 
-        <div class="grid sm:grid-cols-3 gap-8 py-4">
-          <template v-for="{ src, alt, name } in services" :key="name">
+        <div class="grid grid-cols-2 gap-8 py-4 sm:grid-cols-3">
+          <template v-for="({ src, alt, name }, idx) in services" :key="name">
             <div
-              class="flex flex-col items-center justify-center space-y-4 text-center"
+              :class="[
+                'm-auto flex flex-col space-y-4',
+                {
+                  'col-span-2 md:col-span-1':
+                    !!(services.length % 2) && idx === 0,
+                },
+              ]"
             >
               <h3 class="text-xl font-bold tracking-tighter">{{ name }}</h3>
               <img
                 loading="lazy"
                 :src="src"
                 :alt="alt"
-                class="hover:brightness-125"
+                class="size-[256px] hover:brightness-125 md:size-full"
               />
               <Link
                 href="#"
-                class="mr-2 self-start flex items-center text-md font-bold tracking-tighter"
+                class="text-md mr-2 flex items-center self-start font-bold tracking-tighter"
                 >Voir les prix<Icons.ArrowRight class="ml-2 size-4"
               /></Link>
             </div>
