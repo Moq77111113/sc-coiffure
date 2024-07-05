@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const pics = ref(
   Array(12)
-    .fill("")
+    .fill('')
     .map((_, index) => ({
       src: `https://picsum.photos/seed/${index}/256`,
       alt: `Image ${index}`,
-    })),
+    }))
 );
 </script>
 
@@ -20,6 +20,7 @@ const pics = ref(
             class="relative size-16 rounded-full bg-gradient-to-r from-yellow-200 to-pink-600 p-1"
           >
             <img
+              loading="lazy"
               class="h-full w-full rounded-full"
               src="https://images.unsplash.com/photo-1534430480872-3498386e7856?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
               alt="@sccoiffure"
@@ -33,6 +34,7 @@ const pics = ref(
         <div class="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4">
           <template v-for="pic in pics" :key="pic.src">
             <img
+              loading="lazy"
               :src="pic.src"
               :alt="pic.alt"
               class="h-full w-full object-cover"
