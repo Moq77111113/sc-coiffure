@@ -35,13 +35,13 @@ const services = [
           Nos services
         </h2>
 
-        <div class="grid grid-cols-2 gap-8 py-4 sm:grid-cols-3">
+        <div class="grid gap-8 py-4 min-[450px]:grid-cols-2 md:grid-cols-3">
           <template v-for="({ src, alt, name }, idx) in services" :key="name">
             <div
               :class="[
                 'm-auto flex flex-col space-y-4',
                 {
-                  'col-span-2 md:col-span-1':
+                  'min-[450px]:col-span-2 md:col-span-1':
                     !!(services.length % 2) && idx === 0,
                 },
               ]"

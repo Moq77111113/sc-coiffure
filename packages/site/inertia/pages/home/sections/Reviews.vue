@@ -94,7 +94,7 @@ function getFillPercentage(score: number, starIndex: number) {
         </span>
         <article class="flex flex-col space-y-6">
           <Carousel
-            class="relative mx-auto w-full max-w-[400px] py-6 md:max-w-[900px] xl:max-w-full"
+            class="relative mx-auto w-full max-w-[300px] py-6 sm:max-w-[400px] md:max-w-[900px] xl:max-w-full"
             :opts="{
               align: 'center',
               loop,

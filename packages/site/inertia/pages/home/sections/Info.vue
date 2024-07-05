@@ -28,12 +28,13 @@ const schedule = ref({
 
         <div class="px-6 md:mt-8 md:px-8 lg:px-12">
           <div
-            class="flex flex-col justify-between space-y-4 py-4 text-base sm:text-xl/tight md:text-xl/relaxed"
+            class="m flex flex-col justify-between space-y-4 py-4 text-base sm:text-xl/tight md:text-xl/relaxed"
           >
             <span class="flex items-center justify-between"
               ><Icons.Map />
-              <p class="line-clamp-1 whitespace-nowrap">
-                5 Avenue Garibaldi, 83500 La Seyne-sur-Mer
+              <p class="text-right">
+                5 Avenue Garibaldi<br />
+                83500 La Seyne-sur-Mer
               </p></span
             >
             <div class="my-2 h-[0.2pt] w-full bg-muted-foreground" />

@@ -1,10 +1,14 @@
 <script setup lang="ts">
-import { Button } from '~/components/ui/button'
-import { Popover, PopoverContent, PopoverTrigger } from '~/components/ui/popover'
+import { Button } from '~/components/ui/button';
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from '~/components/ui/popover';
 
-import { Link } from '@inertiajs/vue3'
-import { ref } from 'vue'
-import LogoComponent from './LogoComponent.vue'
+import { Link } from '@inertiajs/vue3';
+import { ref } from 'vue';
+import LogoComponent from './LogoComponent.vue';
 
 const sections = ref([
   { name: 'Horaires', href: '#schedule' },
@@ -12,21 +16,21 @@ const sections = ref([
   { name: 'Services', href: '#services' },
   { name: 'Réalisations', href: '#portfolio' },
   { name: 'Contact', href: '#contact' },
-])
+]);
 </script>
 <template>
   <Popover>
     <PopoverTrigger as-child>
       <Button
         variant="ghost"
-        class="mr-2 px-2 text-base flex-shrink-0 hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
+        class="mr-2 shrink-0 px-2 text-base hover:bg-transparent focus-visible:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 md:hidden"
       >
         <svg
           strokeWidth="1.5"
           viewBox="0 0 24 24"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
+          class="size-5"
         >
           <path
             d="M3 5H11"
@@ -56,7 +60,7 @@ const sections = ref([
     <PopoverContent
       :side-offset="4"
       align="start"
-      class="w-64 bg-muted text-muted-foreground border-none"
+      class="w-64 space-y-4 border-none bg-muted text-muted-foreground"
     >
       <LogoComponent />
       <div class="flex flex-col space-y-2">
@@ -64,7 +68,7 @@ const sections = ref([
           <Link :href="item.href">
             {{ item.name }}
           </Link>
-          <div class="w-12 h-[0.2pt] bg-muted-foreground/70 my-2" />
+          <div class="my-2 h-[0.2pt] w-12 bg-muted-foreground/70" />
         </div>
       </div>
     </PopoverContent>

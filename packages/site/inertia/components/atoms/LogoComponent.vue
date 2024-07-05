@@ -6,7 +6,12 @@ const props = defineProps<{ class?: string }>();
 <template>
   <a
     href="/"
-    class="mr-4 flex items-center md:mr-2 lg:mr-6 lg:space-x-1 xl:space-x-2"
+    :class="
+      cn(
+        'mr-4 flex items-center md:mr-2 lg:mr-6 lg:space-x-1 xl:space-x-2',
+        props.class
+      )
+    "
   >
     <svg
       version="1.0"
@@ -15,7 +20,7 @@ const props = defineProps<{ class?: string }>();
       height="161.000000pt"
       viewBox="0 0 159.000000 161.000000"
       preserveAspectRatio="xMidYMid meet"
-      :class="cn('size-14', props.class)"
+      class="size-14"
     >
       <g
         transform="translate(0.000000,161.000000) scale(0.100000,-0.100000)"
