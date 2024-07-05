@@ -21,7 +21,7 @@ const pics = ref(
           >
             <img
               loading="lazy"
-              class="h-full w-full rounded-full"
+              class="size-full rounded-full"
               src="https://images.unsplash.com/photo-1534430480872-3498386e7856?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
               alt="@sccoiffure"
             />
@@ -37,7 +37,7 @@ const pics = ref(
               loading="lazy"
               :src="pic.src"
               :alt="pic.alt"
-              class="h-full w-full object-cover"
+              class="size-full object-cover"
             />
           </template>
         </div>

@@ -49,7 +49,7 @@ const { pictures, delay, loop, height, width } = withDefaults(
           :alt="alt"
           :height="height"
           :width="width"
-          class="size-full object-cover aspect-[3/4] rounded-sm shadow-xl"
+          class="aspect-[3/4] size-full rounded-sm object-cover shadow-xl"
         />
       </CarouselItem>
     </CarouselContent>

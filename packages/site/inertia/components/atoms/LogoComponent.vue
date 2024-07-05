@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import { cn } from '~/lib/utils'
-const props = defineProps<{ class?: string }>()
+import { cn } from '~/lib/utils';
+const props = defineProps<{ class?: string }>();
 </script>
 
 <template>
-  <a href="/" class="mr-4 md:mr-2 lg:mr-6 flex items-center lg:space-x1 xl:space-x-2">
+  <a
+    href="/"
+    class="mr-4 flex items-center md:mr-2 lg:mr-6 lg:space-x-1 xl:space-x-2"
+  >
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
@@ -14,7 +17,10 @@ const props = defineProps<{ class?: string }>()
       preserveAspectRatio="xMidYMid meet"
       :class="cn('size-14', props.class)"
     >
-      <g transform="translate(0.000000,161.000000) scale(0.100000,-0.100000)" stroke="none">
+      <g
+        transform="translate(0.000000,161.000000) scale(0.100000,-0.100000)"
+        stroke="none"
+      >
         <path
           fill="currentColor"
           d="M602 1566 c-280 -75 -507 -302 -578 -581 -28 -111 -23 -295 11 -410

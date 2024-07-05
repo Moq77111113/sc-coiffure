@@ -48,4 +48,8 @@
   h6 {
     @apply font-heading;
   }
+
+  img {
+    @apply pointer-events-none;
+  }
 }

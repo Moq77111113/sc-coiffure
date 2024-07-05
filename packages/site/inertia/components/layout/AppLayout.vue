@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Header from './AppHeader.vue'
-import Footer from './AppFooter.vue'
+import Header from './AppHeader.vue';
+import Footer from './AppFooter.vue';
 </script>
 <template>
   <div class="relative flex min-h-dvh flex-col">
