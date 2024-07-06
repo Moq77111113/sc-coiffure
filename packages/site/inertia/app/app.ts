@@ -10,6 +10,7 @@ import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 
 import { InertiaProgress } from "@inertiajs/progress";
 const appName = import.meta.env.VITE_APP_NAME || ''
+import.meta.glob(['./assets/**'])
 
 InertiaProgress.init()
 

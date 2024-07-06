@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite';
 import { getDirname } from '@adonisjs/core/helpers';
 import inertia from '@adonisjs/inertia/client';
-import vue from '@vitejs/plugin-vue';
 import adonisjs from '@adonisjs/vite/client';
+import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
 
-import tailwind from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
+import tailwind from 'tailwindcss';
 
 export default defineConfig({
   plugins: [
@@ -13,7 +13,7 @@ export default defineConfig({
     vue(),
     adonisjs({
       entrypoints: ['inertia/app/app.ts'],
-      reload: ['resources/views/**/*.edge'],
+      reload: ['resources/views/**/*.edge', 'inertia/app/app.ts'],
     }),
   ],
   css: {

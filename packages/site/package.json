@@ -52,7 +52,7 @@
     "eslint-plugin-vue": "^9.27.0",
     "globals": "^15.8.0",
     "hot-hook": "^0.2.6",
-    "pino-pretty": "^11.2.1",
+
     "postcss": "^8.4.39",
     "prettier": "^3.3.2",
     "prettier-eslint": "^16.3.0",
@@ -84,6 +84,7 @@
     "@vueuse/core": "^10.11.0",
     "better-sqlite3": "^11.1.1",
     "class-variance-authority": "^0.7.0",
+    "pino-pretty": "^11.2.1",
     "clsx": "^2.1.1",
     "edge.js": "^6.0.2",
     "embla-carousel-autoplay": "^8.1.6",

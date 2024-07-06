@@ -88,6 +88,7 @@ export default defineConfig({
       pattern: 'resources/views/**/*.edge',
       reloadServer: false,
     },
+    { pattern: 'resources/assets/**', reloadServer: false },
     {
       pattern: 'public/**',
       reloadServer: false,
