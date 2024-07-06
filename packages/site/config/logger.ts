@@ -2,7 +2,6 @@ import env from "#start/env";
 import { defineConfig, targets } from "@adonisjs/core/logger";
 import app from "@adonisjs/core/services/app";
 
-console.log(app.inProduction, "ici");
 const loggerConfig = defineConfig({
   default: "app",
 

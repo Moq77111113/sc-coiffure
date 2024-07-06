@@ -2,7 +2,27 @@
   "extends": "@adonisjs/tsconfig/tsconfig.app.json",
   "compilerOptions": {
     "rootDir": "./",
-    "outDir": "./build"
+    "outDir": "./build",
+    "paths": {
+      "#app/*.js": ["./app/*.js"],
+      "#controllers/*.js": ["./app/controllers/*.js"],
+      "#exceptions/*.js": ["./app/exceptions/*.js"],
+      "#models/*.js": ["./app/models/*.js"],
+      "#instagram/*.js": ["./app/instagram/*.js"],
+      "#mails/*.js": ["./app/mails/*.js"],
+      "#services/*.js": ["./app/services/*.js"],
+      "#listeners/*.js": ["./app/listeners/*.js"],
+      "#events/*.js": ["./app/events/*.js"],
+      "#middleware/*.js": ["./app/middleware/*.js"],
+      "#validators/*.js": ["./app/validators/*.js"],
+      "#providers/*.js": ["./providers/*.js"],
+      "#policies/*.js": ["./app/policies/*.js"],
+      "#abilities/*.js": ["./app/abilities/*.js"],
+      "#database/*.js": ["./database/*.js"],
+      "#tests/*.js": ["./tests/*.js"],
+      "#start/*.js": ["./start/*.js"],
+      "#config/*.js": ["./config/*.js"]
+    }
   },
   "exclude": ["./inertia/**/*", "node_modules", "build"]
 }
