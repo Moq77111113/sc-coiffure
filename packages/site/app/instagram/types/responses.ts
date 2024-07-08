@@ -10,7 +10,14 @@ type LongToken = {
   expires_in: number;
 };
 
+type RefreshToekn = {
+  access_token: string;
+  token_type: string;
+  expires_in: number;
+  permissions: string[];
+};
 export type Token = {
   Short: ShortToken;
   Long: LongToken;
+  Refresh: RefreshToekn;
 };

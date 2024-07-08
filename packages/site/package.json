@@ -74,6 +74,7 @@
     "@vinejs/vine": "^2.1.0",
     "@vue/server-renderer": "^3.4.31",
     "@vueuse/core": "^10.11.0",
+    "adonisjs-scheduler": "^1.0.5",
     "better-sqlite3": "^11.1.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",

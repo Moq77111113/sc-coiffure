@@ -1,7 +1,7 @@
 import { db } from '#core/services/db';
 
 export default class TokenRepository {
-  public async add(key: string, value: string, expires?: string) {
+  public async addOrUpdate(key: string, value: string, expires?: string) {
     const now = Date.now().toString();
     return await db
       .insertInto('tokens')
@@ -19,6 +19,14 @@ export default class TokenRepository {
           expires_at: expires,
         }))
       )
+      .executeTakeFirst();
+  }
+
+  public async getOne(key: string) {
+    return await db
+      .selectFrom('tokens')
+      .select('token')
+      .where('name', '=', key)
       .executeTakeFirst();
   }
 }

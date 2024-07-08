@@ -15,12 +15,22 @@ export default class InstagramTokenService {
     const { access_token: long, expires_in } =
       await this.api.exchangeShortTokenForLongToken(access_token);
 
-    const r = await this.tokenRepo.add(
+    await this.tokenRepo.addOrUpdate('INSTAGRAM', long, expires_in.toString());
+  }
+
+  public async refreshToken() {
+    const row = await this.tokenRepo.getOne('INSTAGRAM');
+
+    if (!row) {
+      throw new Error('No Instagram token found');
+    }
+
+    const { access_token, expires_in } = await this.api.refreshToken(row.token);
+
+    await this.tokenRepo.addOrUpdate(
       'INSTAGRAM',
-      long,
+      access_token,
       expires_in.toString()
     );
-
-    console.log('result', r.numInsertedOrUpdatedRows);
   }
 }

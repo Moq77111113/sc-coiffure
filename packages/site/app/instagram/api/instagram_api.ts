@@ -13,7 +13,7 @@ export default class InstagramApiService {
     getCode: `${this.#apiUrl}/oauth/authorize`,
     shortToken: `${this.#apiUrl}/oauth/access_token`,
     longToken: `${this.#graphUrl}/access_token`,
-    refreshToken: `${this.#apiUrl}/refresh_token`,
+    refreshToken: `${this.#graphUrl}/refresh_access_token`,
   };
 
   public getAuthorizationUrl() {
@@ -41,7 +41,6 @@ export default class InstagramApiService {
     });
 
     const response = (await body.json()) as Record<string, unknown>;
-    console.log('response', response);
     if (statusCode !== 200) {
       throw new Error(
         'error_message' in response
@@ -86,6 +85,6 @@ export default class InstagramApiService {
       throw new Error('Failed to refresh token');
     }
 
-    return body.json();
+    return body.json() as Promise<Token['Refresh']>;
   }
 }
