@@ -22,3 +22,27 @@ export type Token = {
   Long: LongToken;
   Refresh: RefreshToken;
 };
+
+type Paging = {
+  cursors: {
+    before: string;
+    after: string;
+  };
+  next?: string;
+  before?: string;
+};
+
+export type FieldSet =
+  | 'id'
+  | 'caption'
+  | 'media_type'
+  | 'media_url'
+  | 'thumbnail_url'
+  | 'timestamp'
+  | 'username'
+  | 'permalink';
+
+export type Media<Fields extends FieldSet[] = FieldSet[]> = {
+  data: Record<Fields[number], string>[];
+  paging: Paging;
+};

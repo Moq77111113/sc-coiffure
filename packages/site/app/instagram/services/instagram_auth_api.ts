@@ -3,7 +3,7 @@ import { FormData, request } from 'undici';
 import { Token } from '../types/responses.js';
 import { ResultWithRecoverableError } from '#types/response';
 
-export default class InstagramApiService {
+export default class InstagramAuthApi {
   #clientId = env.get('IG_CLIENT_ID');
   #clientSecret = env.get('IG_CLIENT_SECRET');
   #redirectUrl = env.get('IG_RETURN_URL');
