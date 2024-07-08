@@ -1,7 +1,8 @@
 import { db } from '#core/services/db';
 
+type TokenKey = 'INSTAGRAM' | 'GOOGLE';
 export default class TokenRepository {
-  public async addOrUpdate(key: string, value: string, expires?: string) {
+  public async addOrUpdate(key: TokenKey, value: string, expires?: string) {
     const now = Date.now().toString();
     return await db
       .insertInto('tokens')
@@ -22,7 +23,7 @@ export default class TokenRepository {
       .executeTakeFirst();
   }
 
-  public async getOne(key: string) {
+  public async getOne(key: TokenKey) {
     return await db
       .selectFrom('tokens')
       .select('token')

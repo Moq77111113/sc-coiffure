@@ -10,7 +10,8 @@
 import router from '@adonisjs/core/services/router';
 
 const Home = () => import('#pages/home_controller');
-const Instagram = () => import('#instagram/controllers/callback_controller');
+const Instagram = () =>
+  import('#instagram/controllers/instagram_callback_controller');
 
 router.get('/', [Home, 'index']);
 router.get('/sbx', [Home, 'sbx']);

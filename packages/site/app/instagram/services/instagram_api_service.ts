@@ -1,6 +1,7 @@
 import env from '#start/env';
 import { FormData, request } from 'undici';
 import { Token } from '../types/responses.js';
+import { ResultWithRecoverableError } from '#types/response';
 
 export default class InstagramApiService {
   #clientId = env.get('IG_CLIENT_ID');
@@ -27,7 +28,9 @@ export default class InstagramApiService {
     return url.toString();
   }
 
-  public async getShortToken(code: string) {
+  public async getShortToken(
+    code: string
+  ): Promise<ResultWithRecoverableError<Token['Short']>> {
     const formData = new FormData();
     formData.set('client_id', this.#clientId);
     formData.set('client_secret', this.#clientSecret);
@@ -41,36 +44,46 @@ export default class InstagramApiService {
     });
 
     const response = (await body.json()) as Record<string, unknown>;
+
     if (statusCode !== 200) {
-      throw new Error(
-        'error_message' in response
-          ? (response['error_message'] as string)
-          : 'Failed to retrieve short token'
-      );
+      return [
+        null,
+        new Error(
+          'error_message' in response
+            ? (response['error_message'] as string)
+            : 'Failed to retrieve short token'
+        ),
+      ];
     }
 
-    return response as Token['Short'];
+    return [response as Token['Short'], null];
   }
 
-  public async exchangeShortTokenForLongToken(shortToken: string) {
+  public async exchangeShortTokenForLongToken(
+    shortToken: string
+  ): Promise<ResultWithRecoverableError<Token['Long']>> {
     const url = new URL(this.#routes.longToken);
     url.search = new URLSearchParams({
       grant_type: 'ig_exchange_token',
       client_secret: this.#clientSecret,
       access_token: shortToken,
     }).toString();
+
     const { statusCode, body } = await request(url.toString(), {
       method: 'GET',
     });
 
+    const response = (await body.json()) as Record<string, unknown>;
     if (statusCode !== 200) {
-      throw new Error('Failed to get long token');
+      return [null, new Error('Failed to get long token')];
     }
 
-    return body.json() as Promise<Token['Long']>;
+    return [response as Token['Long'], null];
   }
 
-  public async refreshToken(token: string) {
+  public async refreshToken(
+    token: string
+  ): Promise<ResultWithRecoverableError<Token['Refresh']>> {
     const url = new URL(this.#routes.refreshToken);
     url.search = new URLSearchParams({
       grant_type: 'ig_refresh_token',
@@ -81,10 +94,11 @@ export default class InstagramApiService {
       method: 'GET',
     });
 
+    const response = (await body.json()) as Record<string, unknown>;
     if (statusCode !== 200) {
-      throw new Error('Failed to refresh token');
+      return [null, new Error('Failed to refresh token')];
     }
 
-    return body.json() as Promise<Token['Refresh']>;
+    return [response as Token['Refresh'], null];
   }
 }

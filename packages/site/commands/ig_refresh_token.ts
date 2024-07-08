@@ -1,4 +1,4 @@
-import InstagramTokenService from '#instagram/services/token_service';
+import InstagramTokenService from '#instagram/services/instagram_token_service';
 import { inject } from '@adonisjs/core';
 import { BaseCommand } from '@adonisjs/core/ace';
 import logger from '@adonisjs/core/services/logger';
