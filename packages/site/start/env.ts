@@ -9,13 +9,13 @@
 |
 */
 
-import { Env } from "@adonisjs/core/env";
+import { Env } from '@adonisjs/core/env';
 
-export default await Env.create(new URL("../", import.meta.url), {
-  NODE_ENV: Env.schema.enum(["development", "production", "test"] as const),
+export default await Env.create(new URL('../', import.meta.url), {
+  NODE_ENV: Env.schema.enum(['development', 'production', 'test'] as const),
   PORT: Env.schema.number(),
   APP_KEY: Env.schema.string(),
-  HOST: Env.schema.string({ format: "host" }),
+  HOST: Env.schema.string({ format: 'host' }),
   LOG_LEVEL: Env.schema.string(),
 
   /*
@@ -23,7 +23,7 @@ export default await Env.create(new URL("../", import.meta.url), {
   | Variables for configuring session package
   |----------------------------------------------------------
   */
-  SESSION_DRIVER: Env.schema.enum(["cookie", "memory"] as const),
+  SESSION_DRIVER: Env.schema.enum(['cookie', 'memory'] as const),
   /*
   |--------------------------------------------------------------------------
   | META 
@@ -34,4 +34,9 @@ export default await Env.create(new URL("../", import.meta.url), {
   IG_CLIENT_ID: Env.schema.string(),
   IG_CLIENT_SECRET: Env.schema.string(),
   IG_RETURN_URL: Env.schema.string(),
+
+  /**
+   * DB
+   */
+  DATABASE_URL: Env.schema.string(),
 });

@@ -7,11 +7,12 @@
 |
 */
 
-import router from "@adonisjs/core/services/router";
+import router from '@adonisjs/core/services/router';
 
-const Home = () => import("#controllers/home_controller");
-const IG = () => import("#controllers/ig_controller");
-router.get("/", [Home, "index"]);
-router.get("/sbx", [Home, "sbx"]);
+const Home = () => import('#pages/home_controller');
+const IG = () => import('#instagram/controllers/ig_controller');
 
-router.get("/ig/redirect", [IG, "handleRedirect"]);
+router.get('/', [Home, 'index']);
+router.get('/sbx', [Home, 'sbx']);
+
+router.get('/ig/redirect', [IG, 'handleRedirect']);
