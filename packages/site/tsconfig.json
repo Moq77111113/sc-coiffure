@@ -7,6 +7,7 @@
       "#pages/*": ["./app/pages/*.js"],
       "#instagram/*": ["./app/instagram/*.js"],
       "#core/*": ["./app/core/*.js"],
+      "#tokens/*": ["./app/tokens/*.js"],
       "#types/*": ["./types/*.js"],
       "#start/*": ["./start/*.js"],
       "#config/*": ["./config/*.js"]
