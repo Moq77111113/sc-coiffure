@@ -1,18 +1,22 @@
 <script setup lang="ts">
-
-import team from '~/assets/pictures/team.jpg';
-import { Icons } from '~/components/icons';
+import { Icons } from '@/components/icons';
 </script>
 
 <template>
   <section id="us" class="w-full py-12 md:py-24">
     <div class="container px-4 md:px-6">
       <div class="flex flex-col items-center space-y-8">
-        <span class="-rotate-2 font-handwritten text-2xl/relaxed tracking-wider md:text-3xl/relaxed">
+        <span
+          class="-rotate-2 font-handwritten text-2xl/relaxed tracking-wider md:text-3xl/relaxed"
+        >
           La Seyne sur Mer depuis 2023
         </span>
-        <div class="flex flex-col items-center justify-center sm:flex-row sm:space-x-12 md:space-x-24">
-          <article class="flex flex-col items-center justify-center space-y-4 text-center">
+        <div
+          class="flex flex-col items-center justify-center sm:flex-row sm:space-x-12 md:space-x-24"
+        >
+          <article
+            class="flex flex-col items-center justify-center space-y-4 text-center"
+          >
             <div class="flex flex-col items-center space-y-6">
               <h2 class="text-2xl font-bold tracking-tighter md:text-4xl">
                 Votre équipe chaleureuse chez
@@ -41,10 +45,14 @@ import { Icons } from '~/components/icons';
           </article>
 
           <article
-            class="flex items-center gap-6 py-12 sm:grid-cols-2 md:mx-auto lg:gap-12 grayscale hover:grayscale-0 transition-all duration-200 ease-in-out">
+            class="flex items-center gap-6 py-12 grayscale transition-all duration-200 ease-in-out hover:grayscale-0 sm:grid-cols-2 md:mx-auto lg:gap-12"
+          >
             <div class="flex flex-col items-center space-y-4">
-              <img :src="team" alt="L'équipe SC Coiffure"
-                class="mx-auto aspect-square w-52 overflow-hidden rounded-full object-cover transition-all duration-300 ease-in-out hover:grayscale sm:w-96" />
+              <img
+                :src="`/pictures/team.jpg`"
+                alt="L'équipe SC Coiffure"
+                class="mx-auto aspect-square w-52 overflow-hidden rounded-full object-cover transition-all duration-300 ease-in-out hover:grayscale sm:w-96"
+              />
               <div class="space-y-1 text-center">
                 <h3 class="text-xl font-bold">Séverine & Cécile</h3>
                 <p class="text-muted">Co-Créatrices</p>

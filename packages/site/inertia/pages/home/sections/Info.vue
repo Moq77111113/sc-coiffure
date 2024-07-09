@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue';
-import { Icons } from '~/components/icons';
+import { Icons } from '@/components/icons';
 const schedule = ref({
   lundi: [],
   'mardi-samedi': ['09:00', '17:00'],

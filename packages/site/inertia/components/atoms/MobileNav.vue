@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { Button } from '~/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from '~/components/ui/popover';
+} from '@/components/ui/popover';
 
 import { Link } from '@inertiajs/vue3';
 import { ref } from 'vue';

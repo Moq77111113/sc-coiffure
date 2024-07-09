@@ -1,4 +1,4 @@
-import InstagramApi from '#instagram/services/instagram_api_service';
+import InstagramAuthApi from '#instagram/services/instagram_auth_api';
 import InstagramTokenService from '#instagram/services/instagram_token_service';
 import { inject } from '@adonisjs/core';
 import { HttpContext } from '@adonisjs/core/http';
@@ -8,7 +8,7 @@ import logger from '@adonisjs/core/services/logger';
 export default class InstagramCallbackController {
   constructor(
     private readonly tokenService: InstagramTokenService,
-    private readonly api: InstagramApi
+    private readonly api: InstagramAuthApi
   ) {}
 
   public async generateRedirect({ response }: HttpContext) {

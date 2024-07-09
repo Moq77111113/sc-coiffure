@@ -5,9 +5,9 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from '~/components/ui/carousel';
+} from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-import { Icons } from '~/components/icons';
+import { Icons } from '@/components/icons';
 
 type Review = {
   owner: string;

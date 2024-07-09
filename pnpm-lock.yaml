@@ -65,6 +65,9 @@ importers:
       '@adonisjs/auth':
         specifier: ^9.2.3
         version: 9.2.3(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(@adonisjs/lucid@21.1.0(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(better-sqlite3@11.1.1)(luxon@3.4.4))(@adonisjs/session@7.4.2(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(edge.js@6.0.2))(@japa/plugin-adonisjs@3.0.1(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(@japa/runner@3.1.4))
+      '@adonisjs/cache':
+        specifier: 1.0.0-4
+        version: 1.0.0-4(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(@adonisjs/lucid@21.1.0(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(better-sqlite3@11.1.1)(luxon@3.4.4))(knex@3.1.0(better-sqlite3@11.1.1))(kysely@0.27.4)(tslib@2.6.3)
       '@adonisjs/core':
         specifier: ^6.12.1
         version: 6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2)
@@ -402,6 +405,20 @@ packages:
     engines: {node: '>=18.16.0'}
     peerDependencies:
       '@adonisjs/http-server': ^7.0.2
+
+  '@adonisjs/cache@1.0.0-4':
+    resolution: {integrity: sha512-5wzo26HfYs+ThC9/XL2tzSanKd0gVSFEOxKpqp7J0PuVSwAAkFYMJiSIdDcTfTFKdm0in/dM5YlC1usqCIElEQ==}
+    engines: {node: '>=18.16.0'}
+    peerDependencies:
+      '@adonisjs/assembler': ^7.0.0
+      '@adonisjs/core': ^6.2.0
+      '@adonisjs/lucid': ^20.0.0 || ^21.0.0
+      '@adonisjs/redis': ^8.0.0
+    peerDependenciesMeta:
+      '@adonisjs/lucid':
+        optional: true
+      '@adonisjs/redis':
+        optional: true
 
   '@adonisjs/config@5.0.2':
     resolution: {integrity: sha512-NXjFqDHNGRTZ1EnA4zr20GFEt7qw/JvZ4ZV8/PzFyVc7dPoFprpoyE3bw7kmlKHhcQdBbF7YXCGB4q+HQUnqiQ==}
@@ -794,6 +811,15 @@ packages:
   '@babel/types@7.24.7':
     resolution: {integrity: sha512-XEFXSlxiG5td2EJRe8vOmRbaXVgfcBlszKujvVmWIK/UpywWljQCfzAv3RQCGujWQ1RD4YYWEAqDXfuJiy8f5Q==}
     engines: {node: '>=6.9.0'}
+
+  '@boringnode/bus@0.6.0':
+    resolution: {integrity: sha512-i6AKHvFqRUC5KZTX7WXYcWIV8Wfnem6t5Li1Bn5oU+YXAq0zw1y09bZk9HxB2smugfcFlDgzRwpXuwC9fLTE9g==}
+    engines: {node: '>=20.11.1'}
+    peerDependencies:
+      ioredis: ^5.0.0
+    peerDependenciesMeta:
+      ioredis:
+        optional: true
 
   '@colors/colors@1.5.0':
     resolution: {integrity: sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==}
@@ -2361,6 +2387,9 @@ packages:
   async-lock@1.4.1:
     resolution: {integrity: sha512-Az2ZTpuytrtqENulXwO3GGv1Bztugx6TT37NIo7imr/Qo0gsYiGtSdBa2B6fsXhTpVZDNfu1Qn3pk531e3q+nQ==}
 
+  async-mutex@0.5.0:
+    resolution: {integrity: sha512-1A94B18jkJ3DYq284ohPxoXbfTA5HsQ7/Mf4DEhcyLx3Bz27Rh59iScbB6EPiP+B+joue6YCxcMXSbFC1tZKwA==}
+
   async-retry@1.3.3:
     resolution: {integrity: sha512-wfr/jstw9xNi/0teMHrRW7dsz3Lt5ARhYNZ2ewpadnhaIp5mbALhOAP+EAdsC7t4Z6wqsDVv9+W6gm1Dk9mEyw==}
 
@@ -2424,6 +2453,26 @@ packages:
   basic-auth@2.0.1:
     resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
     engines: {node: '>= 0.8'}
+
+  bentocache@1.0.0-beta.9:
+    resolution: {integrity: sha512-KykJ/8q20DO9FHQ7Yhqv8RlgI/jo7kgoE0EJ65w30sziNdaDSsy8gVRCOTf06m+TcoVdBu2luKH9V4xaavBAbA==}
+    peerDependencies:
+      '@aws-sdk/client-dynamodb': ^3.438.0
+      ioredis: ^5.3.2
+      knex: ^3.0.1
+      kysely: ^0.27.3
+      orchid-orm: ^1.24.0
+    peerDependenciesMeta:
+      '@aws-sdk/client-dynamodb':
+        optional: true
+      ioredis:
+        optional: true
+      knex:
+        optional: true
+      kysely:
+        optional: true
+      orchid-orm:
+        optional: true
 
   better-sqlite3@11.1.1:
     resolution: {integrity: sha512-bAlQQb7gwCgxNpDYafK0O4AaIOiTwA7srfqRtBbw0Nsiq6P+qxEYGl3hLw+9C5jX2FVjKW7oxkSouxlJ+3VX8A==}
@@ -2584,6 +2633,10 @@ packages:
   chownr@2.0.0:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
+
+  chunkify@5.0.0:
+    resolution: {integrity: sha512-G8dj/3/Gm+1yL4oWSdwIxihZWFlgC4V2zYtIApacI0iPIRKBHlBGOGAiDUBZgrj4H8MBA8g8fPFwnJrWF3wl7Q==}
+    engines: {node: '>=18'}
 
   ci-info@3.9.0:
     resolution: {integrity: sha512-NIxF55hv4nSqQswkAeiOi1r83xy8JldOFDTWiug55KBu9Jnblncd2U6ViHmYgHf01TPZS77NJBhBMKdWj9HQMQ==}
@@ -3684,6 +3737,10 @@ packages:
 
   help-me@5.0.0:
     resolution: {integrity: sha512-7xgomUX6ADmcYzFik0HzAxh/73YlKR9bmFzf51CZwR+b6YtzU2m0u49hQCqV6SvlqIqsaxovfwdvbnsw3b/zpg==}
+
+  hexoid@1.0.0:
+    resolution: {integrity: sha512-QFLV0taWQOZtvIRIAdBChesmogZrtuXvVWsFHZTk2SU+anspqZ2vMnoLg7IE1+Uk16N19APic1BuF8bC8c2m5g==}
+    engines: {node: '>=8'}
 
   hosted-git-info@2.8.9:
     resolution: {integrity: sha512-mxIDAb9Lsm6DoOJ7xH+5+X4y1LU/4Hi50L9C5sIswK3JzULS4bwk1FvjdBgvYR4bzT4tuUQiC15FE2f5HbLvYw==}
@@ -6044,6 +6101,11 @@ packages:
       typescript:
         optional: true
 
+  typescript-log@2.0.0:
+    resolution: {integrity: sha512-TyW8lmURJSo0yjBovEhESpah3haDYBgsnQRocBF4MQSDJSYs/DOmhjo2cpSrGyvD9OaX++dbbonq9TkIQeA+Bw==}
+    peerDependencies:
+      tslib: ^2.0.0
+
   typescript@5.2.2:
     resolution: {integrity: sha512-mI4WrpHsbCIcwT9cF4FZvr80QUeKvsUsUvKDoR+X/7XHQH98xYD8YHZg7ANtz2GtZt/CBq2QJ0thkGJMHfqc1w==}
     engines: {node: '>=14.17'}
@@ -6487,6 +6549,21 @@ snapshots:
       media-typer: 1.1.0
       qs: 6.12.2
       raw-body: 2.5.2
+
+  '@adonisjs/cache@1.0.0-4(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(@adonisjs/lucid@21.1.0(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(better-sqlite3@11.1.1)(luxon@3.4.4))(knex@3.1.0(better-sqlite3@11.1.1))(kysely@0.27.4)(tslib@2.6.3)':
+    dependencies:
+      '@adonisjs/assembler': 7.7.0(typescript@5.5.3)
+      '@adonisjs/core': 6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2)
+      bentocache: 1.0.0-beta.9(knex@3.1.0(better-sqlite3@11.1.1))(kysely@0.27.4)(tslib@2.6.3)
+    optionalDependencies:
+      '@adonisjs/lucid': 21.1.0(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@adonisjs/core@6.12.1(@adonisjs/assembler@7.7.0(typescript@5.5.3))(@vinejs/vine@2.1.0)(edge.js@6.0.2))(better-sqlite3@11.1.1)(luxon@3.4.4)
+    transitivePeerDependencies:
+      - '@aws-sdk/client-dynamodb'
+      - ioredis
+      - knex
+      - kysely
+      - orchid-orm
+      - tslib
 
   '@adonisjs/config@5.0.2':
     dependencies:
@@ -7022,6 +7099,12 @@ snapshots:
       '@babel/helper-string-parser': 7.24.7
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
+
+  '@boringnode/bus@0.6.0':
+    dependencies:
+      '@paralleldrive/cuid2': 2.2.2
+      '@poppinss/utils': 6.7.3
+      object-hash: 3.0.0
 
   '@colors/colors@1.5.0':
     optional: true
@@ -8677,6 +8760,10 @@ snapshots:
 
   async-lock@1.4.1: {}
 
+  async-mutex@0.5.0:
+    dependencies:
+      tslib: 2.6.3
+
   async-retry@1.3.3:
     dependencies:
       retry: 0.13.1
@@ -8759,6 +8846,22 @@ snapshots:
   basic-auth@2.0.1:
     dependencies:
       safe-buffer: 5.1.2
+
+  bentocache@1.0.0-beta.9(knex@3.1.0(better-sqlite3@11.1.1))(kysely@0.27.4)(tslib@2.6.3):
+    dependencies:
+      '@boringnode/bus': 0.6.0
+      '@poppinss/utils': 6.7.3
+      async-mutex: 0.5.0
+      chunkify: 5.0.0
+      hexoid: 1.0.0
+      lru-cache: 10.3.0
+      p-timeout: 6.1.2
+      typescript-log: 2.0.0(tslib@2.6.3)
+    optionalDependencies:
+      knex: 3.1.0(better-sqlite3@11.1.1)
+      kysely: 0.27.4
+    transitivePeerDependencies:
+      - tslib
 
   better-sqlite3@11.1.1:
     dependencies:
@@ -8942,6 +9045,8 @@ snapshots:
   chownr@1.1.4: {}
 
   chownr@2.0.0: {}
+
+  chunkify@5.0.0: {}
 
   ci-info@3.9.0: {}
 
@@ -10264,6 +10369,8 @@ snapshots:
   helmet-csp@3.4.0: {}
 
   help-me@5.0.0: {}
+
+  hexoid@1.0.0: {}
 
   hosted-git-info@2.8.9: {}
 
@@ -12942,6 +13049,10 @@ snapshots:
       typescript: 5.5.3
     transitivePeerDependencies:
       - supports-color
+
+  typescript-log@2.0.0(tslib@2.6.3):
+    dependencies:
+      tslib: 2.6.3
 
   typescript@5.2.2: {}
 

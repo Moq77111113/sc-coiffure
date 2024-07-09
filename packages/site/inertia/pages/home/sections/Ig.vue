@@ -31,7 +31,7 @@ const { feed } = defineProps<{ feed: Feed }>();
             <img
               loading="lazy"
               :src="pic.media_url"
-              :alt="pic.caption"
+              :alt="pic.caption || ''"
               class="size-full object-cover"
             />
           </template>

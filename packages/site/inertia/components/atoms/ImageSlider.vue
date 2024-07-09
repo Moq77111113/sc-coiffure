@@ -3,7 +3,7 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '~/components/ui/carousel';
+} from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 
 type Picture = {
@@ -45,7 +45,7 @@ const { pictures, delay, loop, height, width } = withDefaults(
       >
         <img
           loading="lazy"
-          :src="src"
+          :src="`${src}`"
           :alt="alt"
           :height="height"
           :width="width"

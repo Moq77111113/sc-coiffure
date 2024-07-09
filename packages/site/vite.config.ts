@@ -3,6 +3,7 @@ import inertia from '@adonisjs/inertia/client';
 import adonisjs from '@adonisjs/vite/client';
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
+import { resolve } from 'node:path';
 
 import autoprefixer from 'autoprefixer';
 import tailwind from 'tailwindcss';
@@ -27,7 +28,8 @@ export default defineConfig({
    */
   resolve: {
     alias: {
-      '~/': `${getDirname(import.meta.url)}/inertia/`,
+      '@/': `${resolve(getDirname(import.meta.url), 'inertia')}/`,
+      '~/': `${resolve(getDirname(import.meta.url), '.')}/`,
     },
   },
 });
