@@ -5,7 +5,7 @@ import {
   CarouselItem,
 } from '@/components/ui/carousel';
 import Autoplay from 'embla-carousel-autoplay';
-
+import ImageLoader from './ImageLoader.vue';
 type Picture = {
   src: string;
   alt: string;
@@ -43,12 +43,11 @@ const { pictures, delay, loop, height, width } = withDefaults(
         :key="index"
         class="basis-1/2 md:basis-1/3 lg:basis-1/6"
       >
-        <img
-          loading="lazy"
-          :src="`${src}`"
+        <ImageLoader
+          :src="src"
           :alt="alt"
-          :height="height"
           :width="width"
+          :height="height"
           class="aspect-[3/4] size-full rounded-sm object-cover shadow-xl"
         />
       </CarouselItem>

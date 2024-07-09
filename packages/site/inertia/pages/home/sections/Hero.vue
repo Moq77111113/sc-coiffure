@@ -39,6 +39,7 @@ import { Icons } from '@/components/icons';
           :src="`/hero.avif`"
           width="550"
           height="550"
+          decoding="async"
           alt="Salon SC Coiffure"
           sizes="(max-width: 480px) 100vw,(max-width: 768px) 90vw, 1200px"
           class="mx-auto aspect-video overflow-hidden rounded-xl object-cover sm:w-full lg:order-last lg:aspect-square"
