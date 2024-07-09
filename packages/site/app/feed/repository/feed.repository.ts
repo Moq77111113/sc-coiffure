@@ -28,4 +28,13 @@ export default class FeedRepository {
       )
       .executeTakeFirst();
   }
+
+  public async feed(limit = 16) {
+    return await db
+      .selectFrom('feed')
+      .selectAll()
+      .orderBy('media_date', 'desc')
+      .limit(limit)
+      .execute();
+  }
 }

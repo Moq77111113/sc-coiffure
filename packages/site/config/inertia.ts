@@ -1,5 +1,5 @@
-import { defineConfig } from '@adonisjs/inertia'
-import type { InferSharedProps } from '@adonisjs/inertia/types'
+import { defineConfig } from '@adonisjs/inertia';
+import type { InferSharedProps } from '@adonisjs/inertia/types';
 
 const inertiaConfig = defineConfig({
   /**
@@ -13,7 +13,6 @@ const inertiaConfig = defineConfig({
   sharedData: {
     errors: (ctx) => ctx.session?.flashMessages.get('errors'),
   },
-  
 
   /**
    * Options for the server-side rendering
@@ -21,10 +20,11 @@ const inertiaConfig = defineConfig({
   ssr: {
     enabled: true,
     entrypoint: 'inertia/app/ssr.ts',
+    pages: ['Home/home'],
   },
-})
+});
 
-export default inertiaConfig
+export default inertiaConfig;
 
 declare module '@adonisjs/inertia/types' {
   export interface SharedProps extends InferSharedProps<typeof inertiaConfig> {}

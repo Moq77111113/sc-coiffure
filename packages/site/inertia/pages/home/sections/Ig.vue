@@ -1,14 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import type { Feed } from '~/types/pages';
 
-const pics = ref(
-  Array(12)
-    .fill('')
-    .map((_, index) => ({
-      src: `https://picsum.photos/seed/${index}/256`,
-      alt: `Image ${index}`,
-    }))
-);
+const { feed } = defineProps<{ feed: Feed }>();
 </script>
 
 <template>
@@ -34,11 +27,11 @@ const pics = ref(
         <div
           class="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4"
         >
-          <template v-for="pic in pics" :key="pic.src">
+          <template v-for="pic in feed" :key="pic.src">
             <img
               loading="lazy"
-              :src="pic.src"
-              :alt="pic.alt"
+              :src="pic.media_url"
+              :alt="pic.caption"
               class="size-full object-cover"
             />
           </template>

@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { siInstagram } from 'simple-icons'
+import siInstagram from 'simple-icons/icons/instagram.svg?url';
 
-const props = defineProps<{ class?: string; fill?: string }>()
+const props = defineProps<{ class?: string; fill?: string }>();
 </script>
 
 <template>
-  <svg v-html="siInstagram.svg" :class="props.class" :fill="props.fill" />
+  <img
+    :class="props.class"
+    :fill="props.fill"
+    alt="instagram"
+    :src="siInstagram"
+  />
 </template>
