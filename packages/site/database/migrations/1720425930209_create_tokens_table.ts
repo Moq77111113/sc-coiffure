@@ -1,13 +1,14 @@
-import { Kysely } from 'kysely';
-import { typeid } from 'typeid-js';
+import { Kysely, sql } from 'kysely';
 export async function up(db: Kysely<unknown>): Promise<void> {
   await db.schema
     .createTable('tokens')
-    .addColumn('id', 'varchar', (col) =>
-      col.primaryKey().defaultTo(typeid('tkn').toString())
+    .addColumn('id', 'integer', (col) => col.primaryKey().autoIncrement())
+    .addColumn('created_at', 'timestamp', (col) =>
+      col.notNull().defaultTo(sql`CURRENT_TIMESTAMP`)
     )
-    .addColumn('created_at', 'timestamp', (col) => col.notNull())
-    .addColumn('updated_at', 'timestamp', (col) => col.notNull())
+    .addColumn('updated_at', 'timestamp', (col) =>
+      col.notNull().defaultTo(sql`CURRENT_TIMESTAMP`)
+    )
     .addColumn('name', 'varchar', (col) => col.notNull().unique())
     .addColumn('token', 'varchar', (col) => col.notNull())
     .addColumn('expires_at', 'timestamp')

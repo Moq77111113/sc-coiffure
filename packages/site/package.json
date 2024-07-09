@@ -17,6 +17,7 @@
   "imports": {
     "#pages/*": "./app/pages/*.js",
     "#instagram/*": "./app/instagram/*.js",
+    "#feed/*": "./app/feed/*.js",
     "#core/*": "./app/core/*.js",
     "#tokens/*": "./app/token/*.js",
     "#types/*": "./types/*.js",

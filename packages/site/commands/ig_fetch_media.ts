@@ -3,6 +3,7 @@ import { Media } from '#instagram/types/responses';
 import { inject } from '@adonisjs/core';
 import { BaseCommand } from '@adonisjs/core/ace';
 import type { CommandOptions } from '@adonisjs/core/types/ace';
+import FeedRepository from '../app/feed/repository/feed.repository.js';
 
 export default class IgFetchMedia extends BaseCommand {
   static commandName = 'ig:fetch-media';
@@ -10,10 +11,13 @@ export default class IgFetchMedia extends BaseCommand {
 
   static options: CommandOptions = {};
 
-  #hexadecimalTimeStampToDate(hex: string) {
-    return new Date(parseInt(hex, 16) * 1000);
+  #hexaDecimalToTimestamp(hex: string) {
+    return parseInt(hex, 16) * 1000;
   }
-  async #processPicture(picture: Media['data'][number]) {
+  async #processPicture(
+    picture: Media['data'][number],
+    feedRepo: FeedRepository
+  ) {
     const asUrl = new URL(picture.media_url);
     const oe = asUrl.searchParams.get('oe');
     if (!oe) {
@@ -22,10 +26,23 @@ export default class IgFetchMedia extends BaseCommand {
       );
       return;
     }
+
+    const { caption, media_type, media_url, permalink, timestamp } = picture;
+
+    const expiration = this.#hexaDecimalToTimestamp(oe);
+    await feedRepo.addOrUpdate({
+      caption,
+      media_type,
+      media_url,
+      permalink,
+      expires_at: expiration.toString(),
+      external_id: picture.id,
+      media_date: new Date(timestamp).getTime().toString(),
+    });
   }
 
   @inject()
-  async run(mediaApi: InstagramMediaApi) {
+  async run(mediaApi: InstagramMediaApi, feedRepo: FeedRepository) {
     const [pics, error] = await mediaApi.userMedia(5);
     if (error) {
       this.logger.error(error.message);
@@ -33,7 +50,7 @@ export default class IgFetchMedia extends BaseCommand {
     }
 
     for (const pic of pics) {
-      await this.#processPicture(pic);
+      await this.#processPicture(pic, feedRepo);
     }
   }
 }
