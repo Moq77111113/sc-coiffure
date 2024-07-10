@@ -4,17 +4,17 @@ import { Icons } from '@/components/icons';
 const services = [
   {
     name: 'Coupe',
-    src: '/pictures/haircut.jpg',
+    src: '/pictures/haircut.webp',
     alt: 'Coupe',
   },
   {
     name: 'Couleur',
-    src: '/pictures/colour.jpg',
+    src: '/pictures/colour.webp',
     alt: 'Couleur',
   },
   {
     name: 'Mèches & Balayage',
-    src: '/pictures/highlights.jpg',
+    src: '/pictures/highlights.webp',
     alt: 'Mèches et Balayage',
   },
 ];

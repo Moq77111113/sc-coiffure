@@ -49,7 +49,7 @@ import { Icons } from '@/components/icons';
           >
             <div class="flex flex-col items-center space-y-4">
               <img
-                :src="`/pictures/team.jpg`"
+                :src="`/pictures/team.webp`"
                 alt="L'équipe SC Coiffure"
                 class="mx-auto aspect-square w-52 overflow-hidden rounded-full object-cover transition-all duration-300 ease-in-out hover:grayscale sm:w-96"
               />

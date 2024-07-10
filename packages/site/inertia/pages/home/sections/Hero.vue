@@ -36,7 +36,7 @@ import { Icons } from '@/components/icons';
 
         <img
           loading="eager"
-          :src="`/hero.avif`"
+          :src="`/hero.webp`"
           width="550"
           height="550"
           decoding="async"

@@ -5,27 +5,27 @@ import ImageSlider from '@/components/atoms/ImageSlider.vue';
 
 const pics = ref([
   {
-    src: 'pictures/real1.jpg',
+    src: 'pictures/real1.webp',
     alt: 'real1',
   },
   {
-    src: 'pictures/real2.jpg',
+    src: 'pictures/real2.webp',
     alt: 'real2',
   },
   {
-    src: 'pictures/real3.jpg',
+    src: 'pictures/real3.webp',
     alt: 'real3',
   },
   {
-    src: 'pictures/real4.jpg',
+    src: 'pictures/real4.webp',
     alt: 'real4',
   },
   {
-    src: 'pictures/real5.jpg',
+    src: 'pictures/real5.webp',
     alt: 'real5',
   },
   {
-    src: 'pictures/real6.jpg',
+    src: 'pictures/real6.webp',
     alt: 'real6',
   },
 ]);

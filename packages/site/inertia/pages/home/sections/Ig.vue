@@ -9,15 +9,20 @@ const { feed } = defineProps<{ feed: Feed }>();
     <div class="container px-4 md:px-6">
       <article class="flex flex-col space-y-6">
         <div class="flex items-center space-x-2">
-          <div
-            class="relative size-16 rounded-full bg-gradient-to-r from-yellow-200 to-pink-600 p-1"
-          >
-            <img
-              loading="lazy"
-              class="size-full rounded-full"
-              src="https://images.unsplash.com/photo-1534430480872-3498386e7856?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-              alt="@sccoiffure"
-            />
+          <div class="relative size-16 rounded-full">
+            <a
+              href="https://www.instagram.com/sccoiffure83"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span class="sr-only">Instagram</span>
+              <img
+                loading="lazy"
+                class="size-full rounded-full"
+                :src="`/logo_ig.webp`"
+                alt="@sccoiffure"
+              />
+            </a>
           </div>
           <div class="flex flex-col items-start">
             <span>SC Coiffure</span>
@@ -28,12 +33,14 @@ const { feed } = defineProps<{ feed: Feed }>();
           class="mx-auto grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4"
         >
           <template v-for="pic in feed" :key="pic.src">
-            <img
-              loading="lazy"
-              :src="pic.media_url"
-              :alt="pic.caption || ''"
-              class="size-full object-cover"
-            />
+            <a :href="pic.permalink" target="_blank" rel="noopener noreferrer">
+              <img
+                loading="lazy"
+                :src="pic.media_url"
+                :alt="pic.caption || ''"
+                class="size-full object-cover"
+              />
+            </a>
           </template>
         </div>
       </article>
