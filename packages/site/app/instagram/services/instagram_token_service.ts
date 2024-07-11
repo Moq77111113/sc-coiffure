@@ -1,6 +1,6 @@
+import { inject } from '@adonisjs/core'
 import InstagramAuthApi from '#instagram/services/instagram_auth_api'
 import TokenRepository from '../../token/repository/token_repository.js'
-import { inject } from '@adonisjs/core'
 
 @inject()
 export default class InstagramTokenService {

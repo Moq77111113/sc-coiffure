@@ -1,6 +1,6 @@
+import typography from '@tailwindcss/typography'
 import { Config } from 'tailwindcss'
 import animate from 'tailwindcss-animate'
-import typography from '@tailwindcss/typography'
 
 import defaultTheme from 'tailwindcss/defaultTheme.js'
 

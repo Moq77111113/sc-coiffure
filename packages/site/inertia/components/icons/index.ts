@@ -1,12 +1,12 @@
-import { Brands } from './brands'
-import { Phone, ArrowRight, Mail, Map } from 'lucide-vue-next'
+import { ArrowRight, Mail, Map as MapIcon, Phone } from 'lucide-vue-next'
 import StarIcon from './StarIcon.vue'
+import { Brands } from './brands'
 const Icons = {
   ...Brands,
   Phone,
   ArrowRight,
   Star: StarIcon,
-  Map,
+  Map: MapIcon,
   Mail,
 }
 

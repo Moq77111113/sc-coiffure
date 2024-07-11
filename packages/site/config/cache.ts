@@ -1,4 +1,4 @@
-import { defineConfig, store, drivers } from '@adonisjs/cache'
+import { defineConfig, drivers, store } from '@adonisjs/cache'
 
 const cacheConfig = defineConfig({
   default: 'memory',

@@ -1,22 +1,22 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
+import { ref } from 'vue';
 const props = defineProps<{
-  src: string
-  alt: string
-  width?: number
-  height?: number
-  sizes?: string
-  class?: string
-}>()
+  src: string;
+  alt: string;
+  width?: number;
+  height?: number;
+  sizes?: string;
+  class?: string;
+}>();
 
-const isImageLoaded = ref(false)
+const isImageLoaded = ref(false);
 
 const markAsLoaded = () => {
   setTimeout(() => {
-    isImageLoaded.value = true
-  }, 1000)
-}
+    isImageLoaded.value = true;
+  }, 1000);
+};
 </script>
 
 <template>

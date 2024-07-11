@@ -1,8 +1,8 @@
-import InstagramTokenService from '#instagram/services/instagram_token_service'
 import { inject } from '@adonisjs/core'
 import { BaseCommand } from '@adonisjs/core/ace'
 import logger from '@adonisjs/core/services/logger'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
+import InstagramTokenService from '#instagram/services/instagram_token_service'
 
 export default class IgRefreshToken extends BaseCommand {
   static commandName = 'ig:refresh-token'

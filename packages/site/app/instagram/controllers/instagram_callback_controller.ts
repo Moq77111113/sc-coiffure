@@ -1,8 +1,8 @@
-import InstagramAuthApi from '#instagram/services/instagram_auth_api'
-import InstagramTokenService from '#instagram/services/instagram_token_service'
 import { inject } from '@adonisjs/core'
 import { HttpContext } from '@adonisjs/core/http'
 import logger from '@adonisjs/core/services/logger'
+import InstagramAuthApi from '#instagram/services/instagram_auth_api'
+import InstagramTokenService from '#instagram/services/instagram_token_service'
 
 @inject()
 export default class InstagramCallbackController {

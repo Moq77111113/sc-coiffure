@@ -1,8 +1,8 @@
-import InstagramMediaApi from '#instagram/services/instagram_media_api'
-import { Media } from '#instagram/types/responses'
 import { inject } from '@adonisjs/core'
 import { BaseCommand } from '@adonisjs/core/ace'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
+import InstagramMediaApi from '#instagram/services/instagram_media_api'
+import { Media } from '#instagram/types/responses'
 import FeedRepository from '../app/feed/repository/feed.repository.js'
 
 export default class IgFetchMedia extends BaseCommand {

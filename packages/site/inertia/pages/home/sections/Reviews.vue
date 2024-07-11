@@ -1,13 +1,13 @@
 <script setup lang="ts">
+import { Icons } from '@/components/icons'
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselPrevious,
   CarouselNext,
+  CarouselPrevious,
 } from '@/components/ui/carousel'
 import Autoplay from 'embla-carousel-autoplay'
-import { Icons } from '@/components/icons'
 
 type Review = {
   owner: string

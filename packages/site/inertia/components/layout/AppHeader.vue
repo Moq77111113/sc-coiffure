@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Link } from '@inertiajs/vue3'
-import { BrandIcons } from '../icons'
 import { ref } from 'vue'
-import MobileNav from '../atoms/MobileNav.vue'
 import LogoComponent from '../atoms/LogoComponent.vue'
+import MobileNav from '../atoms/MobileNav.vue'
+import { BrandIcons } from '../icons'
 
 const sections = ref([
   { name: 'Horaires', href: '#schedule' },

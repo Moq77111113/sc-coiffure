@@ -1,8 +1,8 @@
-import FeedRepository from '#feed/repository/feed.repository'
-import env from '#start/env'
+import cache from '@adonisjs/cache/services/main'
 import { inject } from '@adonisjs/core'
 import type { HttpContext } from '@adonisjs/core/http'
-import cache from '@adonisjs/cache/services/main'
+import FeedRepository from '#feed/repository/feed.repository'
+import env from '#start/env'
 
 @inject()
 export default class UsersController {

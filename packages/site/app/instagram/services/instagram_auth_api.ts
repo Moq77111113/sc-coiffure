@@ -1,7 +1,7 @@
-import env from '#start/env'
 import { FormData, request } from 'undici'
-import { Token } from '../types/responses.js'
+import env from '#start/env'
 import { ResultWithRecoverableError } from '#types/response'
+import { Token } from '../types/responses.js'
 
 export default class InstagramAuthApi {
   #clientId = env.get('IG_CLIENT_ID')

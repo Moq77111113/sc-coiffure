@@ -1,9 +1,9 @@
-import * as path from 'node:path'
-import { db } from '#core/services/db'
 import * as fs from 'node:fs/promises'
+import * as path from 'node:path'
 import { BaseCommand } from '@adonisjs/core/ace'
-import { FileMigrationProvider, Migrator } from 'kysely'
 import type { CommandOptions } from '@adonisjs/core/types/ace'
+import { FileMigrationProvider, Migrator } from 'kysely'
+import { db } from '#core/services/db'
 
 export default class KyselyRollback extends BaseCommand {
   static commandName = 'kysely:rollback'

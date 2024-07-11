@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3'
 import { Icons } from '@/components/icons'
+import { Link } from '@inertiajs/vue3'
 const services = [
   {
     name: 'Coupe',
