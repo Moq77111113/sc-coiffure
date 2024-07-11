@@ -20,7 +20,10 @@ const config = {
       fontFamily: {
         heading: ['var(--font-heading)', ...defaultTheme.fontFamily.sans],
         body: ['var(--font-body)', ...defaultTheme.fontFamily.mono],
-        handwritten: ['var(--font-handwritten)', ...defaultTheme.fontFamily.serif],
+        handwritten: [
+          'var(--font-handwritten)',
+          ...defaultTheme.fontFamily.serif,
+        ],
       },
       colors: {
         border: 'hsl(var(--border))',
@@ -80,7 +83,7 @@ const config = {
           from: { height: 'var(--radix-collapsible-content-height)' },
           to: { height: '0' },
         },
-        'fadeIn': {
+        fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },

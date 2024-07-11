@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
-import { BrandIcons } from '../icons';
-import { ref } from 'vue';
-import MobileNav from '../atoms/MobileNav.vue';
-import LogoComponent from '../atoms/LogoComponent.vue';
+import { Link } from '@inertiajs/vue3'
+import { BrandIcons } from '../icons'
+import { ref } from 'vue'
+import MobileNav from '../atoms/MobileNav.vue'
+import LogoComponent from '../atoms/LogoComponent.vue'
 
 const sections = ref([
   { name: 'Horaires', href: '#schedule' },
@@ -11,7 +11,7 @@ const sections = ref([
   { name: 'Services', href: '#services' },
   { name: 'Réalisations', href: '#portfolio' },
   { name: 'Contact', href: '#contact' },
-]);
+])
 </script>
 <template>
   <header

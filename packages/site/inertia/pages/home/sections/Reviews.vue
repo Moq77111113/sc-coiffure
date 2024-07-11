@@ -5,21 +5,21 @@ import {
   CarouselItem,
   CarouselPrevious,
   CarouselNext,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { Icons } from '@/components/icons';
+} from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
+import { Icons } from '@/components/icons'
 
 type Review = {
-  owner: string;
-  date: string;
-  avatarUrl: string;
-  score: number;
-  content: string;
-};
+  owner: string
+  date: string
+  avatarUrl: string
+  score: number
+  content: string
+}
 interface Props {
-  reviews?: Review[];
-  delay?: number;
-  loop?: boolean;
+  reviews?: Review[]
+  delay?: number
+  loop?: boolean
 }
 
 const { delay, loop } = withDefaults(defineProps<Props>(), {
@@ -56,30 +56,30 @@ const { delay, loop } = withDefaults(defineProps<Props>(), {
         'I like it! I want to say that they provided to me such a good hair cut, we start with a good conversation and they understood what I wanted. I am very happy with the result.',
     },
   ],
-});
+})
 
 const getRelativeDate = (date: string) => {
-  const now = new Date();
-  const reviewDate = new Date(date);
-  const diff = now.getTime() - reviewDate.getTime();
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  if (days === 0) return 'Today';
+  const now = new Date()
+  const reviewDate = new Date(date)
+  const diff = now.getTime() - reviewDate.getTime()
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+  if (days === 0) return 'Today'
 
-  if (days < 60) return `${days} days ago`;
+  if (days < 60) return `${days} days ago`
 
   if (days < 365) {
-    const months = Math.floor(days / 30);
-    return `${months} months ago`;
+    const months = Math.floor(days / 30)
+    return `${months} months ago`
   }
 
-  return `${Math.floor(days / 365)} years ago`;
-};
+  return `${Math.floor(days / 365)} years ago`
+}
 
 function getFillPercentage(score: number, starIndex: number) {
-  if (score >= starIndex) return 100;
+  if (score >= starIndex) return 100
   if (score < starIndex && score > starIndex - 1)
-    return (score - starIndex + 1) * 100;
-  return 0;
+    return (score - starIndex + 1) * 100
+  return 0
 }
 </script>
 

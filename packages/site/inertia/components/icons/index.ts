@@ -1,6 +1,6 @@
-import { Brands } from './brands';
-import { Phone, ArrowRight, Mail, Map } from 'lucide-vue-next';
-import StarIcon from './StarIcon.vue';
+import { Brands } from './brands'
+import { Phone, ArrowRight, Mail, Map } from 'lucide-vue-next'
+import StarIcon from './StarIcon.vue'
 const Icons = {
   ...Brands,
   Phone,
@@ -8,6 +8,6 @@ const Icons = {
   Star: StarIcon,
   Map,
   Mail,
-};
+}
 
-export { Icons, Brands as BrandIcons };
+export { Icons, Brands as BrandIcons }

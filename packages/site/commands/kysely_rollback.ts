@@ -7,9 +7,10 @@ import type { CommandOptions } from '@adonisjs/core/types/ace'
 
 export default class KyselyRollback extends BaseCommand {
   static commandName = 'kysely:rollback'
-  static description = 'Rollback the database by running down method on the migration files'
+  static description =
+    'Rollback the database by running down method on the migration files'
   static options: CommandOptions = {
-    startApp: true
+    startApp: true,
   }
 
   declare migrator: Migrator
@@ -23,7 +24,7 @@ export default class KyselyRollback extends BaseCommand {
     this.migrator = new Migrator({
       db,
       provider: new FileMigrationProvider({
-          fs,
+        fs,
         path,
         migrationFolder: this.app.migrationsPath(),
       }),
@@ -50,10 +51,14 @@ export default class KyselyRollback extends BaseCommand {
     results?.forEach((it) => {
       switch (it.status) {
         case 'Success':
-          this.logger.success(`migration "${it.migrationName}" rolled back successfully`)
+          this.logger.success(
+            `migration "${it.migrationName}" rolled back successfully`,
+          )
           break
         case 'Error':
-          this.logger.error(`failed to rollback migration "${it.migrationName}"`)
+          this.logger.error(
+            `failed to rollback migration "${it.migrationName}"`,
+          )
           break
         case 'NotExecuted':
           this.logger.info(`rollback pending "${it.migrationName}"`)

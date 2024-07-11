@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import siInstagram from 'simple-icons/icons/instagram.svg?url';
+import siInstagram from 'simple-icons/icons/instagram.svg?url'
 
-const props = defineProps<{ class?: string; fill?: string }>();
+const props = defineProps<{ class?: string; fill?: string }>()
 </script>
 
 <template>

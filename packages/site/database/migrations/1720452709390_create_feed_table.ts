@@ -1,4 +1,4 @@
-import { Kysely, sql } from 'kysely';
+import { Kysely, sql } from 'kysely'
 
 export async function up(db: Kysely<unknown>): Promise<void> {
   await db.schema
@@ -7,10 +7,10 @@ export async function up(db: Kysely<unknown>): Promise<void> {
 
     .addColumn('external_id', 'varchar', (col) => col.notNull().unique())
     .addColumn('created_at', 'timestamp', (col) =>
-      col.notNull().defaultTo(sql`CURRENT_TIMESTAMP`)
+      col.notNull().defaultTo(sql`CURRENT_TIMESTAMP`),
     )
     .addColumn('updated_at', 'timestamp', (col) =>
-      col.notNull().defaultTo(sql`CURRENT_TIMESTAMP`)
+      col.notNull().defaultTo(sql`CURRENT_TIMESTAMP`),
     )
     .addColumn('caption', 'text')
     .addColumn('media_url', 'text', (col) => col.notNull())
@@ -18,9 +18,9 @@ export async function up(db: Kysely<unknown>): Promise<void> {
     .addColumn('permalink', 'text', (col) => col.notNull())
     .addColumn('expires_at', 'timestamp', (col) => col.notNull())
     .addColumn('media_date', 'timestamp', (col) => col.notNull())
-    .execute();
+    .execute()
 }
 
 export async function down(db: Kysely<unknown>): Promise<void> {
-  await db.schema.dropTable('feed').execute();
+  await db.schema.dropTable('feed').execute()
 }

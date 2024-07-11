@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
+import { Link } from '@inertiajs/vue3'
 
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/icons'
 </script>
 
 <template>

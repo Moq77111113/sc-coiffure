@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from 'vue'
 
-import ImageSlider from '@/components/atoms/ImageSlider.vue';
+import ImageSlider from '@/components/atoms/ImageSlider.vue'
 
 const pics = ref([
   {
@@ -28,7 +28,7 @@ const pics = ref([
     src: 'pictures/real6.webp',
     alt: 'real6',
   },
-]);
+])
 </script>
 
 <template>

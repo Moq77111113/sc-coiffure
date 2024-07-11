@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import type { Feed } from '~/types/pages';
+import type { Feed } from '~/types/pages'
 
-const { feed } = defineProps<{ feed: Feed }>();
+const { feed } = defineProps<{ feed: Feed }>()
 </script>
 
 <template>

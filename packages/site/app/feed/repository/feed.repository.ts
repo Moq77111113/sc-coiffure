@@ -1,11 +1,11 @@
-import { db } from '#core/services/db';
-import { Feed } from '#types/db';
+import { db } from '#core/services/db'
+import { Feed } from '#types/db'
 
-type FeedCreateProps = Omit<Feed, 'id' | 'created_at' | 'updated_at'>;
+type FeedCreateProps = Omit<Feed, 'id' | 'created_at' | 'updated_at'>
 
 export default class FeedRepository {
   public async addOrUpdate(feed: FeedCreateProps) {
-    const now = Date.now().toString();
+    const now = Date.now().toString()
 
     return await db
       .insertInto('feed')
@@ -24,9 +24,9 @@ export default class FeedRepository {
           media_url: eb.ref('excluded.media_url'),
           permalink: eb.ref('excluded.permalink'),
           updated_at: now,
-        }))
+        })),
       )
-      .executeTakeFirst();
+      .executeTakeFirst()
   }
 
   public async feed(limit = 16) {
@@ -35,6 +35,6 @@ export default class FeedRepository {
       .selectAll()
       .orderBy('media_date', 'desc')
       .limit(limit)
-      .execute();
+      .execute()
   }
 }

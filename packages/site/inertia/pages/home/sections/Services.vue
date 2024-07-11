@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { Link } from '@inertiajs/vue3';
-import { Icons } from '@/components/icons';
+import { Link } from '@inertiajs/vue3'
+import { Icons } from '@/components/icons'
 const services = [
   {
     name: 'Coupe',
@@ -17,7 +17,7 @@ const services = [
     src: '/pictures/highlights.webp',
     alt: 'Mèches et Balayage',
   },
-];
+]
 </script>
 
 <template>

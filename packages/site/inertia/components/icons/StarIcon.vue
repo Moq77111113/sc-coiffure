@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from 'vue'
 type Props = {
-  size?: number;
-  fillColor: string;
-  fillPercentage: number;
-  id: string;
-};
+  size?: number
+  fillColor: string
+  fillPercentage: number
+  id: string
+}
 
 const props = withDefaults(defineProps<Props>(), {
   size: 24,
-});
+})
 
-const clipWidth = computed(() => (props.size * props.fillPercentage) / 100);
+const clipWidth = computed(() => (props.size * props.fillPercentage) / 100)
 </script>
 
 <template>

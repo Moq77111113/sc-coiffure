@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Icons } from '@/components/icons';
+import { Icons } from '@/components/icons'
 </script>
 
 <template>

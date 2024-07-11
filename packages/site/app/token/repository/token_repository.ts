@@ -1,9 +1,9 @@
-import { db } from '#core/services/db';
+import { db } from '#core/services/db'
 
-type TokenKey = 'INSTAGRAM' | 'GOOGLE';
+type TokenKey = 'INSTAGRAM' | 'GOOGLE'
 export default class TokenRepository {
   public async addOrUpdate(key: TokenKey, value: string, expires?: string) {
-    const now = Date.now().toString();
+    const now = Date.now().toString()
     return await db
       .insertInto('tokens')
       .values({
@@ -18,9 +18,9 @@ export default class TokenRepository {
           token: eb.ref('excluded.token'),
           updated_at: now,
           expires_at: expires,
-        }))
+        })),
       )
-      .executeTakeFirst();
+      .executeTakeFirst()
   }
 
   public async getOne(key: TokenKey) {
@@ -28,6 +28,6 @@ export default class TokenRepository {
       .selectFrom('tokens')
       .select('token')
       .where('name', '=', key)
-      .executeTakeFirst();
+      .executeTakeFirst()
   }
 }

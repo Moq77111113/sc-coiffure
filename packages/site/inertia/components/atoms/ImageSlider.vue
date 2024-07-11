@@ -3,20 +3,20 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from '@/components/ui/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import ImageLoader from './ImageLoader.vue';
+} from '@/components/ui/carousel'
+import Autoplay from 'embla-carousel-autoplay'
+import ImageLoader from './ImageLoader.vue'
 type Picture = {
-  src: string;
-  alt: string;
-};
+  src: string
+  alt: string
+}
 type Props = {
-  height?: number;
-  width?: number;
-  pictures: Picture[];
-  delay?: number;
-  loop?: boolean;
-};
+  height?: number
+  width?: number
+  pictures: Picture[]
+  delay?: number
+  loop?: boolean
+}
 const { pictures, delay, loop, height, width } = withDefaults(
   defineProps<Props>(),
   {
@@ -24,8 +24,8 @@ const { pictures, delay, loop, height, width } = withDefaults(
     loop: true,
     height: 384,
     width: 256,
-  }
-);
+  },
+)
 </script>
 
 <template>

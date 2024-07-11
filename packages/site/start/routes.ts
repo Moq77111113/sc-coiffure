@@ -7,14 +7,14 @@
 |
 */
 
-import router from '@adonisjs/core/services/router';
+import router from '@adonisjs/core/services/router'
 
-const Home = () => import('#pages/home_controller');
+const Home = () => import('#pages/home_controller')
 const Instagram = () =>
-  import('#instagram/controllers/instagram_callback_controller');
+  import('#instagram/controllers/instagram_callback_controller')
 
-router.get('/', [Home, 'index']);
-router.get('/sbx', [Home, 'sbx']);
+router.get('/', [Home, 'index'])
+router.get('/sbx', [Home, 'sbx'])
 
-router.get('/ig', [Instagram, 'generateRedirect']);
-router.get('/ig/redirect', [Instagram, 'handleRedirect']);
+router.get('/ig', [Instagram, 'generateRedirect'])
+router.get('/ig/redirect', [Instagram, 'handleRedirect'])

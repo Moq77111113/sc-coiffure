@@ -9,7 +9,9 @@ export default function render(page: Page<PageProps>) {
     page,
     render: renderToString,
     resolve: (name) => {
-      const pages = import.meta.glob<DefineComponent>('../pages/**/*.vue', { eager: true })
+      const pages = import.meta.glob<DefineComponent>('../pages/**/*.vue', {
+        eager: true,
+      })
       return pages[`../pages/${name}.vue`]
     },
 
@@ -18,4 +20,3 @@ export default function render(page: Page<PageProps>) {
     },
   })
 }
-

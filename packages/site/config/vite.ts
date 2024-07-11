@@ -1,4 +1,4 @@
-import { defineConfig } from '@adonisjs/vite';
+import { defineConfig } from '@adonisjs/vite'
 
 const viteBackendConfig = defineConfig({
   /**
@@ -24,6 +24,6 @@ const viteBackendConfig = defineConfig({
     defer: true,
     async: true,
   },
-});
+})
 
-export default viteBackendConfig;
+export default viteBackendConfig
