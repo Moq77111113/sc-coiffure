@@ -1,5 +1,6 @@
 packages:
   - 'packages/site'
   - 'packages/site-v1'
+  - 'packages/sc-coiffure'
   - 'packages/cli'
   - 'packages/core'

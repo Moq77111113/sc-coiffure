@@ -1,10 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2024-04-03',
-  head: {
-    charset: 'utf-8',
-    viewport: 'width=device-width, initial-scale=1',
+  app: {
+    head: {
+      title: 'SC Coiffure',
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'SC Coiffure' },
+      ],
+    },
   },
+  compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['./assets/css/tailwind.css'],
   modules: [
@@ -12,6 +18,7 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@nuxtjs/tailwindcss',
     '@vueuse/motion/nuxt',
+    'nuxt-cron',
   ],
   postcss: {
     plugins: {
@@ -27,5 +34,10 @@ export default defineNuxtConfig({
   },
   shadcn: {
     componentDir: './components/ui',
+  },
+  cron: {
+    timeZone: 'Europe/Paris',
+    jobsDir: 'jobs',
+    runOnInit: true,
   },
 })
