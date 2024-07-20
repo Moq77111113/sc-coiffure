@@ -20,7 +20,7 @@ const sections = ref([
     <div class="mr-4 flex w-full items-center justify-between md:mr-1">
       <MobileNav />
       <LogoComponent class="hidden size-14 md:block" />
-
+      <h1 class="font-handwritten text-2xl/relaxed tracking-wider md:hidden">SC Coiffure</h1>
       <nav class="hidden grow justify-center gap-4 self-end sm:gap-6 md:flex">
         <Link
           v-for="{ name, href } in sections"

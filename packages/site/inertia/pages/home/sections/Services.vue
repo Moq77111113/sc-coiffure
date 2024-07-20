@@ -28,7 +28,7 @@ const services = [
           Découvrez
         </span>
         <h2 class="text-3xl font-bold tracking-tighter sm:text-5xl/none">
-          Nos services
+          Nos prestations
         </h2>
 
         <div class="grid gap-8 py-4 min-[450px]:grid-cols-2 md:grid-cols-3">

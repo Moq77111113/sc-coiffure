@@ -6,8 +6,16 @@ const shieldConfig = defineConfig({
    * to learn more
    */
   csp: {
-    enabled: false,
-    directives: {},
+    enabled: true,
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", "'unsafe-inline'"],
+      styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com", "https://fonts.gstatic.com"],
+      fontSrc: ["'self'", 'https://fonts.googleapis.com',  "https://fonts.gstatic.com"],
+      imgSrc: ["'self'", 'data:', 'https://*.cdninstagram.com'],
+      connectSrc: ["'self'", "ws://localhost:*"],
+      frameSrc: ["'self'"],
+    },
     reportOnly: false,
   },
 

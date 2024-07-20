@@ -42,7 +42,7 @@ const schedule = ref({
 
             <span class="flex items-center justify-between">
               <Icons.Phone />
-              <p class="tracking-wider">08.00.00.00.00</p></span
+              <p class="tracking-wider">00.00.00.00.00</p></span
             >
             <div class="my-2 h-[0.2pt] w-full bg-muted-foreground" />
             <span class="flex items-center justify-between">
