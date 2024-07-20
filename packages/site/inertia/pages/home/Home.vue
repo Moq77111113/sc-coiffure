@@ -9,6 +9,7 @@ import Realisations from './sections/Realisations.vue';
 import Reviews from './sections/Reviews.vue';
 import Salon from './sections/Salon.vue';
 import Services from './sections/Services.vue';
+import Contact from './sections/Contact.vue';
 const { feed } = defineProps<{ feed: Feed }>();
 </script>
 
@@ -22,7 +23,7 @@ const { feed } = defineProps<{ feed: Feed }>();
       <Salon />
       <Services />
       <Ig :feed="feed" />
-      <Reviews />
+      <Contact />
     </main>
   </Layout>
 </template>

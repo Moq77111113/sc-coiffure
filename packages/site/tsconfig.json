@@ -8,6 +8,7 @@
       "#instagram/*": ["./app/instagram/*.js"],
       "#feed/*": ["./app/feed/*.js"],
       "#core/*": ["./app/core/*.js"],
+      "#contact/*": ["./app/contact/*.js"],
       "#tokens/*": ["./app/token/*.js"],
       "#types/*": ["./types/*.js"],
       "#start/*": ["./start/*.js"],

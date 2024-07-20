@@ -5,7 +5,7 @@ const { feed } = defineProps<{ feed: Feed }>()
 </script>
 
 <template>
-  <section id="ig" class="w-full py-8 md:py-12 lg:py-20">
+  <section id="portfolio" class="w-full py-8 md:py-12 lg:py-20">
     <div class="container px-4 md:px-6">
       <article class="flex flex-col space-y-6">
         <div class="flex items-center space-x-2">

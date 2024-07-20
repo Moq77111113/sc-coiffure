@@ -12,9 +12,12 @@ import router from '@adonisjs/core/services/router'
 const Home = () => import('#pages/home_controller')
 const Instagram = () =>
   import('#instagram/controllers/instagram_callback_controller')
+const Contact = () => import('#contact/controller/contact_controller')
 
 router.get('/', [Home, 'index'])
 router.get('/sbx', [Home, 'sbx'])
 
 router.get('/ig', [Instagram, 'generateRedirect'])
 router.get('/ig/redirect', [Instagram, 'handleRedirect'])
+
+router.post('/contact', [Contact, 'handleMessage'])
