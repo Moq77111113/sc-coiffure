@@ -22,7 +22,8 @@
     "#tokens/*": "./app/token/*.js",
     "#types/*": "./types/*.js",
     "#start/*": "./start/*.js",
-    "#config/*": "./config/*.js"
+    "#config/*": "./config/*.js",
+    "#commands/*": "./commands/*.js"
   },
   "devDependencies": {
     "@adonisjs/assembler": "^7.7.0",
@@ -86,6 +87,9 @@
     "vue": "^3.4.31"
   },
   "hotHook": {
-    "boundaries": ["./app/controllers/**/*.ts", "./app/middleware/*.ts"]
+    "boundaries": [
+      "./app/controllers/**/*.ts",
+      "./app/middleware/*.ts"
+    ]
   }
 }

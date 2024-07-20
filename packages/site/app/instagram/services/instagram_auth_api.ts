@@ -1,6 +1,6 @@
-import { FormData, request } from 'undici'
 import env from '#start/env'
 import { ResultWithRecoverableError } from '#types/response'
+import { FormData, request } from 'undici'
 import { Token } from '../types/responses.js'
 
 export default class InstagramAuthApi {

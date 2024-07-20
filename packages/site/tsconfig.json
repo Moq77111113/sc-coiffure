@@ -11,7 +11,8 @@
       "#tokens/*": ["./app/token/*.js"],
       "#types/*": ["./types/*.js"],
       "#start/*": ["./start/*.js"],
-      "#config/*": ["./config/*.js"]
+      "#config/*": ["./config/*.js"],
+      "#commands/*": ["./commands/*.js"]
     }
   },
   "exclude": ["./inertia/**/*", "node_modules", "build"]
