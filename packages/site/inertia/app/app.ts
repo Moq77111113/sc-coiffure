@@ -3,11 +3,11 @@
 
 import '@/css/globals.css'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
-import { createInertiaApp } from '@inertiajs/vue3'
-import { createSSRApp, h } from 'vue'
-import type { DefineComponent } from 'vue'
-
 import { InertiaProgress } from '@inertiajs/progress'
+import { createInertiaApp } from '@inertiajs/vue3'
+import { MotionPlugin } from '@vueuse/motion'
+import type { DefineComponent } from 'vue'
+import { createSSRApp, h } from 'vue'
 const appName = import.meta.env.VITE_APP_NAME || ''
 
 import.meta.glob(['./assets/**'])
@@ -29,6 +29,7 @@ createInertiaApp({
   setup({ el, App, props, plugin }) {
     createSSRApp({ render: () => h(App, props) })
       .use(plugin)
+      .use(MotionPlugin)
       .mount(el)
   },
 })

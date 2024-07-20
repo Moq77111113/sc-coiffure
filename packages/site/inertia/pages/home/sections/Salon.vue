@@ -3,7 +3,7 @@ import { Icons } from '@/components/icons'
 </script>
 
 <template>
-  <section id="us" class="w-full py-12 md:py-24">
+  <section id="us" v-motion-slide-visible-once-top class="w-full py-12 md:py-24">
     <div class="container px-4 md:px-6">
       <div class="flex flex-col items-center space-y-8">
         <span
@@ -63,4 +63,5 @@ import { Icons } from '@/components/icons'
       </div>
     </div>
   </section>
-</template>
+</template>import { Icons } from '@/components/icons';
+

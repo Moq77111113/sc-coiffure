@@ -14,9 +14,7 @@ import { Icons } from '@/components/icons'
           <div class="flex flex-col items-center space-y-4 md:items-start">
             <h1
               class="whitespace-break-spaces text-center text-3xl font-bold tracking-tighter sm:whitespace-normal sm:text-4xl md:text-start md:text-5xl xl:text-6xl/tight"
-            >
-              Sublimez votre style avec
-              <span class="text-accent-foreground">SC Coiffure</span>
+            >Bienvenue chez <br /><span class="text-accent-foreground">SC Coiffure</span>
             </h1>
             <p
               class="max-w-[600px] text-center text-sm sm:text-lg md:self-start md:text-start md:text-xl"

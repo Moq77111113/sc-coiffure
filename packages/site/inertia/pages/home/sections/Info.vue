@@ -11,6 +11,7 @@ const schedule = ref({
 <template>
   <section
     id="schedule"
+    
     class="w-full bg-muted py-8 text-muted-foreground md:py-12 lg:py-20"
   >
     <div class="container w-full space-y-8 sm:px-4 md:space-y-8 md:px-6">
@@ -81,4 +82,8 @@ const schedule = ref({
       </div>
     </div>
   </section>
-</template>
+</template>import { Icons } from '@/components/icons';
+import { ref } from 'vue';
+import { Icons } from '@/components/icons';
+import { ref } from 'vue';
+

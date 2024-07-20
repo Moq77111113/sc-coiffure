@@ -32,7 +32,7 @@ const pics = ref([
 </script>
 
 <template>
-  <section id="real" class="w-full p-4">
+  <section id="real"  class="w-full p-4">
     <ImageSlider :pictures="pics" />
   </section>
 </template>

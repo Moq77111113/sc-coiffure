@@ -2,6 +2,7 @@ import { PageProps } from '@adonisjs/inertia/types'
 import { Page } from '@inertiajs/core'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { renderToString } from '@vue/server-renderer'
+import { MotionPlugin } from '@vueuse/motion'
 import { type DefineComponent, createSSRApp, h } from 'vue'
 
 export default function render(page: Page<PageProps>) {
@@ -16,7 +17,9 @@ export default function render(page: Page<PageProps>) {
     },
 
     setup({ App, props, plugin }) {
-      return createSSRApp({ render: () => h(App, props) }).use(plugin)
+      return createSSRApp({ render: () => h(App, props) })
+        .use(plugin)
+        .use(MotionPlugin)
     },
   })
 }
