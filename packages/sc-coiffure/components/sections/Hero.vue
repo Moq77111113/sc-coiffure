@@ -23,13 +23,13 @@ import { Icons } from '@/components/icons'
               notre équipe conviviale de coiffeurs passionnés.
             </p>
           </div>
-          <Link
+          <NuxtLink
             href="#"
             class="inline-flex h-12 max-w-[250px] items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
           >
             <Icons.Phone class="mr-2 size-6" />
             Prendre Rendez-vous
-          </Link>
+          </NuxtLink>
         </div>
 
         <NuxtImg

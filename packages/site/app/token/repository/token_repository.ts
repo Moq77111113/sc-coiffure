@@ -2,7 +2,7 @@ import { db } from '#core/services/db'
 
 type TokenKey = 'INSTAGRAM' | 'GOOGLE'
 export default class TokenRepository {
-  public async addOrUpdate(key: TokenKey, value: string, expires?: string) {
+  public async  addOrUpdate(key: TokenKey, value: string, expires?: string) {
     const now = Date.now().toString()
     return await db
       .insertInto('tokens')

@@ -42,11 +42,11 @@ const services = [
           ]">
               <h3 class="text-xl font-bold tracking-tighter">{{ name }}</h3>
               <NuxtImg loading="lazy" v-motion-pop-visible-once  :src="src" :alt="alt" class="w-2/3 hover:brightness-125 md:size-full" />
-              <Link href="#"
-                class="text-md mr-2 flex items-center self-center min[450px]:self-start font-bold tracking-tighter">Voir
+              <NuxtLink href="#"
+                class="text-md mr-2 flex items-center self-center min-[450px]:self-start font-bold tracking-tighter">Voir
               les prix
               <Icons.ArrowRight class="ml-2 size-4" />
-              </Link>
+              </NuxtLink>
             </div>
           </template>
         </div>

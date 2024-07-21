@@ -1,5 +1,9 @@
 import { defineCronHandler } from '#nuxt/cron'
-
-export default defineCronHandler(() => '0 0 * * 0', async () => {
-  console.log('This job runs every second')
-})
+import { db } from '~/db/kysely'
+export default defineCronHandler(
+  () => '* * * * *',
+  async () => {
+    const data = await db.selectFrom('feed').selectAll().execute()
+    console.log(JSON.stringify(data))
+  },
+)
