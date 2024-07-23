@@ -36,9 +36,6 @@ const getShortToken = async (
   try {
     const res = await $fetch<Token['Short']>(`${igApiUrl}/oauth/access_token`, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
       body: data,
     });
     return [res, null];
@@ -50,8 +47,8 @@ const getShortToken = async (
 const exchangeShortTokenForLongToken = async (
   shortToken: string
 ): Promise<[Token['Long'], null] | [null, Error]> => {
-  const { igClientSecret, igApiUrl } = useRuntimeConfig();
-  const url = new URL(`${igApiUrl}/access_token`);
+  const { igClientSecret, igGraphUrl } = useRuntimeConfig();
+  const url = new URL(`${igGraphUrl}/access_token`);
   url.search = new URLSearchParams({
     grant_type: 'ig_exchange_token',
     client_secret: igClientSecret,
