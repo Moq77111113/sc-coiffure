@@ -3,7 +3,6 @@ import { Kysely, SqliteDialect } from 'kysely'
 import type { DB } from '~/types/db'
 export const db = (function () {
   const { databaseUrl } = useRuntimeConfig()
-  console.log('databaseUrl', databaseUrl)
   const dialect = new SqliteDialect({
     database: new SQLite(databaseUrl),
   })

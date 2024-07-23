@@ -2,8 +2,6 @@
 export default defineNuxtConfig({
   runtimeConfig: {
     databaseUrl: '',
-    metaApiKey: '',
-    metaClientId: '',
     igClientId: '',
     igClientSecret: '',
     igApiUrl: 'https://api.instagram.com',

@@ -18,7 +18,7 @@ type RefreshToken = {
 }
 
 export type Token = {
-  Short: Short  Token
+  Short: ShortToken
   Long: LongToken
   Refresh: RefreshToken
 }
