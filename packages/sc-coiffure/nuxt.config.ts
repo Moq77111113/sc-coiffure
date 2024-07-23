@@ -11,11 +11,14 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      htmlAttrs: {
+        lang: 'fr',
+      } ,
       title: 'SC Coiffure',
       meta: [
         { charset: 'utf-8' },
+    
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { hid: 'description', name: 'description', content: 'SC Coiffure' },
       ],
     },
   },
@@ -40,7 +43,7 @@ export default defineNuxtConfig({
     exposeConfig: true,
     viewer: true,
     configPath: 'tailwind.config.ts',
-    cssPath: './assets/css/main.css',
+    cssPath: './assets/css/tailwind.css',
   },
   shadcn: {
     componentDir: './components/ui',

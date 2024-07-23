@@ -8,8 +8,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "kyselgy:codegen": "npx kysely-codegen",
-    "kysely:migrate": "pnpx tsx db/run.ts",
+    "kysely:codegen": "npx kysely-codegen --out-file=types/db.ts",
+    "kysely:rollback": "pnpx tsx db/rollback.ts",
+    "kysely:migrate": "pnpx tsx db/migrate.ts",
     "ig:url": "pnpx tsx scripts/get_auth_url.ts"
   },
   "dependencies": {

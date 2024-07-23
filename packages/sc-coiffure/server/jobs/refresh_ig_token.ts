@@ -55,5 +55,5 @@ export default defineCronHandler(
       throw new Error('Refresh token failed');
     }
   },
-  { runOnInit: false }
+  { runOnInit: true, timeZone: 'Europe/Paris' }
 );

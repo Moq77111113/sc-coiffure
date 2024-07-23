@@ -135,5 +135,6 @@ export default defineCronHandler(
       await extractAndSaveMedia(pic);
     }
     console.info("Finished 'refresh_media' job");
-  }
+  },
+  { runOnInit: true , timeZone:  'Europe/Paris'}
 );

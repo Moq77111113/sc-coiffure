@@ -24,8 +24,8 @@ const migrator = new Migrator({
 
 async function migrate() {
   await migrator.migrateDown()
-  const { error, results } = await migrator.migrateToLatest()
-
+  const { error, results } = await migrator.migrateDown()
+  console.log('--- ~ results:', results)
   results?.forEach((it) => {
     if (it.status === 'Success')
       console.log(`migration "${it.migrationName}" was executed successfully`)

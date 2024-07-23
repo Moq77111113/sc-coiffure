@@ -11,3 +11,4 @@ export const db = (function () {
     dialect,
   })
 })()
+
