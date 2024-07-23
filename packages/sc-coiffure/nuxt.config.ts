@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/motion/nuxt',
     'nuxt-cron',
+    "@nuxt/eslint"
   ],
   postcss: {
     plugins: {

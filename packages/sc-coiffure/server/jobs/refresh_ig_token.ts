@@ -1,6 +1,6 @@
-import { db } from '~/db/kysely';
-import { Token } from '~/types/ig';
 import { defineCronHandler } from '#nuxt/cron';
+import { db } from '~/db/kysely';
+import type { Token } from '~/types/ig';
 export default defineCronHandler(
   () => '0 0 * * 0',
   async () => {

@@ -1,7 +1,7 @@
-import { db } from '~/db/kysely';
-import { Media } from '~/types/ig';
-import { ResultWithRecoverableError } from '~/types/utils';
 import { defineCronHandler } from '#nuxt/cron';
+import { db } from '~/db/kysely';
+import type { Media } from '~/types/ig';
+import type { ResultWithRecoverableError } from '~/types/utils';
 
 const retrieveToken = async (): Promise<ResultWithRecoverableError<string>> => {
   const row = await db

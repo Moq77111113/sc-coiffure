@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import type { Feed } from '~/types/pages'
+import type { Feed } from '~/types/db';
 
-const { feed } = defineProps<{ feed: Feed }>()
+
+const { feed } = defineProps<{ feed: Feed[] }>()
 </script>
 
 <template>
   <section id="portfolio"  v-motion-slide-visible-once-top class="w-full py-8 md:py-12 lg:py-20">
+  
     <div class="container px-4 md:px-6">
       <article class="flex flex-col space-y-6">
         <div class="flex items-center space-x-2">
@@ -46,5 +48,4 @@ const { feed } = defineProps<{ feed: Feed }>()
       </article>
     </div>
   </section>
-</template>import type { Feed } from '~/types/pages';
-
+</template>

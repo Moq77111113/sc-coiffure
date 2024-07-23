@@ -1,5 +1,5 @@
 import { db } from '~/db/kysely';
-import { Token } from '~/types/ig';
+import type { Token } from '~/types/ig';
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
   if (!query.code) {
