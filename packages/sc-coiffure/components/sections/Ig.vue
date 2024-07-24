@@ -1,19 +1,22 @@
 <script setup lang="ts">
 import type { Feed } from '~/types/db';
+import { social } from '~/constants/social';
 
-
-const { feed } = defineProps<{ feed: Feed[] }>()
+const { feed } = defineProps<{ feed: Feed[] }>();
 </script>
 
 <template>
-  <section id="portfolio"  v-motion-slide-visible-once-top class="w-full py-8 md:py-12 lg:py-20">
-  
+  <section
+    id="portfolio"
+    v-motion-slide-visible-once-top
+    class="w-full py-8 md:py-12 lg:py-20"
+  >
     <div class="container px-4 md:px-6">
       <article class="flex flex-col space-y-6">
         <div class="flex items-center space-x-2">
           <div class="relative size-16 rounded-full">
             <a
-              href="https://www.instagram.com/sccoiffure83"
+              :href="social.instagram"
               target="_blank"
               rel="noopener noreferrer"
             >

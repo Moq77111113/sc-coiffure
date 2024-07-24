@@ -1,9 +1,14 @@
 <script setup lang="ts">
-import { Icons } from '@/components/icons'
+import { Icons } from '@/components/icons';
+import { social } from '~/constants/social';
 </script>
 
 <template>
-  <section id="us" v-motion-slide-visible-once-top class="w-full py-12 md:py-24">
+  <section
+    id="us"
+    v-motion-slide-visible-once-top
+    class="w-full py-12 md:py-24"
+  >
     <div class="container px-4 md:px-6">
       <div class="flex flex-col items-center space-y-8">
         <span
@@ -30,13 +35,28 @@ import { Icons } from '@/components/icons'
               </p>
               <div class="h-[0.2pt] w-24 bg-accent-foreground" />
               <div class="flex space-x-4">
-                <a href="#" alt="Facebook">
+                <a
+                  :href="social.facebook"
+                  alt="Facebook"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   <Icons.facebook class="size-6" />
                 </a>
-                <a href="#" alt="Instagram">
+                <a
+                  :href="social.instagram"
+                  alt="Instagram"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   <Icons.instagram class="size-6" />
                 </a>
-                <a href="#" alt="Appelez-nous">
+                <a
+                  :href="`tel:${social.phone}`"
+                  alt="Appelez-nous"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
                   <Icons.Phone class="size-6" />
                 </a>
               </div>
@@ -64,4 +84,3 @@ import { Icons } from '@/components/icons'
     </div>
   </section>
 </template>
-

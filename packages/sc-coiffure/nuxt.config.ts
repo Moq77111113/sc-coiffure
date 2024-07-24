@@ -13,11 +13,11 @@ export default defineNuxtConfig({
     head: {
       htmlAttrs: {
         lang: 'fr',
-      } ,
+      },
       title: 'SC Coiffure',
       meta: [
         { charset: 'utf-8' },
-    
+
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       ],
     },
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/motion/nuxt',
     'nuxt-cron',
-    "@nuxt/eslint"
+    '@nuxt/eslint',
   ],
   postcss: {
     plugins: {
@@ -53,4 +53,5 @@ export default defineNuxtConfig({
     jobsDir: 'jobs',
     runOnInit: true,
   },
-})
+  telemetry: false,
+});

@@ -1,7 +1,6 @@
 <script setup lang="ts">
-
-
-import { Icons } from '@/components/icons'
+import { Icons } from '@/components/icons';
+import { social } from '@/constants/social';
 </script>
 
 <template>
@@ -14,7 +13,9 @@ import { Icons } from '@/components/icons'
           <div class="flex flex-col items-center space-y-4 md:items-start">
             <h1
               class="whitespace-break-spaces text-center text-3xl font-bold tracking-tighter sm:whitespace-normal sm:text-4xl md:text-start md:text-5xl xl:text-6xl/tight"
-            >Bienvenue chez <br /><span class="text-accent-foreground">SC Coiffure</span>
+            >
+              <p>Bienvenue chez</p>
+              <span class="text-accent-foreground">SC Coiffure</span>
             </h1>
             <p
               class="max-w-[600px] text-center text-sm sm:text-lg md:self-start md:text-start md:text-xl"
@@ -24,7 +25,7 @@ import { Icons } from '@/components/icons'
             </p>
           </div>
           <NuxtLink
-            href="#"
+            :href="`tel:${social.phone}`"
             class="inline-flex h-12 max-w-[250px] items-center justify-center rounded-md bg-primary px-8 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
           >
             <Icons.Phone class="mr-2 size-6" />

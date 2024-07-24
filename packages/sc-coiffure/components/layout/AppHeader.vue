@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
-import { ref } from 'vue'
-import LogoComponent from '../atoms/LogoComponent.vue'
-import MobileNav from '../atoms/MobileNav.vue'
-import { BrandIcons } from '../icons'
+import { ref } from 'vue';
+import LogoComponent from '@/components/atoms/LogoComponent.vue';
+import MobileNav from '@/components/atoms/MobileNav.vue';
+import { BrandIcons } from '@/components/icons';
+import { social } from '@/constants/social';
 
 const sections = ref([
   { name: 'Horaires', href: '#schedule' },
@@ -11,7 +11,7 @@ const sections = ref([
   { name: 'Services', href: '#services' },
   { name: 'Réalisations', href: '#portfolio' },
   { name: 'Contact', href: '#contact' },
-])
+]);
 </script>
 <template>
   <header
@@ -20,7 +20,9 @@ const sections = ref([
     <div class="mr-4 flex w-full items-center justify-between md:mr-1">
       <MobileNav />
       <LogoComponent class="hidden size-14 md:block" />
-      <h1 class="font-handwritten text-2xl/relaxed tracking-wider md:hidden">SC Coiffure</h1>
+      <h1 class="font-handwritten text-2xl/relaxed tracking-wider md:hidden">
+        SC Coiffure
+      </h1>
       <nav class="hidden grow justify-center gap-4 self-end sm:gap-6 md:flex">
         <NuxtLink
           v-for="{ name, href } in sections"
@@ -32,10 +34,10 @@ const sections = ref([
         </NuxtLink>
       </nav>
       <div class="flex space-x-4">
-        <a href="#" target="_blank" rel="noopener, noreferrer"
+        <a :href="social.facebook" target="_blank" rel="noopener, noreferrer"
           ><BrandIcons.facebook class="size-6"
         /></a>
-        <a href="#" target="_blank" rel="noopener, noreferrer">
+        <a :href="social.instagram" target="_blank" rel="noopener, noreferrer">
           <BrandIcons.instagram class="size-6"
         /></a>
       </div>
