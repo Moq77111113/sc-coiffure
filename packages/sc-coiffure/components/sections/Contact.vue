@@ -10,8 +10,19 @@ const form = reactive({
   honey: '',
 });
 
-function submit() {
-  console.log('values');
+const { token } = defineProps<{ token: string }>();
+async function submit() {
+  const formData = new FormData();
+  for (const [key, value] of Object.entries(form)) {
+    formData.append(key, value);
+  }
+  await $fetch('/api/contact', {
+    headers: {
+      authorization: `Bearer ${token}`,
+    },
+    method: 'POST',
+    body: formData,
+  });
 }
 </script>
 

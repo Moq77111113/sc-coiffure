@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-export const getAuthUrl = () => {
+const getAuthUrl = () => {
   const clientId = process.env.NUXT_IG_CLIENT_ID;
   const redirectUrl = process.env.NUXT_IG_RETURN_URL;
   if (!clientId || !redirectUrl) {

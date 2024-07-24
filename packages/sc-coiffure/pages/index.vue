@@ -59,6 +59,16 @@ const { data: feed, status } = useLazyAsyncData<Feed[]>('feed', () =>
     },
   })
 );
+
+const { data: contactToken, status: hasContactToken } = useLazyAsyncData<{
+  value: string;
+}>('contact_token', () =>
+  $fetch<{ value: string }>('/api/token/contact_token', {
+    headers: {
+      authorization: `Bearer ${apiSecret}`,
+    },
+  })
+);
 </script>
 
 <template>
@@ -70,7 +80,10 @@ const { data: feed, status } = useLazyAsyncData<Feed[]>('feed', () =>
       <Salon />
       <Services />
       <Ig v-if="status === 'success' && feed?.length" :feed="feed" />
-      <Contact />
+      <Contact
+        v-if="hasContactToken === 'success'"
+        :token="contactToken.value"
+      />
     </main>
   </Layout>
 </template>

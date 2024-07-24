@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     igReturnUrl: '',
     igScope: 'user_profile,user_media',
     apiSecret: '',
+    tokenExpirationDurationMinutes: 15,
   },
   app: {
     head: {

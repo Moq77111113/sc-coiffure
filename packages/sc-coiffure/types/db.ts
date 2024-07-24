@@ -23,6 +23,12 @@ export interface Feed {
   updated_at: Generated<string>;
 }
 
+export interface RollingToken {
+  expires_at: number;
+  key: string;
+  value: string;
+}
+
 export interface Tokens {
   created_at: Generated<string>;
   expires_at: string | null;
@@ -35,5 +41,6 @@ export interface Tokens {
 export interface DB {
   config: Config;
   feed: Feed;
+  rolling_token: RollingToken;
   tokens: Tokens;
 }
