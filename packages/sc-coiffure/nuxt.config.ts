@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     igGraphUrl: 'https://graph.instagram.com',
     igReturnUrl: '',
     igScope: 'user_profile,user_media',
+    apiSecret: '',
   },
   app: {
     head: {
@@ -17,8 +18,8 @@ export default defineNuxtConfig({
       title: 'SC Coiffure',
       meta: [
         { charset: 'utf-8' },
-
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { name: 'view-transition', content: 'same-origin' },
       ],
     },
   },

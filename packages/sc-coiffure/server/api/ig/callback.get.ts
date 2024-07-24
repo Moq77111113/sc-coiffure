@@ -7,7 +7,6 @@ export default defineEventHandler(async (event) => {
   }
   const [short, shortError] = await getShortToken(query.code.toString());
   if (shortError) {
-  
     return { error: 'Failed' };
   }
   const [long, longError] = await exchangeShortTokenForLongToken(
@@ -40,7 +39,7 @@ const getShortToken = async (
       body: data,
     });
     return [res, null];
-  } catch(e){
+  } catch (e) {
     console.error(e instanceof Error ? e.message : e);
     return [null, new Error('Failed to retrieve short token')];
   }
@@ -65,7 +64,7 @@ const exchangeShortTokenForLongToken = async (
     });
 
     return [res, null];
-  } catch (e){
+  } catch (e) {
     console.error(e instanceof Error ? e.message : e);
     return [null, new Error('Failed to get long token')];
   }

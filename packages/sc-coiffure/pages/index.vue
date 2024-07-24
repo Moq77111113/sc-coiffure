@@ -51,8 +51,13 @@ useSeoMeta({
   twitterImage: ogImage.toString(),
 });
 
+const { apiSecret } = useRuntimeConfig();
 const { data: feed, status } = useLazyAsyncData<Feed[]>('feed', () =>
-  $fetch('/api/ig/feed')
+  $fetch<Feed[]>('/api/ig/feed', {
+    headers: {
+      authorization: `Bearer ${apiSecret}`,
+    },
+  })
 );
 </script>
 
