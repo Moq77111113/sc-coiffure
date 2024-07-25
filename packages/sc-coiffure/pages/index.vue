@@ -1,8 +1,5 @@
 <script setup lang="ts">
 import Layout from '@/components/layout/AppLayout.vue';
-import { seo, title } from '@/constants/seo';
-import { social } from '@/constants/social';
-import type { Feed } from '~/types/db';
 import Contact from '@/components/sections/Contact.vue';
 import Hero from '@/components/sections/Hero.vue';
 import Ig from '@/components/sections/Ig.vue';
@@ -10,6 +7,9 @@ import Infos from '@/components/sections/Info.vue';
 import Realisations from '@/components/sections/Realisations.vue';
 import Salon from '@/components/sections/Salon.vue';
 import Services from '@/components/sections/Services.vue';
+import { seo, title } from '@/constants/seo';
+import { social } from '@/constants/social';
+import type { Feed } from '~/types/db';
 
 const route = useRoute();
 const url = new URL(route.fullPath, social.web);
@@ -52,13 +52,12 @@ useSeoMeta({
 });
 
 const { apiSecret } = useRuntimeConfig();
-const { data: feed, status } = useLazyAsyncData<Feed[]>('feed', () =>
-  $fetch<Feed[]>('/api/ig/feed', {
+const { data: feed, status } = useFetch<Feed[]>('/api/ig/feed', {
     headers: {
       authorization: `Bearer ${apiSecret}`,
     },
   })
-);
+
 
 const { data: contactToken, status: hasContactToken } = useLazyAsyncData<{
   value: string;
@@ -81,7 +80,7 @@ const { data: contactToken, status: hasContactToken } = useLazyAsyncData<{
       <Services />
       <Ig v-if="status === 'success' && feed?.length" :feed="feed" />
       <Contact
-        v-if="hasContactToken === 'success'"
+        v-if="hasContactToken === 'success' && contactToken"
         :token="contactToken.value"
       />
     </main>

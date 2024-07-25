@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { reactive } from 'vue';
-
+import { toast } from 'vue-sonner';
 const form = reactive({
   contact: '',
   message: '',
@@ -16,14 +16,25 @@ async function submit() {
   for (const [key, value] of Object.entries(form)) {
     formData.append(key, value);
   }
-  await $fetch('/api/contact', {
+ 
+ const sendMessage = () => $fetch('/api/contact', {
     headers: {
       authorization: `Bearer ${token}`,
     },
     method: 'POST',
     body: formData,
   });
-}
+  toast.promise(sendMessage, {
+    loading: 'Envoi en cours...',
+    success: () => 'Merci pour votre message !',
+    error: () => 'Une erreur s\'est produite, veuillez réessayer.',
+  });
+    form.contact = ''
+    form.message = ''
+    form.honey = ''
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+  }
 </script>
 
 <template>

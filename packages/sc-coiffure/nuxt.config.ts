@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
   runtimeConfig: {
     databaseUrl: '',
     igClientId: '',
@@ -10,6 +11,7 @@ export default defineNuxtConfig({
     igScope: 'user_profile,user_media',
     apiSecret: '',
     tokenExpirationDurationMinutes: 15,
+    resendApiSecret: '',
   },
   app: {
     head: {

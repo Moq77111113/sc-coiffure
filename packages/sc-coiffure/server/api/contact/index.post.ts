@@ -1,5 +1,15 @@
 import { db } from '~/db/kysely';
 
+
+import { Resend } from 'resend';
+
+const resend = (() => {
+  const {resendApiSecret} = useRuntimeConfig()
+  
+  return new Resend(resendApiSecret)
+})()
+
+
 const authUsingContactKey = defineEventHandler(async (event) => {
   const headers = getHeaders(event);
 
@@ -43,6 +53,20 @@ export default defineEventHandler({
       };
     }
 
-    console.log({ contact, message });
+    const { error} = await resend.emails.send({
+      from: 'Acme <onboarding@resend.dev>',
+      to: 'quentin.moessner@gmail.com',
+      subject: 'Nouveau message depuis https://sccoiffure83.fr',
+      html: `<p><strong>${contact}</strong> a laissé le message suivant</p><p>${message}</p>`,
+    });
+  if(error) {
+    console.error(error)
+    return {
+      status: 500,
+    }
+  }
+    return {
+      status: 200,
+    };
   },
 });
