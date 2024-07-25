@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import type { Feed } from '~/types/db';
 import { social } from '~/constants/social';
+import type { Feed } from '~/types/db';
 
 const { feed } = defineProps<{ feed: Feed[] }>();
 </script>

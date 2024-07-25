@@ -1,11 +1,8 @@
 <script setup lang="ts">
-import { Icons } from '@/components/icons'
-import { ref } from 'vue'
-const schedule = ref({
-  lundi: [],
-  'mardi-samedi': ['09:00', '17:00'],
-  dimanche: [],
-})
+import { Icons } from '@/components/icons';
+import { schedule } from '~/constants/schedule';
+import { social } from '~/constants/social';
+
 </script>
 
 <template>
@@ -32,21 +29,21 @@ const schedule = ref({
             class="m flex flex-col justify-between space-y-4 py-4 text-base sm:text-xl/tight md:text-xl/relaxed"
           >
             <span class="flex items-center justify-between"
-              ><Icons.Map />
+              ><a :href="social.embedUrl" target="_blank" rel="noopener, noreferrer"><Icons.Map /></a>
               <p class="text-right">
-                5 Avenue Garibaldi<br />
+                5 Avenue Garibaldi<br >
                 83500 La Seyne-sur-Mer
               </p></span
             >
             <div class="my-2 h-[0.2pt] w-full bg-muted-foreground" />
 
             <span class="flex items-center justify-between">
-              <Icons.Phone />
-              <p class="tracking-wider">00.00.00.00.00</p></span
+              <a :href="`tel:${social.phone}`" target="_blank" rel="noopener, noreferrer">   <Icons.Phone /></a>
+              <p class="tracking-wider">{{social.phone}}</p></span
             >
             <div class="my-2 h-[0.2pt] w-full bg-muted-foreground" />
             <span class="flex items-center justify-between">
-              <Icons.Mail />
+              <a :href="`mailto:${social.email}`" target="_blank" rel="noopener, noreferrer"> <Icons.Mail /></a>
               <p>contact@sccoiffure83.fr</p>
             </span>
           </div>
@@ -55,7 +52,7 @@ const schedule = ref({
 
       <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div
-          class="flex flex-col items-end space-y-2 justify-self-center sm:justify-self-start md:order-2"
+          class="flex flex-col items-start space-y-2 justify-self-center sm:justify-self-start md:order-2"
         >
           <h2
             class="font-handwritten text-2xl/relaxed tracking-wider md:text-3xl/relaxed"

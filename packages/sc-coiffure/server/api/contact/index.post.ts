@@ -59,14 +59,12 @@ export default defineEventHandler({
       subject: 'Nouveau message depuis https://sccoiffure83.fr',
       html: `<p><strong>${contact}</strong> a laissé le message suivant</p><p>${message}</p>`,
     });
+
   if(error) {
-    console.error(error)
-    return {
-      status: 500,
-    }
+   throw createError({
+    status: 500
+   })
   }
-    return {
-      status: 200,
-    };
+    return 
   },
 });
