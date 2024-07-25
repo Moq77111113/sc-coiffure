@@ -51,22 +51,26 @@ useSeoMeta({
   twitterImage: ogImage.toString(),
 });
 
-const { apiSecret } = useRuntimeConfig();
-const { data: feed, status } = useFetch<Feed[]>('/api/ig/feed', {
+
+const { data: feed, status } = useLazyAsyncData<Feed[]>('feed', () => {
+  const { apiSecret } = useRuntimeConfig();
+  return $fetch<Feed[]>('/api/ig/feed', {
     headers: {
       authorization: `Bearer ${apiSecret}`,
     },
   })
 
+})
 
 const { data: contactToken, status: hasContactToken } = useLazyAsyncData<{
   value: string;
-}>('contact_token', () =>
-  $fetch<{ value: string }>('/api/token/contact_token', {
+}>('contact_token', () => {
+  const { apiSecret } = useRuntimeConfig();
+  return $fetch<{ value: string }>('/api/token/contact_token', {
     headers: {
       authorization: `Bearer ${apiSecret}`,
     },
-  })
+  })}
 );
 </script>
 
