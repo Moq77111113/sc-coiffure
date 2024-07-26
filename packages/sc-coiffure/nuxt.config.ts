@@ -35,6 +35,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     'nuxt-cron',
     '@nuxt/eslint',
+    '@nuxt/content'
   ],
   postcss: {
     plugins: {
@@ -57,4 +58,7 @@ export default defineNuxtConfig({
     runOnInit: true,
   },
   telemetry: false,
+  content: {
+    
+  }
 });

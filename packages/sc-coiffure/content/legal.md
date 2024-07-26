@@ -1,0 +1,39 @@
+---
+title: Mentions légales - SC Coiffure
+author: Quentin Moessner
+description: Mentions légales du Salon SC Coiffure
+companyName: SC Coiffure
+juridicForm: SAS
+address: 5 Av. Garibaldi, 83500 La Seyne-sur-Mer
+phone: 09 88 04 85 76
+email: contact@sccoiffure83.fr
+director: Péchin Cécile
+siret: 981 172 422 00017
+tva: FR92981172422
+capital: 1000 €
+host: Netlify, Inc
+hostAddress: 44 Montgomery Street, Suite 300, San Francisco, California 94104
+contactEmail: contact@sccoiffure83.fr
+---
+
+
+# Mentions Légales - Salon SC Coiffure
+
+
+- **Nom de l'Entreprise :** {frontmatter.companyName}
+- **Forme Juridique :** {frontmatter.juridicForm}
+- **Adresse du Salon :** {frontmatter.address}
+- **Téléphone :** {frontmatter.phone}
+- **E-mail :** {frontmatter.email}
+- **Directeur de la Publication :** {frontmatter.director}
+- **Numéro SIRET :** {frontmatter.siret}
+- **Numéro TVA intracommunautaire :** {frontmatter.tva}
+- **Capital Social :** {frontmatter.capital}
+- **Hébergement du Site Web :** {frontmatter.host}
+- **Adresse de l'Hébergeur :** {frontmatter.hostAddress}
+- **Propriété Intellectuelle :** Tous les contenus présents sur le site SC Coiffure (textes, images, vidéos, etc.) sont protégés par le droit de la propriété intellectuelle. Toute reproduction ou utilisation non autorisée de ces contenus est strictement interdite.
+- **Protection des Données Personnelles :** SC Coiffure s'engage à protéger la vie privée de ses clients. Les données personnelles collectées sur le site sont traitées de manière confidentielle et ne sont utilisées que dans le cadre des services proposés.
+- **Cookies :** Le site SC Coiffure peut utiliser des cookies pour améliorer l'expérience de navigation. Les utilisateurs peuvent désactiver les cookies dans les paramètres de leur navigateur.
+- **Liens Externes :** SC Coiffure n'est pas responsable du contenu des sites externes liés depuis son site.
+- **Droit Applicable :** Les présentes mentions légales sont régies par le droit français.
+- **Contact :** Pour toute question ou demande, veuillez contacter SC Coiffure à l'adresse e-mail suivante : {frontmatter.contactEmail}
