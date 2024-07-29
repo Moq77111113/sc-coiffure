@@ -1,20 +1,9 @@
 {
-  "extends": "@adonisjs/tsconfig/tsconfig.app.json",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "rootDir": "./",
-    "outDir": "./build",
+    "baseUrl": ".",
     "paths": {
-      "#pages/*": ["./app/pages/*.js"],
-      "#instagram/*": ["./app/instagram/*.js"],
-      "#feed/*": ["./app/feed/*.js"],
-      "#core/*": ["./app/core/*.js"],
-      "#contact/*": ["./app/contact/*.js"],
-      "#tokens/*": ["./app/token/*.js"],
-      "#types/*": ["./types/*.js"],
-      "#start/*": ["./start/*.js"],
-      "#config/*": ["./config/*.js"],
-      "#commands/*": ["./commands/*.js"]
+      "~/*": ["src/*"]
     }
-  },
-  "exclude": ["./inertia/**/*", "node_modules", "build"]
+  }
 }
