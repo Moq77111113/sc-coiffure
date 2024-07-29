@@ -13,7 +13,7 @@ const sections = ref([
   { name: 'Contact', href: '#contact' },
 ]);
 
-const online = window?.navigator.onLine
+const online = typeof window === 'undefined' || window?.navigator.onLine
 
 const showOfflineMessage = ref(true)
 </script>

@@ -1,0 +1,34 @@
+---
+title: Politique de confidentialité - SC Coiffure
+description: Politique de confidentialité du Salon SC Coiffure
+---
+
+La présente politique de confidentialité expose la manière dont SC Coiffure collecte, utilise et protège les informations que vous fournissez lorsque vous utilisez notre site web et nos services.
+
+## Collecte d'Informations
+
+Nous pouvons collecter des informations personnelles lorsque vous prenez rendez-vous en ligne, vous abonnez à notre newsletter, remplissez un formulaire ou utilisez d'autres fonctionnalités de notre site. Les informations collectées peuvent inclure votre nom, votre adresse e-mail, votre numéro de téléphone, et d'autres informations pertinentes.
+
+## Utilisation des Informations
+
+Les informations que nous collectons peuvent être utilisées pour personnaliser votre expérience, traiter vos transactions, vous envoyer des communications marketing, et améliorer nos services. Nous ne partagerons pas vos informations avec des tiers sans votre consentement, sauf si requis par la loi.
+
+## Protection des Informations
+
+Nous mettons en œuvre des mesures de sécurité pour protéger vos informations personnelles. Vos données sont stockées de manière sécurisée et ne sont accessibles qu'aux personnes autorisées.
+
+## Cookies
+
+Notre site web peut utiliser des cookies pour améliorer votre expérience de navigation. Vous pouvez configurer votre navigateur pour refuser les cookies, mais cela pourrait affecter certaines fonctionnalités du site.
+
+## Droit d'Accès et de Rectification
+
+Vous avez le droit d'accéder à vos informations personnelles et de demander des corrections si nécessaire. Pour exercer ces droits, veuillez nous contacter à contact@sccoiffure83.fr.
+
+## Modifications de la Politique de Confidentialité
+
+Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les modifications seront publiées sur cette page.
+
+## Contact
+
+Si vous avez des questions concernant notre politique de confidentialité, veuillez nous contacter à contact@sccoiffure83.fr.
