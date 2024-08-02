@@ -1,0 +1,26 @@
+name: Build
+
+
+on:
+  push:
+    branches:
+      - feat/version-2
+    
+env: 
+  IMAGE_NAME: "sc-coiffure"
+  SHORT_SHA: $(echo git rev-parse --short HEAD)
+
+jobs:
+  build;
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Build docker image
+        run: |
+        docker build -t {{ env.IMAGE_NAME }}:{{ env.SHORT_SHA }} .
