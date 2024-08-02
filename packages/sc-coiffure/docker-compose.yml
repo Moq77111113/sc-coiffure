@@ -1,0 +1,12 @@
+services:
+  sc-coiffure:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sc-coiffure
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./tmp:./tmp
+    env_file:
+      - .env
