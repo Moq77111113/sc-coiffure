@@ -11,7 +11,7 @@ env:
   SHORT_SHA: $(echo git rev-parse --short HEAD)
 
 jobs:
-  build;
+  build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
