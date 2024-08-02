@@ -1,48 +1,75 @@
-# SC MonRepo
-Short project description goes here.
+# Nuxt 3 Minimal Starter
 
-## Table of Contents
-- [SC MonRepo](#sc-monrepo)
-  - [Table of Contents](#table-of-contents)
-  - [Introduction](#introduction)
-  - [Packages](#packages)
-    - [Site](#site)
-    - [Cron Functions](#cron-functions)
-    - [CLI](#cli)
-  - [Getting Started](#getting-started)
-  - [License](#license)
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
-## Introduction
+## Setup
 
-Provide a brief overview of your project. Explain what it does and its purpose.
+Make sure to install the dependencies:
 
-## Packages
+```bash
+# npm
+npm install
 
-### Site
+# pnpm
+pnpm install
 
-The `site` package contains the source code for our hair salon showcase website.
-This website is built with [Astro](https://astro.build/), styled with [Tailwind CSS](https://tailwindcss.com/), and powered by the delightful [Svelte](https://svelte.dev/) framework.
+# yarn
+yarn install
 
-### Cron Functions
+# bun
+bun install
+```
 
-The `cron-functions` package hosts scheduled functions that automate various tasks related to our hair salon operations. This could include tasks like appointment reminders, data updates, or any other scheduled processes.
+## Development Server
 
-### CLI
+Start the development server on `http://localhost:3000`:
 
-The `cli` package provides a command-line interface (CLI) for running local tools related to our hair salon. This could include scripts for data management, analysis, or any other command-line tools.
+```bash
+# npm
+npm run dev
 
-## Getting Started
+# pnpm
+pnpm run dev
 
-1. **Clone the Repository:**
-   ```bash
-     git clone [this-repo]
-   ```
-2. **Install Dependencies:**
+# yarn
+yarn dev
 
-    ```bash
-    pnpm install
-    ```
+# bun
+bun run dev
+```
 
-## License
+## Production
 
-This project is licensed under the MIT - see the [LICENSE](LICENSE) file for details.
+Build the application for production:
+
+```bash
+# npm
+npm run build
+
+# pnpm
+pnpm run build
+
+# yarn
+yarn build
+
+# bun
+bun run build
+```
+
+Locally preview production build:
+
+```bash
+# npm
+npm run preview
+
+# pnpm
+pnpm run preview
+
+# yarn
+yarn preview
+
+# bun
+bun run preview
+```
+
+Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
