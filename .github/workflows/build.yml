@@ -8,7 +8,7 @@ on:
     
 env: 
   IMAGE_NAME: "sc-coiffure"
-  SHORT_SHA: "test"
+  SHORT_SHA: $(echo $GITHUB_SHA | cut -c1-7)
 
 jobs:
   build:
@@ -23,5 +23,5 @@ jobs:
       
       - name: Build docker image
         run: |
-        echo {{ env.SHORT_SHA }}
-        docker build -t {{ env.IMAGE_NAME }}:{{ env.SHORT_SHA }} .
+        
+          docker build -t ${{ env.IMAGE_NAME }}:${{ env.SHORT_SHA }} .
