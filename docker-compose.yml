@@ -1,12 +1,15 @@
 services:
   sc-coiffure:
+    # image: sc-coiffure
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: sc-coiffure
     ports:
       - '3000:3000'
     volumes:
-      - ./tmp:./tmp
+      - ./tmp:/db
     env_file:
       - .env
+    environment:
+      - NUXT_DATABASE_URL=/db/db.sqlite3
+      - DATABASE_URL=/db/db.sqlite3
