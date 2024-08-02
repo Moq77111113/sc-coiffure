@@ -23,4 +23,5 @@ jobs:
       
       - name: Build docker image
         run: |
+        echo {{ env.SHORT_SHA }}
         docker build -t {{ env.IMAGE_NAME }}:{{ env.SHORT_SHA }} .
