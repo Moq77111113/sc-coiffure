@@ -8,7 +8,7 @@ on:
     
 env: 
   IMAGE_NAME: "sc-coiffure"
-  SHORT_SHA: $(echo git rev-parse --short HEAD)
+  SHORT_SHA: "test"
 
 jobs:
   build:
