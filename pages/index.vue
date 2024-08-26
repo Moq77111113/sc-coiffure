@@ -59,7 +59,6 @@ const { data: feed, status } = useLazyAsyncData<Feed[]>('feed', () => {
       authorization: `Bearer ${apiSecret}`,
     },
   })
-
 })
 
 const { data: contactToken, status: hasContactToken } = useLazyAsyncData<{

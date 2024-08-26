@@ -11,7 +11,8 @@
     "kysely:codegen": "npx kysely-codegen --out-file=types/db.ts",
     "kysely:rollback": "pnpx tsx db/rollback.ts",
     "kysely:migrate": "pnpx tsx db/migrate.ts",
-    "ig:url": "pnpx tsx scripts/get_auth_url.ts"
+    "ig:url": "pnpx tsx scripts/get_auth_url.ts",
+    "test": "pnpx tsx scripts/test.ts"
   },
   "dependencies": {
     "@nuxt/content": "^2.13.2",
@@ -44,6 +45,7 @@
     "kysely-codegen": "^0.15.0",
     "nuxt-cron": "^1.6.0",
     "postcss": "^8.4.41",
-    "tailwindcss": "^3.4.10"
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.5.4"
   }
 }
