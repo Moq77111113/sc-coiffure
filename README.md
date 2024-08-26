@@ -1,75 +1,67 @@
-# Nuxt 3 Minimal Starter
+# SC-Coiffure Website
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Welcome to the Hair Salon Website project! This is a Nuxt3-based application designed for a hair salon showcasing their services, prices, and contact information.
 
-## Setup
+## Prerequisites
 
-Make sure to install the dependencies:
+- Node.js (v20 or higher)
+- pnpm
+
+## Getting Started
+
+### Clone the Repository
 
 ```bash
-# npm
-npm install
+git clone <this-repo>
+cd <this-repo>
 
-# pnpm
+```
+
+### Install Dependencies
+
+```bash
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### Run the Development Server
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+pnpm dev
 ```
 
-## Production
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the website.
 
-Build the application for production:
+
+### Build for Production
 
 ```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
+pnpm build
 ```
 
-Locally preview production build:
+## Configuration
+
+You can configure the environment variables while copying the `.env.example` file to `.env` and filling the values.
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+cp .env.example .env
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Project Structure
+
+  - `.github/` - GitHub Actions workflows
+  - `assets/` - Currently containing the CSS files
+  - `components/` - Vue components used in the project
+  - `constants/` - Constants used in the project
+  - `content/` - Markdown files for subpages using `@nuxt/content` module
+  - `db/` - Database files
+  - `layouts/` - Layouts for the pages
+  - `pages/` - Pages of the website
+  - `public/` - Static files served by the server
+  - `server/` - Server-side code, includind api & jobs
+  - `types/` - TypeScript types
+
+
+## License
+
+    This project is licensed under the MIT License. See the LICENSE file for details.

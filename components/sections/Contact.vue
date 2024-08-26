@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { reactive } from 'vue';
 import { toast } from 'vue-sonner';
+import { entries } from '~/lib/utils';
 const form = reactive({
   contact: '',
   message: '',
@@ -13,7 +14,7 @@ const form = reactive({
 const { token } = defineProps<{ token: string }>();
 async function submit() {
   const formData = new FormData();
-  for (const [key, value] of Object.entries(form)) {
+  for (const [key, value] of entries(form)) {
     formData.append(key, value);
   }
 

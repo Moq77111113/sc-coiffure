@@ -1,12 +1,12 @@
-import { address, latitude, longitude } from './location';
-import { social } from './social';
+import { location } from './location'
+import { social } from './social'
 
-export const companyName = 'SC Coiffure';
+export const companyName = 'SC Coiffure'
 export const description =
-  'SC Coiffure, votre coiffeur de confiance sur le port de La Seyne-sur-Mer. Avec ou sans rendez-vous, profitez de notre expertise pour sublimer votre style.';
-export const title = 'SC Coiffure - Votre coiffeur à La Seyne-sur-Mer';
+  'SC Coiffure, votre coiffeur de confiance sur le port de La Seyne-sur-Mer. Avec ou sans rendez-vous, profitez de notre expertise pour sublimer votre style.'
+export const title = 'SC Coiffure - Votre coiffeur à La Seyne-sur-Mer'
 
-const siteName = 'SC Coiffure';
+const siteName = 'SC Coiffure'
 const keywords = [
   'Coiffure',
   'Coiffeur',
@@ -43,47 +43,47 @@ const keywords = [
   'Curls',
   'Shampoo',
   'No appointment',
-];
+]
 
 const schema = ({ canonical, image }: { canonical: URL; image: URL }) => ({
   '@context': ['http://schema.org', { '@language': 'fr-fr' }],
   '@type': 'HairSalon',
-  name: siteName,
-  description: description,
-  image: image,
-  url: canonical,
-  sameAs: [social.facebook, social.instagram],
-  address: {
+  'name': siteName,
+  'description': description,
+  'image': image,
+  'url': canonical,
+  'sameAs': [social.facebook, social.instagram],
+  'address': {
     '@type': 'PostalAddress',
-    addressLocality: address.city,
-    postalCode: address.zip,
-    streetAddress: address.street,
+    'addressLocality': location.address.city,
+    'postalCode': location.address.zip,
+    'streetAddress': location.address.street,
   },
-  telephone: social.phone,
-  email: social.email,
+  'telephone': social.phone,
+  'email': social.email,
 
-  priceRange: '20€ - 100€',
-  paymentAccepted: 'Cash, Credit Card',
-  currenciesAccepted: 'EUR',
-  openingHoursSpecification: [
+  'priceRange': '20€ - 100€',
+  'paymentAccepted': 'Cash, Credit Card',
+  'currenciesAccepted': 'EUR',
+  'openingHoursSpecification': [
     {
       '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
-      opens: '09:00:00',
-      closes: '17:00:00',
+      'dayOfWeek': ['Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      'opens': '09:00:00',
+      'closes': '17:00:00',
     },
   ],
-  geo: {
+  'geo': {
     '@type': 'GeoCoordinates',
-    latitude,
-    longitude,
+    latitude: location.latitude,
+    longitude: location.longitude,
   },
-  keywords: keywords.join(', '),
-});
+  'keywords': keywords.join(', '),
+})
 
 export const seo = {
   description,
   title,
   schema,
   siteName,
-};
+}

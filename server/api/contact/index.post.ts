@@ -1,6 +1,8 @@
 import { db } from '~/db/kysely'
-
+import handlebars from 'handlebars'
 import { Resend } from 'resend'
+import { location } from '~/constants/location'
+import { social } from '~/constants/social'
 
 const resend = (() => {
   const { resendApiSecret } = useRuntimeConfig()
@@ -38,6 +40,30 @@ const authUsingContactKey = defineEventHandler(async (event) => {
   }
 })
 
+const compileTemplate = async (subject: string, message: string) => {
+  const file = await useStorage('assets:templates').getItem('mails:default.hbs')
+
+  if (!file) {
+    throw new Error('Template not found')
+  }
+
+  const template = handlebars.compile(file)
+
+  return template({
+    title: subject,
+    content: message,
+    street: location.address.street,
+    city: location.address.city,
+    zip: location.address.zip,
+    phone: social.phone,
+    instagram: social.instagram,
+    facebook: social.facebook,
+    email: social.email,
+  }, {
+    
+  })
+}
+
 export default defineEventHandler({
   onRequest: [authUsingContactKey],
   handler: async (event) => {
@@ -51,11 +77,15 @@ export default defineEventHandler({
       }
     }
 
+    console.log(message)
+
+    const html = await compileTemplate(`${contact} a laissé un message`, `${message}`)
+
     const { error } = await resend.emails.send({
       from: 'Acme <onboarding@resend.dev>',
       to: 'quentin.moessner@gmail.com',
       subject: 'Nouveau message depuis https://sccoiffure83.fr',
-      html: `<p><strong>${contact}</strong> a laissé le message suivant</p><p>${message}</p>`,
+      html: html,
     })
 
     if (error) {

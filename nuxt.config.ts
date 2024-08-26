@@ -25,6 +25,14 @@ export default defineNuxtConfig({
       ],
     },
   },
+  nitro: {
+    serverAssets: [
+      {
+        baseName: 'templates',
+        dir: './templates',
+      },
+    ],
+  },
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
   css: ['./assets/css/tailwind.css'],
@@ -35,7 +43,7 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     'nuxt-cron',
     '@nuxt/eslint',
-    '@nuxt/content'
+    '@nuxt/content',
   ],
   postcss: {
     plugins: {
@@ -58,7 +66,5 @@ export default defineNuxtConfig({
     runOnInit: true,
   },
   telemetry: false,
-  content: {
-    
-  }
-});
+  content: {},
+})
