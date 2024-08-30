@@ -11,7 +11,11 @@ const { feed } = defineProps<{ feed: Feed[] }>()
       <article class="flex flex-col space-y-6">
         <div class="flex items-center space-x-2">
           <div class="relative size-16 rounded-full">
-            <a :href="social.instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a
+              :href="social.instagram"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram">
               <span class="sr-only">Instagram</span>
               <NuxtImg
                 loading="lazy"
@@ -31,7 +35,7 @@ const { feed } = defineProps<{ feed: Feed[] }>()
               :href="pic.permalink"
               target="_blank"
               rel="noopener noreferrer"
-              :aria-label="`Photo du ${new Date(pic.media_date)}`">
+              :aria-label="`Photo du ${new Date(pic.media_date).toLocaleDateString('fr-FR')}`">
               <NuxtImg
                 loading="lazy"
                 :src="pic.media_url"
