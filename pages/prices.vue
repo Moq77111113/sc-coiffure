@@ -3,35 +3,18 @@ import Layout from '@/components/layout/AppLayout.vue'
 
 import { seo, title } from '@/constants/seo'
 import { social } from '@/constants/social'
-import RecursiveAccordion from '~/components/ui/accordion/RecursiveAccordion.vue'
-import type { RecursiveAccordionProps } from '~/components/ui/accordion/types'
 import type { PriceTree } from '~/types/prices'
 
 const route = useRoute()
-const url = new URL(route.fullPath, social.web)
+const page = new URL(route.fullPath, social.web)
 const ogImage = new URL('/social.jpg', social.web)
 
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: url.toString(),
-    },
-  ],
-  script: [
-    {
-      type: 'application/ld+json',
-      innerHTML: JSON.stringify(seo.schema({ canonical: url, image: ogImage }), null, 2),
-    },
-  ],
-})
-
 useSeoMeta({
-  title: seo.title,
-  description: seo.description,
+  title: seo.priceTitle,
+  description: seo.priceDescription,
   publisher: social.facebook,
   ogImage: ogImage.toString(),
-  ogUrl: url.toString(),
+  ogUrl: page.toString(),
   ogImageWidth: 342,
   ogImageHeight: 192,
   ogImageAlt: seo.siteName,
@@ -43,7 +26,7 @@ useSeoMeta({
   twitterImage: ogImage.toString(),
 })
 
-const { data: categories } = useLazyAsyncData<PriceTree[]>('prices', () => {
+const { data: categories, status } = useLazyAsyncData<PriceTree[]>('prices', () => {
   const { apiSecret } = useRuntimeConfig()
   return $fetch<PriceTree[]>('/api/prices', {
     headers: {
@@ -52,47 +35,46 @@ const { data: categories } = useLazyAsyncData<PriceTree[]>('prices', () => {
   })
 })
 
-const toSubTree = (tree: PriceTree): RecursiveAccordionProps<{ name: string; amount: number }> => ({
-  value: tree.name,
-  data: tree.prices,
-  subItems: tree.categories.map(toSubTree),
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: page.toString(),
+    },
+  ],
+  script: () => [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(
+        seo.priceSchema({
+          page,
+
+          categories: categories.value ?? [],
+        }),
+        null,
+        2,
+      ),
+    },
+  ],
 })
 </script>
 
 <template>
   <Layout>
-    <main class="relative">
-      <div class="container mx-auto px-4">
+    <main class="relative py-12 md:py-24">
+      <div class="container mx-auto px-4 flex flex-col">
         <h2
           class="text-3xl font-handwritten md:text-4xl lg:text-5xl text-center mb-8 md:mb-12 lg:mb-16">
-          Les prix
+          Les tarifs
         </h2>
 
-        <Accordion
-          type="multiple"
-          class="max-w-4xl mx-auto"
-          collapsible
-          :default-value="categories?.[0].name">
-          <RecursiveAccordion
-            v-for="category in categories"
-            :key="category.name"
-            :item="{
-              value: category.name,
-              data: category.prices,
-              subItems: category.categories.map(toSubTree),
-            }">
-            <template #trigger="item">
-              <h3 class="text-xl tracking-wide">{{ item.item.value }}</h3>
-            </template>
+        <div v-if="status !== 'success'" class="flex justify-center items-center h-96">
+          <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900" />
+        </div>
 
-            <template #content="data">
-              <div v-for="(price, i) in data.data" :key="i" class="flex justify-between text-lg">
-                <p>{{ price.name }}</p>
-                <p>{{ price.amount }}€</p>
-              </div>
-            </template>
-          </RecursiveAccordion>
-        </Accordion>
+        <section v-if="categories?.length" class="self-center max-w-3xl space-y-6 w-full">
+          <AtomsPriceList v-for="category in categories" :key="category.name" :tree="category" />
+        </section>
       </div>
     </main>
   </Layout>

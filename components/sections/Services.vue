@@ -46,7 +46,7 @@ const services = [
                 :alt="alt"
                 class="w-2/3 hover:brightness-125 md:size-full" />
               <NuxtLink
-                href="#"
+                href="/prices"
                 class="text-md mr-2 flex items-center self-center min-[450px]:self-start font-bold tracking-tighter">
                 Voir les prix
                 <Icons.ArrowRight class="ml-2 size-4" />

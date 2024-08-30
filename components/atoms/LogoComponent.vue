@@ -6,13 +6,7 @@ const props = defineProps<{ class?: string }>()
 <template>
   <a
     href="/"
-    :class="
-      cn(
-        'mr-4 flex items-center md:mr-2 lg:mr-6 lg:space-x-1 xl:space-x-2',
-        props.class
-      )
-    "
-  >
+    :class="cn('mr-4 flex items-center md:mr-2 lg:mr-6 lg:space-x-1 xl:space-x-2', props.class)">
     <svg
       version="1.0"
       xmlns="http://www.w3.org/2000/svg"
@@ -20,12 +14,8 @@ const props = defineProps<{ class?: string }>()
       height="161.000000pt"
       viewBox="0 0 159.000000 161.000000"
       preserveAspectRatio="xMidYMid meet"
-      class="size-14"
-    >
-      <g
-        transform="translate(0.000000,161.000000) scale(0.100000,-0.100000)"
-        stroke="none"
-      >
+      class="size-14">
+      <g transform="translate(0.000000,161.000000) scale(0.100000,-0.100000)" stroke="none">
         <path
           fill="currentColor"
           d="M602 1566 c-280 -75 -507 -302 -578 -581 -28 -111 -23 -295 11 -410
@@ -34,8 +24,7 @@ const props = defineProps<{ class?: string }>()
 32 -225 36 -114 3 -142 0 -223 -21z m441 -53 c231 -81 399 -248 480 -480 40
 -115 49 -278 22 -400 -82 -370 -423 -627 -798 -599 -319 24 -600 255 -681 561
 -27 99 -31 237 -12 335 34 168 93 276 216 400 70 70 102 94 181 134 138 70
-215 87 374 82 114 -2 141 -7 218 -33z"
-        />
+215 87 374 82 114 -2 141 -7 218 -33z" />
         <path
           fill="currentColor"
           d="M678 1510 c-101 -18 -235 -76 -308 -132 -159 -123 -263 -301 -290
@@ -44,8 +33,7 @@ const props = defineProps<{ class?: string }>()
 -70 19 -239 27 -307 14z m287 -35 c262 -68 466 -278 521 -536 23 -107 14 -270
 -19 -367 -77 -224 -261 -396 -488 -458 -87 -24 -262 -24 -349 -1 -125 33 -224
 91 -319 186 -130 129 -196 273 -208 451 -14 203 62 395 213 545 83 83 193 143
-314 175 94 24 252 26 335 5z"
-        />
+314 175 94 24 252 26 335 5z" />
         <path
           fill="#E8C7AE"
           d="M495 1321 c-86 -40 -142 -130 -130 -210 17 -112 90 -186 240 -242 50
@@ -61,13 +49,11 @@ const props = defineProps<{ class?: string }>()
 l23 -43 6 85 c4 47 5 87 4 89 -2 1 -14 -4 -27 -13 -32 -22 -54 -20 -123 14
 -49 25 -72 30 -130 30 -47 0 -83 -7 -110 -19z m294 -566 c30 -28 51 -57 55
 -77 9 -44 -11 -106 -42 -135 l-27 -25 -23 51 c-27 59 -44 231 -23 231 6 0 34
--20 60 -45z"
-        />
+-20 60 -45z" />
         <path
           fill="#E8C7AE"
           d="M1190 743 c-8 -3 -21 -6 -28 -9 -10 -3 -9 -10 3 -34 20 -38 29 -38
-45 1 14 32 5 50 -20 42z"
-        />
+45 1 14 32 5 50 -20 42z" />
       </g>
     </svg>
   </a>

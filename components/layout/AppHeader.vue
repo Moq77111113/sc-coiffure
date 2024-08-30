@@ -11,6 +11,7 @@ const sections = ref([
   { name: 'Services', href: '/#services' },
   { name: 'Réalisations', href: '/#portfolio' },
   { name: 'Contact', href: '/#contact' },
+  { name: 'Tarifs', href: '/prices' },
 ])
 
 const online = typeof window === 'undefined' || window?.navigator.onLine
@@ -23,15 +24,17 @@ const showOfflineMessage = ref(true)
     <div class="mr-4 flex w-full items-center justify-between md:mr-1">
       <MobileNav />
       <LogoComponent class="hidden size-14 md:block" />
-      <h1 class="font-handwritten text-2xl/relaxed tracking-wider md:hidden">SC Coiffure</h1>
+      <a href="/">
+        <h1 class="font-handwritten text-2xl/relaxed tracking-wider md:hidden">SC Coiffure</h1>
+      </a>
       <nav class="hidden grow justify-center gap-4 self-end sm:gap-6 md:flex">
-        <NuxtLink
+        <a
           v-for="{ name, href } in sections"
           :key="name"
           :href="href"
           class="text-sm font-bold underline-offset-4 transition-all duration-200 ease-in-out hover:-mt-2 hover:underline">
           {{ name }}
-        </NuxtLink>
+        </a>
       </nav>
       <div class="flex space-x-4">
         <a
