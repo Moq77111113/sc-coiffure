@@ -66,5 +66,8 @@ export default defineNuxtConfig({
     runOnInit: true,
   },
   telemetry: false,
-  content: {},
+  content: {
+    documentDriven: false,
+    
+  },
 })

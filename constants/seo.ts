@@ -1,4 +1,4 @@
-import type { PriceTree } from '~/types/prices'
+import type { Category } from '~/types/prices'
 import { location } from './location'
 import { social } from './social'
 
@@ -97,16 +97,16 @@ export const priceSchema = ({
 }: {
   page: URL
 
-  categories: PriceTree[]
+  categories: Category[]
 }) => {
-  const priceAsList = (categories: PriceTree[]): PriceList => {
+  const priceAsList = (categories: Category[]): PriceList => {
     return categories.reduce<PriceList>((acc, { name, prices, categories: subCategories }) => {
-      if (prices.length) {
+      if (prices?.length) {
         acc = acc.concat(
           prices.map(({ amount, name: price }) => ({ name: price, amount, category: name })),
         )
       }
-      if (subCategories.length) {
+      if (subCategories?.length) {
         acc = acc.concat(
           priceAsList(subCategories.map((_) => ({ ..._, name: `${name} - ${_.name}` }))),
         )

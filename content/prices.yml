@@ -1,0 +1,43 @@
+categories: 
+  - name: Forfaits Brushing
+    prices:
+    - name: Shampoing Brushing Court
+      amount: 16
+    - name: Shampoing Brushing Mi-Long
+      amount: 21
+    - name: Shampoing Brushing Long
+      amount: 28
+  - name: Forfaits Coupe Brushing
+    prices:
+    - name: Shampoing coupe Brushining Court
+      amount: 29
+    - name: Shampoing coupe Brushining Mi-Long
+      amount: 31
+    - name: Shampoing coupe Brushining Long
+      amount: 36
+  - name: Forfaits Coloration
+    categories:
+    - name: Avec Amoniaque
+      prices:
+      - name: Shampoing couleur coupe Brushining court
+        amount: 45
+      - name: Shampoing couleur coupe Brushining mi-long
+        amount: 55
+      - name: Shampoing couleur coupe Brushining long
+        amount: 65
+    - name: Sans Amoniaque
+      prices:
+      - name: Shampoing couleur coupe Brushining court
+        amount: 52
+      - name: Shampoing couleur coupe Brushining mi-long
+        amount: 62
+      - name: Shampoing couleur coupe Brushining long
+        amount: 72
+  - name: Forfaits Balayage
+    prices:
+    - name: Shampoing balayage coupe Brushining court
+      amount: 59
+    - name: Shampoing balayage coupe Brushining mi-long
+      amount: 69
+    - name: Shampoing balayage coupe Brushining long
+      amount: 79

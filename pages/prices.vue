@@ -3,7 +3,7 @@ import Layout from '@/components/layout/AppLayout.vue'
 
 import { seo, title } from '@/constants/seo'
 import { social } from '@/constants/social'
-import type { PriceTree } from '~/types/prices'
+import type { Category } from '~/types/prices'
 
 const route = useRoute()
 const page = new URL(route.fullPath, social.web)
@@ -26,9 +26,9 @@ useSeoMeta({
   twitterImage: ogImage.toString(),
 })
 
-const { data: categories, status } = useLazyAsyncData<PriceTree[]>('prices', () => {
+const { data: categories, status } = useLazyAsyncData<Category[]>('prices', () => {
   const { apiSecret } = useRuntimeConfig()
-  return $fetch<PriceTree[]>('/api/prices', {
+  return $fetch<Category[]>('/api/prices', {
     headers: {
       authorization: `Bearer ${apiSecret}`,
     },
@@ -48,7 +48,6 @@ useHead({
       innerHTML: JSON.stringify(
         seo.priceSchema({
           page,
-
           categories: categories.value ?? [],
         }),
         null,

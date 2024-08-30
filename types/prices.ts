@@ -1,5 +1,10 @@
-export type PriceTree = {
+export type Price = {
+  amount: number
   name: string
-  categories: PriceTree[]
-  prices: { name: string; amount: number }[]
+}
+
+export type Category = {
+  name: string
+  categories?: Category[]
+  prices?: Price[]
 }
