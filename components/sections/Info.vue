@@ -22,7 +22,7 @@ import { entries } from '~/lib/utils'
           <div
             class="m flex flex-col justify-between space-y-4 py-4 text-base sm:text-xl/tight md:text-xl/relaxed">
             <span class="flex items-center justify-between">
-              <a :href="location.mapsHref" target="_blank" rel="noopener, noreferrer">
+              <a :href="location.mapsHref" target="_blank" rel="noopener, noreferrer" aria-label="Adresse du salon">
                 <Icons.Map />
               </a>
               <p class="text-right">
@@ -34,14 +34,14 @@ import { entries } from '~/lib/utils'
             <div class="my-2 h-[0.2pt] w-full bg-muted-foreground" />
 
             <span class="flex items-center justify-between">
-              <a :href="`tel:${social.phone}`" target="_blank" rel="noopener, noreferrer">
+              <a :href="`tel:${social.phone}`" target="_blank" rel="noopener, noreferrer" aria-label="Appelez-nous">
                 <Icons.Phone />
               </a>
               <p class="tracking-wider">{{ social.phone }}</p>
             </span>
             <div class="my-2 h-[0.2pt] w-full bg-muted-foreground" />
             <span class="flex items-center justify-between">
-              <a :href="`mailto:${social.email}`" target="_blank" rel="noopener, noreferrer">
+              <a :href="`mailto:${social.email}`" target="_blank" rel="noopener, noreferrer" aria-label="Ecrivez-nous">
                 <Icons.Mail />
               </a>
               <p>contact@sccoiffure83.fr</p>

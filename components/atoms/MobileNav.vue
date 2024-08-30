@@ -55,7 +55,7 @@ const sections = ref([
       <LogoComponent />
       <div class="flex flex-col space-y-2">
         <div v-for="item in sections" :key="item.href" class="flex flex-col">
-          <a :href="item.href" >
+          <a :href="item.href" :aria-label="item.name">
             {{ item.name }}
           </a>
           <div class="my-2 h-[0.2pt] w-12 bg-muted-foreground/70" />
