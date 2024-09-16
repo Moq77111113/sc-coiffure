@@ -6,7 +6,7 @@ export const companyName = 'SC Coiffure'
 export const description =
   'SC Coiffure, votre coiffeur de confiance sur le port de La Seyne-sur-Mer. Avec ou sans rendez-vous, profitez de notre expertise pour sublimer votre style.'
 export const priceDescription =
-  'écouvrez les tarifs de nos services de coiffure chez SC Coiffure, avec des options pour tous les budgets.'
+  'Découvrez les tarifs de nos services de coiffure chez SC Coiffure, avec des options pour tous les budgets.'
 export const title = 'SC Coiffure - Votre coiffeur à La Seyne-sur-Mer'
 export const priceTitle = 'Tarifs - SC Coiffure'
 const siteName = 'SC Coiffure'
