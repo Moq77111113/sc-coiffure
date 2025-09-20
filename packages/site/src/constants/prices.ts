@@ -18,9 +18,9 @@ const introPrices = [
     },
     {
       name: 'Shampooing coupe couleur sans ammoniaque',
-      amounts: [5800, 6500, 7500],
+      amounts: [5500, 6500, 7500],
     },
-    { name: 'Shampooing coupe balayage soin', amounts: [5900, 6900, 7900] },
+    { name: 'Shampooing coupe balayage soin', amounts: [6200, 7200, 8200] },
   ],
 ] satisfies Category;
 
